@@ -78,6 +78,55 @@
         radial-gradient(at 0% 50%, hsla(263, 66%, 20%, 0.3) 0px, transparent 50%);
 }
 
+/* Blog mobile refinements */
+.filters-scroll {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+}
+
+.filters-scroll::-webkit-scrollbar {
+    display: none;
+}
+
+.featured-card__img {
+    transition: transform 0.5s ease;
+}
+
+.post-card__thumb {
+    transition: transform 0.3s ease;
+}
+
+.post-card__img {
+    transition: transform 0.3s ease;
+}
+
+@media (max-width: 640px) {
+    body {
+        padding-bottom: 2rem;
+    }
+
+    .featured-card__img {
+        height: 260px;
+    }
+
+    .post-card {
+        border-radius: 18px;
+    }
+
+    .post-card__thumb {
+        height: 210px;
+    }
+
+    .post-card__body {
+        padding: 1.25rem;
+    }
+
+    .filters-scroll {
+        padding-bottom: 4px;
+    }
+}
+
 /* 3D Tilted Effect for Hero Image */
 .hero-tilt {
     transform: perspective(1000px) rotateY(-12deg) rotateX(2deg) rotateZ(-1deg);

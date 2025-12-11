@@ -37,7 +37,7 @@
 
         <!-- Sidebar (Darker for Admin) -->
         <aside
-            class="fixed inset-y-0 left-0 z-50 w-64 bg-slate-950 text-slate-400 border-r border-slate-900 transform -translate-x-full transition-transform duration-300 md:translate-x-0 md:static md:flex flex-col">
+            class="fixed inset-y-0 left-0 rtl:left-auto rtl:right-0 z-50 w-64 bg-slate-950 text-slate-400 border-r rtl:border-r-0 rtl:border-l border-slate-900 transform -translate-x-full rtl:translate-x-full transition-transform duration-300 md:translate-x-0 md:static md:flex flex-col">
             <div class="h-20 flex items-center px-6 border-b border-slate-900">
                 <div class="flex items-center gap-2">
                     <div
@@ -266,8 +266,75 @@
                             </div>
                         </div>
 
+                        <!-- Support Tickets & Logs -->
+                        <div class="col-span-1 lg:col-span-3 grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <!-- Support Tickets -->
+                            <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6">
+                                <div class="flex justify-between items-center mb-6">
+                                    <h3 class="font-bold text-lg text-slate-900">Support Tickets</h3>
+                                    <span class="px-2 py-1 rounded bg-red-100 text-red-600 text-xs font-bold">3
+                                        New</span>
+                                </div>
+                                <div class="space-y-4">
+                                    <div class="flex gap-4 p-3 hover:bg-slate-50 rounded-xl transition cursor-pointer">
+                                        <div
+                                            class="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center text-slate-500 shrink-0 font-bold">
+                                            BS
+                                        </div>
+                                        <div>
+                                            <p class="text-sm font-bold text-slate-900">API Latency Issues</p>
+                                            <p class="text-xs text-slate-500 line-clamp-1">Bob Smith • High Priority •
+                                                2h ago</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex gap-4 p-3 hover:bg-slate-50 rounded-xl transition cursor-pointer">
+                                        <div
+                                            class="w-10 h-10 rounded-full bg-purple-100 flex items-center justify-center text-purple-600 shrink-0 font-bold">
+                                            JL
+                                        </div>
+                                        <div>
+                                            <p class="text-sm font-bold text-slate-900">Billing Question</p>
+                                            <p class="text-xs text-slate-500 line-clamp-1">Jane Lee • Medium Priority •
+                                                5h ago</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex gap-4 p-3 hover:bg-slate-50 rounded-xl transition cursor-pointer">
+                                        <div
+                                            class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 shrink-0 font-bold">
+                                            DK
+                                        </div>
+                                        <div>
+                                            <p class="text-sm font-bold text-slate-900">Feature Request</p>
+                                            <p class="text-xs text-slate-500 line-clamp-1">David Kim • Low Priority • 1d
+                                                ago</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- System Logs -->
+                            <div
+                                class="bg-slate-900 rounded-2xl shadow-sm p-6 text-slate-300 font-mono text-xs overflow-hidden">
+                                <h3 class="font-bold text-lg text-white font-sans mb-4">System Console</h3>
+                                <div class="space-y-2 h-48 overflow-y-auto no-scrollbar">
+                                    <p class="text-green-400">>[14:20:05] Auto-scaling group 'worker-pool-a' scaled up
+                                        to 5 instances.</p>
+                                    <p>>[14:18:22] Database backup completed successfully (3.2GB).</p>
+                                    <p class="text-yellow-400">>[14:15:10] Warning: Redis cache memory usage at 85%.</p>
+                                    <p>>[14:12:45] Deployment #4829 deployed to staging via CI/CD.</p>
+                                    <p class="text-red-400">>[14:10:01] Error: Rate limit exceeded for IP 192.168.1.1
+                                    </p>
+                                    <p>>[14:05:30] User 9283 updated organization settings.</p>
+                                    <p>>[14:00:00] Cron job 'daily_digest' started.</p>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
+                <footer class="mt-8 text-center text-sm text-slate-400">
+                    &copy; 2024 OrbitScale Inc. All rights reserved.
+                </footer>
             </main>
         </div>
     </div>

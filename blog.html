@@ -95,7 +95,8 @@
                     </div>
 
                     <a href="about.html" class="text-slate-600 hover:text-primary-600 font-medium transition">About</a>
-                    <a href="#" class="text-slate-600 hover:text-primary-600 font-medium transition">Services</a>
+                    <a href="services.html"
+                        class="text-slate-600 hover:text-primary-600 font-medium transition">Services</a>
                     <a href="pricing.html"
                         class="text-slate-600 hover:text-primary-600 font-medium transition">Pricing</a>
                     <a href="blog.html" class="text-primary-600 font-bold transition">Blog</a>
@@ -160,7 +161,8 @@
 
                 <a href="about.html"
                     class="block text-lg font-medium text-slate-700 hover:text-primary-600 mt-4">About</a>
-                <a href="#" class="block text-lg font-medium text-slate-700 hover:text-primary-600">Services</a>
+                <a href="services.html"
+                    class="block text-lg font-medium text-slate-700 hover:text-primary-600">Services</a>
                 <a href="pricing.html"
                     class="block text-lg font-medium text-slate-700 hover:text-primary-600">Pricing</a>
                 <a href="blog.html" class="block text-lg font-medium text-primary-600">Blog</a>
@@ -200,7 +202,7 @@
                 <div class="relative rounded-3xl overflow-hidden shadow-2xl">
                     <img src="https://images.unsplash.com/photo-1555099962-4199c345e5dd?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80"
                         alt="Featured"
-                        class="w-full h-[500px] object-cover transition-transform duration-500 group-hover:scale-105">
+                        class="w-full h-80 lg:h-[500px] object-cover transition-transform duration-500 group-hover:scale-105">
                     <div
                         class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent flex flex-col justify-end p-8 lg:p-12">
                         <span
@@ -284,8 +286,110 @@
         </div>
     </main>
 
-    <footer class="bg-slate-50 pt-10 pb-10 border-t border-slate-200 text-center text-slate-500">
-        © 2024 OrbitScale Inc.
+    <!-- Newsletter -->
+    <section class="py-24 relative overflow-hidden">
+        <div class="absolute inset-0 bg-slate-900">
+            <div class="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 bg-primary-500 rounded-full blur-3xl opacity-20">
+            </div>
+            <div
+                class="absolute bottom-0 left-0 -ml-20 -mb-20 w-96 h-96 bg-accent-500 rounded-full blur-3xl opacity-20">
+            </div>
+        </div>
+
+        <div class="max-w-4xl mx-auto px-4 relative z-10 text-center">
+            <span
+                class="inline-block py-1 px-3 rounded-full bg-white/10 text-white text-xs font-bold mb-6 border border-white/20">Weekly
+                Digest</span>
+            <h2 class="text-3xl lg:text-5xl font-display font-bold text-white mb-6">Join 150,000+ developers</h2>
+            <p class="text-slate-300 text-lg mb-10 max-w-2xl mx-auto">Get the best of OrbitScale delivered to your
+                inbox. No spam, just high-quality engineering content.</p>
+
+            <form class="flex flex-col sm:flex-row gap-4 max-w-lg mx-auto">
+                <input type="email" placeholder="Enter your email"
+                    class="flex-1 px-6 py-4 rounded-full bg-white/10 border border-white/20 text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-primary-500 backdrop-blur-sm">
+                <button type="button"
+                    class="px-8 py-4 rounded-full bg-white text-slate-900 font-bold hover:bg-primary-50 transition shadow-lg shadow-white/10">Subscribe</button>
+            </form>
+            <p class="text-slate-500 text-sm mt-6">Unsubscribe at any time.</p>
+        </div>
+    </section>
+
+    <!-- Topics Cloud -->
+    <section class="py-16 bg-slate-50 border-t border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <p class="font-bold text-slate-500 mb-6 uppercase tracking-wider text-sm">Explore by Topic</p>
+            <div class="flex flex-wrap justify-center gap-3">
+                <a href="#"
+                    class="px-4 py-2 rounded-lg bg-white border border-slate-200 text-slate-600 hover:border-primary-500 hover:text-primary-600 transition">DevOps</a>
+                <a href="#"
+                    class="px-4 py-2 rounded-lg bg-white border border-slate-200 text-slate-600 hover:border-primary-500 hover:text-primary-600 transition">Serverless</a>
+                <a href="#"
+                    class="px-4 py-2 rounded-lg bg-white border border-slate-200 text-slate-600 hover:border-primary-500 hover:text-primary-600 transition">Kubernetes</a>
+                <a href="#"
+                    class="px-4 py-2 rounded-lg bg-white border border-slate-200 text-slate-600 hover:border-primary-500 hover:text-primary-600 transition">Scaling</a>
+                <a href="#"
+                    class="px-4 py-2 rounded-lg bg-white border border-slate-200 text-slate-600 hover:border-primary-500 hover:text-primary-600 transition">Architecture</a>
+                <a href="#"
+                    class="px-4 py-2 rounded-lg bg-white border border-slate-200 text-slate-600 hover:border-primary-500 hover:text-primary-600 transition">Security</a>
+                <a href="#"
+                    class="px-4 py-2 rounded-lg bg-white border border-slate-200 text-slate-600 hover:border-primary-500 hover:text-primary-600 transition">Culture</a>
+                <a href="#"
+                    class="px-4 py-2 rounded-lg bg-white border border-slate-200 text-slate-600 hover:border-primary-500 hover:text-primary-600 transition">Productivity</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-50 pt-20 pb-10 border-t border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-8 mb-12">
+                <div class="col-span-2">
+                    <div class="flex items-center gap-2 mb-4">
+                        <div
+                            class="w-8 h-8 rounded-lg bg-primary-600 flex items-center justify-center text-white font-bold">
+                            O</div>
+                        <span class="font-display font-bold text-xl text-slate-900">OrbitScale</span>
+                    </div>
+                    <p class="text-slate-500 max-w-xs">Making cloud automation accessible for everyone. Built with love
+                        in San Francisco.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold text-slate-900 mb-4">Product</h4>
+                    <ul class="space-y-2 text-slate-600">
+                        <li><a href="#" class="hover:text-primary-600">Features</a></li>
+                        <li><a href="#" class="hover:text-primary-600">Integrations</a></li>
+                        <li><a href="pricing.html" class="hover:text-primary-600">Pricing</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-slate-900 mb-4">Company</h4>
+                    <ul class="space-y-2 text-slate-600">
+                        <li><a href="about.html" class="hover:text-primary-600">About</a></li>
+                        <li><a href="blog.html" class="hover:text-primary-600">Blog</a></li>
+                        <li><a href="contact.html" class="hover:text-primary-600">Careers</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-slate-900 mb-4">Legal</h4>
+                    <ul class="space-y-2 text-slate-600">
+                        <li><a href="#" class="hover:text-primary-600">Privacy</a></li>
+                        <li><a href="#" class="hover:text-primary-600">Terms</a></li>
+                        <li><a href="#" class="hover:text-primary-600">Security</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="pt-8 border-t border-slate-200 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-slate-500 text-sm">© 2024 OrbitScale Inc. All rights reserved.</p>
+                <div class="flex space-x-4">
+                    <a href="#" class="text-slate-400 hover:text-primary-600"><i
+                            class="ph ph-twitter-logo text-xl"></i></a>
+                    <a href="#" class="text-slate-400 hover:text-primary-600"><i
+                            class="ph ph-github-logo text-xl"></i></a>
+                    <a href="#" class="text-slate-400 hover:text-primary-600"><i
+                            class="ph ph-linkedin-logo text-xl"></i></a>
+                </div>
+            </div>
+        </div>
     </footer>
 
     <script src="js/main.js"></script>

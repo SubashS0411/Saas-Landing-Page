@@ -89,12 +89,18 @@ function initDashboardMenu() {
     }
 
     function openMenu() {
-        sidebar.classList.remove('-translate-x-full');
+        // Remove hidden states
+        sidebar.classList.remove('-translate-x-full', 'rtl:translate-x-full');
+        // Add visible state (optional but good for specificity)
+        sidebar.classList.add('translate-x-0');
         overlay.classList.remove('hidden');
     }
 
     function closeMenu() {
-        sidebar.classList.add('-translate-x-full');
+        // Remove visible state
+        sidebar.classList.remove('translate-x-0');
+        // Add hidden states
+        sidebar.classList.add('-translate-x-full', 'rtl:translate-x-full');
         overlay.classList.add('hidden');
     }
 

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coming Soon - OrbitScale</title>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#6366f1',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Plus Jakarta Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body
+    class="bg-indigo-950 font-sans text-white h-screen overflow-hidden flex flex-col relative selection:bg-indigo-500 selection:text-white">
+
+    <!-- Background -->
+    <div class="absolute inset-0 z-0">
+        <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10">
+        </div>
+        <div
+            class="absolute top-0 right-0 w-full h-full bg-gradient-to-bl from-indigo-900 via-slate-900 to-black opacity-90">
+        </div>
+
+        <!-- Animated Orbs -->
+        <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-indigo-500/20 rounded-full blur-3xl animate-pulse"></div>
+        <div
+            class="absolute bottom-0 right-0 w-[500px] h-[500px] bg-purple-600/20 rounded-full blur-3xl animate-pulse delay-700">
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="relative z-10 p-8 flex justify-between items-center">
+        <div class="flex items-center gap-2">
+            <div class="w-8 h-8 rounded-lg bg-indigo-500 flex items-center justify-center text-white font-bold text-xl">
+                O</div>
+            <span class="font-display font-bold text-xl">OrbitScale</span>
+        </div>
+        <a href="contact.html" class="text-indigo-300 hover:text-white transition">Contact Us</a>
+    </header>
+
+    <!-- Main -->
+    <main class="relative z-10 flex-1 flex flex-col items-center justify-center px-4 text-center">
+
+        <span
+            class="inline-block px-3 py-1 rounded-full bg-indigo-500/20 border border-indigo-500/50 text-indigo-300 text-sm font-semibold mb-6 animate-bounce">
+            Shipping Soon
+        </span>
+
+        <h1 class="text-5xl md:text-7xl font-display font-bold mb-8">We are building <br> <span
+                class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-400">Version 2.0</span>
+        </h1>
+
+        <p class="text-xl text-indigo-200 mb-12 max-w-2xl">
+            A completely rewritten core with distributed edge functions. Get notified when we launch.
+        </p>
+
+        <!-- Countdown -->
+        <div class="grid grid-cols-4 gap-4 md:gap-8 mb-16" id="countdown">
+            <div class="flex flex-col items-center">
+                <span class="text-4xl md:text-6xl font-bold font-mono" id="days">00</span>
+                <span class="text-xs md:text-sm uppercase tracking-widest text-indigo-400">Days</span>
+            </div>
+            <div class="flex flex-col items-center">
+                <span class="text-4xl md:text-6xl font-bold font-mono" id="hours">00</span>
+                <span class="text-xs md:text-sm uppercase tracking-widest text-indigo-400">Hours</span>
+            </div>
+            <div class="flex flex-col items-center">
+                <span class="text-4xl md:text-6xl font-bold font-mono" id="minutes">00</span>
+                <span class="text-xs md:text-sm uppercase tracking-widest text-indigo-400">Minutes</span>
+            </div>
+            <div class="flex flex-col items-center">
+                <span class="text-4xl md:text-6xl font-bold font-mono" id="seconds">00</span>
+                <span class="text-xs md:text-sm uppercase tracking-widest text-indigo-400">Seconds</span>
+            </div>
+        </div>
+
+        <!-- Form -->
+        <form class="w-full max-w-md flex flex-col md:flex-row gap-3">
+            <input type="email" placeholder="Enter your email address"
+                class="flex-1 px-6 py-4 rounded-full bg-white/10 border border-white/20 text-white placeholder-indigo-300 focus:outline-none focus:border-indigo-400 focus:bg-white/20 transition">
+            <button type="button"
+                class="px-8 py-4 rounded-full bg-indigo-500 hover:bg-indigo-600 text-white font-bold shadow-lg shadow-indigo-500/30 transition transform hover:scale-105">
+                Notify Me
+            </button>
+        </form>
+
+    </main>
+
+    <footer class="relative z-10 p-8 text-center text-indigo-400 text-sm">
+        © 2024 OrbitScale Inc.
+    </footer>
+
+    <script>
+        // Set launch date to 14 days from now
+        const launchDate = new Date();
+        launchDate.setDate(launchDate.getDate() + 14);
+
+        function updateCountdown() {
+            const now = new Date();
+            const diff = launchDate - now;
+
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+            document.getElementById('days').innerText = String(days).padStart(2, '0');
+            document.getElementById('hours').innerText = String(hours).padStart(2, '0');
+            document.getElementById('minutes').innerText = String(minutes).padStart(2, '0');
+            document.getElementById('seconds').innerText = String(seconds).padStart(2, '0');
+        }
+
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+    </script>
+</body>
+
+</html>

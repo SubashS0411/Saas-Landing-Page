@@ -131,50 +131,46 @@
                 </div>
             </div>
         </div>
-
-        <!-- Mobile Menu Drawer -->
-        <div id="mobile-menu-overlay"
-            class="fixed inset-0 bg-slate-900/20 backdrop-blur-sm z-40 hidden transition-opacity"></div>
-
-        <div id="mobile-menu"
-            class="fixed top-0 right-0 rtl:right-auto rtl:left-0 w-3/4 max-w-xs h-full bg-white shadow-2xl z-50 transform translate-x-full rtl:-translate-x-full transition-transform duration-300 ease-in-out flex flex-col">
-            <div class="p-6 border-b border-slate-100 flex justify-between items-center">
-                <span class="font-display font-bold text-xl text-slate-900">Menu</span>
-                <button id="mobile-menu-close" class="p-2 text-slate-500 hover:bg-slate-50 rounded-lg">
-                    <i class="ph ph-x text-xl"></i>
-                </button>
-            </div>
-            <div class="p-6 space-y-4 flex-1 overflow-y-auto">
-                <a href="index.html"
-                    class="block text-lg font-bold text-primary-600 bg-primary-50 px-3 py-2 rounded-lg">Home Ver. 1
-                    <span class="text-xs font-normal text-slate-500 ml-2">(Light)</span></a>
-                <a href="index-v2.html"
-                    class="block text-lg font-bold text-slate-800 hover:text-primary-600 px-3 py-2">Home Ver. 2 <span
-                        class="text-xs font-normal text-slate-500 ml-2">(Dark)</span></a>
-
-                <div class="pl-4 border-l-2 border-slate-100 space-y-3 my-2">
-                    <a href="user-dashboard.html"
-                        class="block text-base font-medium text-slate-600 hover:text-primary-600">User Dashboard</a>
-                    <a href="admin-dashboard.html"
-                        class="block text-base font-medium text-slate-600 hover:text-primary-600">Admin Dashboard</a>
-                </div>
-
-                <a href="about.html"
-                    class="block text-lg font-medium text-slate-700 hover:text-primary-600 mt-4">About</a>
-                <a href="services.html"
-                    class="block text-lg font-medium text-slate-700 hover:text-primary-600">Services</a>
-                <a href="pricing.html"
-                    class="block text-lg font-medium text-slate-700 hover:text-primary-600">Pricing</a>
-                <a href="blog.html" class="block text-lg font-medium text-primary-600">Blog</a>
-                <hr class="border-slate-100 my-4">
-                <a href="login.html" class="block text-lg font-medium text-slate-700 hover:text-primary-600">Login</a>
-                <a href="register.html"
-                    class="block w-full text-center bg-primary-600 text-white px-5 py-3 rounded-xl font-bold shadow-lg shadow-primary-500/20 mt-4">
-                    Get Started
-                </a>
-            </div>
-        </div>
     </nav>
+
+    <!-- Mobile Menu Drawer (Moved outside nav for proper layering) -->
+    <div id="mobile-menu-overlay"
+        class="fixed inset-0 bg-slate-900/20 backdrop-blur-sm z-[60] hidden transition-opacity"></div>
+
+    <div id="mobile-menu"
+        class="fixed top-0 left-0 w-full h-auto min-h-[50vh] bg-white shadow-2xl z-[70] transform -translate-y-full transition-transform duration-300 ease-in-out flex flex-col rounded-b-3xl">
+        <div class="p-6 border-b border-slate-100 flex justify-between items-center">
+            <span class="font-display font-bold text-xl text-slate-900">Menu</span>
+            <button id="mobile-menu-close" class="p-2 text-slate-500 hover:bg-slate-50 rounded-lg">
+                <i class="ph ph-x text-xl"></i>
+            </button>
+        </div>
+        <div class="p-6 space-y-4 flex-1 overflow-y-auto">
+            <a href="index.html"
+                class="block text-lg font-bold text-primary-600 bg-primary-50 px-3 py-2 rounded-lg">Home Ver. 1
+                <span class="text-xs font-normal text-slate-500 ml-2">(Light)</span></a>
+            <a href="index-v2.html" class="block text-lg font-bold text-slate-800 hover:text-primary-600 px-3 py-2">Home
+                Ver. 2 <span class="text-xs font-normal text-slate-500 ml-2">(Dark)</span></a>
+
+            <div class="pl-4 border-l-2 border-slate-100 space-y-3 my-2">
+                <a href="user-dashboard.html"
+                    class="block text-base font-medium text-slate-600 hover:text-primary-600">User Dashboard</a>
+                <a href="admin-dashboard.html"
+                    class="block text-base font-medium text-slate-600 hover:text-primary-600">Admin Dashboard</a>
+            </div>
+
+            <a href="about.html" class="block text-lg font-medium text-slate-700 hover:text-primary-600 mt-4">About</a>
+            <a href="services.html" class="block text-lg font-medium text-slate-700 hover:text-primary-600">Services</a>
+            <a href="pricing.html" class="block text-lg font-medium text-slate-700 hover:text-primary-600">Pricing</a>
+            <a href="blog.html" class="block text-lg font-medium text-primary-600 hover:text-primary-600">Blog</a>
+            <hr class="border-slate-100 my-4">
+            <a href="login.html" class="block text-lg font-medium text-slate-700 hover:text-primary-600">Login</a>
+            <a href="register.html"
+                class="block w-full text-center bg-primary-600 text-white px-5 py-3 rounded-xl font-bold shadow-lg shadow-primary-500/20 mt-4">
+                Get Started
+            </a>
+        </div>
+    </div>
 
     <main class="pt-32 pb-24">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -202,12 +198,13 @@
                 <div class="relative rounded-3xl overflow-hidden shadow-2xl">
                     <img src="https://images.unsplash.com/photo-1555099962-4199c345e5dd?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80"
                         alt="Featured"
-                        class="w-full h-80 lg:h-[500px] object-cover transition-transform duration-500 group-hover:scale-105">
+                        class="w-full h-[400px] lg:h-[500px] object-cover transition-transform duration-500 group-hover:scale-105">
                     <div
-                        class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent flex flex-col justify-end p-8 lg:p-12">
+                        class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent flex flex-col justify-end p-6 lg:p-12">
                         <span
                             class="text-primary-400 font-bold tracking-wider mb-2 uppercase text-sm">Engineering</span>
-                        <h2 class="text-3xl lg:text-5xl font-display font-bold text-white mb-4">Migrating to Serverless:
+                        <h2 class="text-2xl lg:text-5xl font-display font-bold text-white mb-4 leading-tight">Migrating
+                            to Serverless:
                             A CTO's Guide</h2>
                         <div class="flex items-center gap-4 text-slate-300">
                             <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?fit=crop&w=100&h=100"

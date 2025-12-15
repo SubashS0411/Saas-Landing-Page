@@ -19,15 +19,15 @@ function initMobileMenu() {
     if (!btn || !menu) return;
 
     function openMenu() {
-        menu.classList.remove('-translate-y-full');
-        menu.classList.add('translate-y-0');
+        menu.classList.remove('translate-x-full', 'rtl:-translate-x-full');
+        menu.classList.add('translate-x-0');
         if (overlay) overlay.classList.remove('hidden');
         btn.setAttribute('aria-expanded', 'true');
     }
 
     function closeMenu() {
-        menu.classList.remove('translate-y-0');
-        menu.classList.add('-translate-y-full');
+        menu.classList.remove('translate-x-0');
+        menu.classList.add('translate-x-full', 'rtl:-translate-x-full');
         if (overlay) overlay.classList.add('hidden');
         btn.setAttribute('aria-expanded', 'false');
     }

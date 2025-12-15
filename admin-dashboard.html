@@ -33,11 +33,11 @@
 
 <body class="bg-slate-50 font-sans text-slate-800">
 
-    <div class="flex h-screen overflow-hidden">
+    <div class="flex rtl:flex-row-reverse h-screen overflow-hidden">
 
         <!-- Sidebar (Darker for Admin) -->
         <aside
-            class="fixed inset-y-0 left-0 rtl:left-auto rtl:right-0 z-[60] w-64 bg-slate-950 text-slate-400 border-r rtl:border-r-0 rtl:border-l border-slate-900 transform -translate-x-full rtl:translate-x-full transition-transform duration-300 md:translate-x-0 md:static md:flex flex-col">
+            class="fixed inset-y-0 left-0 rtl:left-auto rtl:right-0 z-[60] w-64 bg-slate-950 text-slate-400 border-r rtl:border-r-0 rtl:border-l border-slate-900 transform -translate-x-full rtl:translate-x-full md:rtl:translate-x-0 transition-transform duration-300 md:translate-x-0 md:static md:flex flex-col">
             <div class="h-20 flex items-center px-6 border-b border-slate-900">
                 <div class="flex items-center gap-2">
                     <div
@@ -78,11 +78,12 @@
         <div class="flex-1 flex flex-col h-full overflow-hidden bg-slate-100">
 
             <!-- Top Bar -->
-            <header class="h-20 bg-white border-b border-slate-200 flex items-center justify-between px-4 sm:px-8">
+            <header
+                class="h-20 bg-white border-b border-slate-200 flex flex-row-reverse rtl:flex-row items-center justify-between px-4 sm:px-8">
                 <button id="dashboard-menu-btn" class="md:hidden p-2 text-slate-500 hover:bg-slate-100 rounded-lg">
                     <i class="ph ph-list text-2xl"></i>
                 </button>
-                <div class="flex items-center gap-4 ml-auto">
+                <div class="flex items-center gap-4 ml-auto rtl:ml-0 rtl:mr-auto">
                     <span
                         class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-green-100 text-green-700 text-xs font-bold">
                         <span class="w-2 h-2 rounded-full bg-green-600 animate-pulse"></span> Systems Operational

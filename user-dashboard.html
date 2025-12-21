@@ -50,11 +50,155 @@
 
 <body class="bg-slate-50 font-sans text-slate-800">
 
-    <div class="flex rtl:flex-row-reverse h-screen overflow-hidden">
+    <!-- Navbar -->
+    <nav class="fixed top-0 w-full z-50 backdrop-blur-md bg-white/90 border-b border-slate-200 transition-colors duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center gap-2 cursor-pointer" onclick="window.location.href='index.html'">
+                    <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-primary-500 to-indigo-700 flex items-center justify-center text-white font-bold text-xl">O</div>
+                    <span class="font-display font-bold text-xl tracking-tight text-slate-900">OrbitScale</span>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-6 rtl:space-x-reverse">
+                    <!-- Mini Stats with Graphs -->
+                    <div class="flex items-center gap-4 px-4 py-2 bg-slate-50 rounded-lg border border-slate-200">
+                        <div class="flex items-center gap-2">
+                            <div class="flex flex-col">
+                                <span class="text-xs text-slate-500 font-medium">API Usage</span>
+                                <span class="text-sm font-bold text-slate-900">8.4K</span>
+                            </div>
+                            <svg width="40" height="24" class="text-indigo-500">
+                                <polyline points="0,20 8,16 16,18 24,12 32,10 40,8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                        <div class="w-px h-8 bg-slate-200"></div>
+                        <div class="flex items-center gap-2">
+                            <div class="flex flex-col">
+                                <span class="text-xs text-slate-500 font-medium">Plan</span>
+                                <span class="text-sm font-bold text-slate-900">84%</span>
+                            </div>
+                            <div class="w-10 h-10 relative">
+                                <svg class="w-full h-full transform -rotate-90">
+                                    <circle cx="20" cy="20" r="16" stroke="#e2e8f0" stroke-width="4" fill="none"/>
+                                    <circle cx="20" cy="20" r="16" stroke="#6366f1" stroke-width="4" fill="none" 
+                                        stroke-dasharray="100" stroke-dashoffset="16" stroke-linecap="round"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="w-px h-8 bg-slate-200"></div>
+                        <div class="flex items-center gap-2">
+                            <div class="flex flex-col">
+                                <span class="text-xs text-slate-500 font-medium">Response</span>
+                                <span class="text-sm font-bold text-green-600">45ms</span>
+                            </div>
+                            <svg width="32" height="24" class="text-green-500">
+                                <rect x="0" y="16" width="4" height="8" fill="currentColor" rx="2"/>
+                                <rect x="7" y="12" width="4" height="12" fill="currentColor" rx="2"/>
+                                <rect x="14" y="8" width="4" height="16" fill="currentColor" rx="2"/>
+                                <rect x="21" y="14" width="4" height="10" fill="currentColor" rx="2"/>
+                                <rect x="28" y="10" width="4" height="14" fill="currentColor" rx="2"/>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <a href="index.html" class="text-slate-600 hover:text-primary-600 font-medium transition">Home</a>
+                    <a href="admin-dashboard.html" class="text-slate-600 hover:text-primary-600 font-medium transition">Admin</a>
+                </div>
+
+                <!-- Right Actions -->
+                <div class="hidden md:flex items-center space-x-4 rtl:space-x-reverse">
+                    <div class="flex items-center gap-2 px-3 py-1 rounded-lg bg-indigo-50 border border-indigo-100">
+                        <i class="ph ph-lightning text-indigo-600"></i>
+                        <span class="text-xs font-bold text-indigo-600">Growth Plan</span>
+                    </div>
+                    <button class="w-10 h-10 rounded-full flex items-center justify-center text-slate-500 hover:bg-slate-100 transition">
+                        <i class="ph ph-bell text-xl"></i>
+                    </button>
+                    <button class="rtl-toggle-btn w-10 h-10 rounded-full flex items-center justify-center text-slate-500 hover:bg-slate-100 transition">
+                        <i class="ph ph-globe text-xl"></i>
+                    </button>
+                    <div class="flex items-center gap-2">
+                        <div class="text-right rtl:text-left hidden lg:block">
+                            <p class="text-xs font-bold text-slate-900">Alex Designer</p>
+                            <p class="text-xs text-slate-500">alex@example.com</p>
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?fit=crop&w=100&h=100" class="w-10 h-10 rounded-full border border-slate-200">
+                    </div>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center gap-2">
+                    <button id="sidebar-toggle-btn" class="p-2 text-slate-600 hover:bg-slate-100 rounded-lg">
+                        <i class="ph ph-sidebar text-xl"></i>
+                    </button>
+                    <button class="rtl-toggle-btn p-2 text-slate-600">
+                        <i class="ph ph-globe text-xl"></i>
+                    </button>
+                    <button id="mobile-menu-btn" class="p-2 rounded-lg text-slate-600 hover:bg-slate-100 focus:outline-none">
+                        <i class="ph ph-list text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Drawer -->
+    <div id="mobile-menu-overlay" class="fixed inset-0 bg-slate-900/50 backdrop-blur-sm z-[60] hidden transition-opacity"></div>
+    <div id="mobile-menu" class="fixed top-0 right-0 rtl:right-auto rtl:left-0 w-80 h-full bg-white shadow-2xl z-[70] transform translate-x-full rtl:-translate-x-full transition-transform duration-300 ease-in-out flex flex-col">
+        <div class="p-6 border-b border-slate-100 flex justify-between items-center">
+            <span class="font-display font-bold text-xl text-slate-900">Menu</span>
+            <button id="mobile-menu-close" class="p-2 text-slate-500 hover:bg-slate-50 rounded-lg">
+                <i class="ph ph-x text-xl"></i>
+            </button>
+        </div>
+        <div class="p-6 space-y-4 flex-1 overflow-y-auto">
+            <!-- Mobile Stats -->
+            <div class="bg-gradient-to-br from-indigo-50 to-purple-50 p-4 rounded-xl space-y-3 mb-4">
+                <div class="flex items-center justify-between">
+                    <span class="text-sm text-slate-700 font-medium">API Usage</span>
+                    <span class="text-lg font-bold text-indigo-600">8,420</span>
+                </div>
+                <div class="w-full bg-white rounded-full h-3">
+                    <div class="bg-indigo-600 h-3 rounded-full" style="width: 84%"></div>
+                </div>
+                <div class="flex justify-between text-xs text-slate-600">
+                    <span>84% used</span>
+                    <span>of 10,000</span>
+                </div>
+            </div>
+            <!-- Mobile Chart -->
+            <div class="bg-white p-4 rounded-xl border border-slate-200">
+                <p class="text-xs text-slate-500 mb-2">Last 7 Days Activity</p>
+                <svg width="100%" height="60" viewBox="0 0 200 60" class="text-indigo-500">
+                    <polyline points="0,50 28,40 56,45 84,30 112,35 140,20 168,25 200,15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    <polyline points="0,60 0,50 28,40 56,45 84,30 112,35 140,20 168,25 200,15 200,60" fill="currentColor" opacity="0.1"/>
+                </svg>
+            </div>
+            <a href="index.html" class="block text-lg font-medium text-slate-700 hover:text-primary-600">Home</a>
+            <a href="admin-dashboard.html" class="block text-lg font-medium text-slate-700 hover:text-primary-600">Admin</a>
+            <hr class="border-slate-100 my-4">
+            <a href="user-dashboard.html" class="block text-lg font-bold text-primary-600 bg-primary-50 px-3 py-2 rounded-lg">Dashboard</a>
+            <div class="mt-6 p-4 bg-slate-50 rounded-xl">
+                <div class="flex items-center gap-3 mb-3">
+                    <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?fit=crop&w=100&h=100" class="w-12 h-12 rounded-full border-2 border-white shadow">
+                    <div>
+                        <p class="text-sm font-bold text-slate-900">Alex Designer</p>
+                        <p class="text-xs text-slate-500">Growth Plan</p>
+                    </div>
+                </div>
+                <button class="w-full py-2 bg-slate-900 text-white rounded-lg text-sm font-medium">View Profile</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="flex rtl:flex-row-reverse h-screen overflow-hidden pt-16">
 
         <!-- Sidebar -->
         <aside
-            class="fixed inset-y-0 left-0 rtl:left-auto rtl:right-0 z-[60] w-64 bg-slate-900 text-slate-400 border-r rtl:border-r-0 rtl:border-l border-slate-800 transform -translate-x-full rtl:translate-x-full md:rtl:translate-x-0 transition-transform duration-300 md:translate-x-0 md:static md:flex flex-col">
+            class="fixed inset-y-0 left-0 rtl:left-auto rtl:right-0 top-16 z-40 w-64 bg-slate-900 text-slate-400 border-r rtl:border-r-0 rtl:border-l border-slate-800 transform -translate-x-full rtl:translate-x-full md:rtl:translate-x-0 transition-transform duration-300 md:translate-x-0 md:static md:flex flex-col">
             <div class="h-20 flex items-center px-6 border-b border-slate-800">
                 <div class="flex items-center gap-2">
                     <div
@@ -95,35 +239,8 @@
             </div>
         </aside>
 
-        <!-- Mobile Header/Sidebar Toggle would go here visually or separate mobile Nav -->
-
         <!-- Main Content -->
         <div class="flex-1 flex flex-col h-full overflow-hidden bg-slate-50">
-
-            <!-- Top Bar -->
-            <header
-                class="h-20 bg-white border-b border-slate-200 flex flex-row-reverse rtl:flex-row items-center justify-between px-4 sm:px-8 z-10">
-                <button id="dashboard-menu-btn" class="md:hidden p-2 text-slate-500 hover:bg-slate-100 rounded-lg">
-                    <i class="ph ph-list text-2xl"></i>
-                </button>
-                <div class="flex items-center gap-6 ml-auto rtl:ml-0 rtl:mr-auto">
-                    <button class="text-slate-400 hover:text-slate-600">
-                        <i class="ph ph-bell text-2xl"></i>
-                    </button>
-                    <div
-                        class="flex items-center gap-3 pl-6 rtl:pl-0 rtl:pr-6 border-l rtl:border-l-0 rtl:border-r border-slate-100">
-                        <div class="text-right rtl:text-left hidden sm:block">
-                            <p class="text-sm font-bold text-slate-900">Alex Designer</p>
-                            <p class="text-xs text-slate-500">Growth Plan</p>
-                        </div>
-                        <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?fit=crop&w=100&h=100"
-                            class="w-10 h-10 rounded-full border border-slate-200">
-                    </div>
-                    <button
-                        class="rtl-toggle-btn w-10 h-10 rounded-full flex items-center justify-center text-slate-500 hover:bg-slate-100 transition"><i
-                            class="ph ph-globe text-xl"></i></button>
-                </div>
-            </header>
 
             <!-- Dashboard Content -->
             <main class="flex-1 overflow-y-auto p-8">
@@ -132,9 +249,9 @@
                     <h1 class="text-3xl font-display font-bold text-slate-900">Dashboard</h1>
 
                     <!-- Widgets Row -->
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                        <!-- Usage Card -->
-                        <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm col-span-2">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 animate-fade-in-up">
+                        <!-- Usage Card with Enhanced Graph -->
+                        <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm col-span-2 hover-lift">
                             <div class="flex justify-between items-center mb-6">
                                 <div>
                                     <h3 class="text-lg font-bold text-slate-900">API Usage</h3>
@@ -144,55 +261,192 @@
                                     class="bg-slate-50 border border-slate-200 rounded-lg text-sm px-3 py-1 outline-none">
                                     <option>Last 30 Days</option>
                                     <option>Last 7 Days</option>
+                                    <option>Last 24 Hours</option>
                                 </select>
                             </div>
 
-                            <!-- SVG Chart Placeholder -->
+                            <!-- Enhanced SVG Chart -->
                             <div class="h-64 w-full relative">
                                 <svg viewBox="0 0 800 300" class="w-full h-full text-indigo-500 overflow-visible">
                                     <!-- Grid Lines -->
                                     <line x1="0" y1="250" x2="800" y2="250" stroke="#e2e8f0" stroke-width="1" />
-                                    <line x1="0" y1="150" x2="800" y2="150" stroke="#e2e8f0" stroke-width="1"
-                                        stroke-dasharray="4 4" />
-                                    <line x1="0" y1="50" x2="800" y2="50" stroke="#e2e8f0" stroke-width="1"
-                                        stroke-dasharray="4 4" />
+                                    <line x1="0" y1="200" x2="800" y2="200" stroke="#e2e8f0" stroke-width="1" stroke-dasharray="4 4" />
+                                    <line x1="0" y1="150" x2="800" y2="150" stroke="#e2e8f0" stroke-width="1" stroke-dasharray="4 4" />
+                                    <line x1="0" y1="100" x2="800" y2="100" stroke="#e2e8f0" stroke-width="1" stroke-dasharray="4 4" />
+                                    <line x1="0" y1="50" x2="800" y2="50" stroke="#e2e8f0" stroke-width="1" stroke-dasharray="4 4" />
 
-                                    <!-- Line -->
-                                    <path d="M0,250 Q100,100 200,180 T400,120 T600,60 T800,90" fill="none"
-                                        stroke="currentColor" stroke-width="3" stroke-linecap="round" />
-                                    <!-- Area under line (optional) -->
-                                    <path d="M0,250 Q100,100 200,180 T400,120 T600,60 T800,90 V300 H0 Z"
-                                        fill="url(#gradient)" opacity="0.1" />
-
+                                    <!-- Area under line -->
                                     <defs>
-                                        <linearGradient id="gradient" x1="0%" y1="0%" x2="0%" y2="100%">
-                                            <stop offset="0%" style="stop-color:#6366f1;stop-opacity:1" />
+                                        <linearGradient id="usageGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                                            <stop offset="0%" style="stop-color:#6366f1;stop-opacity:0.3" />
                                             <stop offset="100%" style="stop-color:#6366f1;stop-opacity:0" />
                                         </linearGradient>
                                     </defs>
+                                    <path d="M0,250 Q100,200 200,180 T400,120 T600,80 T800,60 V300 H0 Z"
+                                        fill="url(#usageGradient)" class="animate-fade-in-up" />
+
+                                    <!-- Main Line with animation -->
+                                    <path d="M0,250 Q100,200 200,180 T400,120 T600,80 T800,60" fill="none"
+                                        stroke="currentColor" stroke-width="3" stroke-linecap="round" class="chart-animate"/>
+                                        
+                                    <!-- Data Points -->
+                                    <circle cx="200" cy="180" r="5" fill="#6366f1" class="animate-scale-in delay-200" />
+                                    <circle cx="400" cy="120" r="5" fill="#6366f1" class="animate-scale-in delay-400" />
+                                    <circle cx="600" cy="80" r="5" fill="#6366f1" class="animate-scale-in delay-700" />
+                                    <circle cx="800" cy="60" r="5" fill="#6366f1" class="animate-scale-in delay-1000" />
                                 </svg>
+                            </div>
+                            
+                            <!-- Stats Below Graph -->
+                            <div class="grid grid-cols-3 gap-4 mt-6 pt-6 border-t border-slate-100">
+                                <div class="text-center">
+                                    <p class="text-2xl font-bold text-primary-600">8.4K</p>
+                                    <p class="text-xs text-slate-500">Total Requests</p>
+                                </div>
+                                <div class="text-center">
+                                    <p class="text-2xl font-bold text-green-600">+18%</p>
+                                    <p class="text-xs text-slate-500">Growth</p>
+                                </div>
+                                <div class="text-center">
+                                    <p class="text-2xl font-bold text-slate-900">45ms</p>
+                                    <p class="text-xs text-slate-500">Avg Response</p>
+                                </div>
                             </div>
                         </div>
 
-                        <!-- Plan Limit -->
-                        <div
-                            class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between">
+                        <!-- Plan Limit with Circular Progress -->
+                        <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between hover-lift delay-200">
                             <div>
                                 <h3 class="text-lg font-bold text-slate-900 mb-2">Plan Usage</h3>
                                 <div class="text-4xl font-bold text-slate-900 mb-1">8,420</div>
                                 <p class="text-sm text-slate-500 mb-6">of 10,000 requests</p>
 
-                                <div class="w-full bg-slate-100 rounded-full h-3 mb-2">
-                                    <div class="bg-indigo-600 h-3 rounded-full" style="width: 84%"></div>
+                                <!-- Large Circular Progress -->
+                                <div class="relative w-40 h-40 mx-auto mb-4">
+                                    <svg class="w-full h-full transform -rotate-90">
+                                        <circle cx="80" cy="80" r="70" stroke="#e2e8f0" stroke-width="12" fill="none"/>
+                                        <circle cx="80" cy="80" r="70" stroke="url(#circleGradient)" stroke-width="12" fill="none" 
+                                            stroke-dasharray="440" stroke-dashoffset="70" stroke-linecap="round" class="chart-animate"/>
+                                        <defs>
+                                            <linearGradient id="circleGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                                <stop offset="0%" style="stop-color:#6366f1" />
+                                                <stop offset="100%" style="stop-color:#8b5cf6" />
+                                            </linearGradient>
+                                        </defs>
+                                    </svg>
+                                    <div class="absolute inset-0 flex items-center justify-center">
+                                        <div class="text-center">
+                                            <div class="text-3xl font-bold text-primary-600">84%</div>
+                                            <div class="text-xs text-slate-500">Used</div>
+                                        </div>
+                                    </div>
                                 </div>
-                                <p class="text-xs text-right text-slate-400">84% Used</p>
+
+                                <div class="w-full bg-slate-100 rounded-full h-2 mb-2">
+                                    <div class="bg-gradient-to-r from-primary-600 to-purple-600 h-2 rounded-full progress-animate" style="width: 84%"></div>
+                                </div>
+                                <p class="text-xs text-right text-slate-400">1,580 requests remaining</p>
                             </div>
 
-                            <div class="mt-6 p-4 bg-indigo-50 rounded-xl border border-indigo-100">
+                            <div class="mt-6 p-4 bg-gradient-to-br from-indigo-50 to-purple-50 rounded-xl border border-indigo-100">
                                 <p class="text-sm text-indigo-800 font-medium mb-3">Running low?</p>
                                 <button
-                                    class="w-full py-2 bg-indigo-600 text-white rounded-lg text-sm font-bold hover:bg-indigo-700 transition">Upgrade
+                                    class="w-full py-2 bg-gradient-to-r from-primary-600 to-purple-600 text-white rounded-lg text-sm font-bold hover:shadow-lg transition-all hover-scale">Upgrade
                                     Plan</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Performance Metrics Chart -->
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 animate-fade-in-up delay-400">
+                        <!-- Response Time Chart -->
+                        <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+                            <h3 class="text-lg font-bold text-slate-900 mb-2">Response Time Trend</h3>
+                            <p class="text-sm text-slate-500 mb-6">Average response time over the last week</p>
+                            
+                            <svg class="w-full h-48" viewBox="0 0 700 200">
+                                <!-- Grid -->
+                                <line x1="0" y1="180" x2="700" y2="180" stroke="#e2e8f0" stroke-width="2" />
+                                
+                                <!-- Bars -->
+                                <rect x="20" y="100" width="60" height="80" fill="#22c55e" rx="4" class="animate-scale-in" />
+                                <rect x="110" y="90" width="60" height="90" fill="#22c55e" rx="4" class="animate-scale-in delay-100" />
+                                <rect x="200" y="80" width="60" height="100" fill="#22c55e" rx="4" class="animate-scale-in delay-200" />
+                                <rect x="290" y="70" width="60" height="110" fill="#eab308" rx="4" class="animate-scale-in delay-300" />
+                                <rect x="380" y="85" width="60" height="95" fill="#22c55e" rx="4" class="animate-scale-in delay-400" />
+                                <rect x="470" y="75" width="60" height="105" fill="#22c55e" rx="4" class="animate-scale-in delay-500" />
+                                <rect x="560" y="90" width="60" height="90" fill="#22c55e" rx="4" class="animate-scale-in delay-700" />
+                                
+                                <!-- Labels -->
+                                <text x="50" y="195" fill="#64748b" font-size="12" text-anchor="middle">Mon</text>
+                                <text x="140" y="195" fill="#64748b" font-size="12" text-anchor="middle">Tue</text>
+                                <text x="230" y="195" fill="#64748b" font-size="12" text-anchor="middle">Wed</text>
+                                <text x="320" y="195" fill="#64748b" font-size="12" text-anchor="middle">Thu</text>
+                                <text x="410" y="195" fill="#64748b" font-size="12" text-anchor="middle">Fri</text>
+                                <text x="500" y="195" fill="#64748b" font-size="12" text-anchor="middle">Sat</text>
+                                <text x="590" y="195" fill="#64748b" font-size="12" text-anchor="middle">Sun</text>
+                            </svg>
+                            
+                            <div class="mt-4 p-4 bg-green-50 rounded-xl border border-green-100">
+                                <div class="flex items-center justify-between">
+                                    <span class="text-sm text-green-800 font-medium">Excellent Performance</span>
+                                    <span class="text-2xl font-bold text-green-600">45ms</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Request Distribution -->
+                        <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+                            <h3 class="text-lg font-bold text-slate-900 mb-2">Request Distribution</h3>
+                            <p class="text-sm text-slate-500 mb-6">By endpoint type</p>
+                            
+                            <div class="flex items-center justify-center mb-6">
+                                <!-- Donut Chart -->
+                                <div class="relative w-48 h-48">
+                                    <svg class="w-full h-full transform -rotate-90">
+                                        <!-- Background -->
+                                        <circle cx="96" cy="96" r="80" stroke="#e2e8f0" stroke-width="32" fill="none"/>
+                                        <!-- API Calls (60%) -->
+                                        <circle cx="96" cy="96" r="80" stroke="#6366f1" stroke-width="32" fill="none" 
+                                            stroke-dasharray="502" stroke-dashoffset="200" stroke-linecap="round" class="chart-animate"/>
+                                        <!-- Database (25%) -->
+                                        <circle cx="96" cy="96" r="80" stroke="#14b8a6" stroke-width="32" fill="none" 
+                                            stroke-dasharray="502" stroke-dashoffset="75" stroke-linecap="round" class="chart-animate delay-200"/>
+                                        <!-- Auth (15%) -->
+                                        <circle cx="96" cy="96" r="80" stroke="#f59e0b" stroke-width="32" fill="none" 
+                                            stroke-dasharray="502" stroke-dashoffset="0" stroke-linecap="round" class="chart-animate delay-400"/>
+                                    </svg>
+                                    <div class="absolute inset-0 flex items-center justify-center">
+                                        <div class="text-center">
+                                            <div class="text-2xl font-bold text-slate-900">8.4K</div>
+                                            <div class="text-xs text-slate-500">Total</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="space-y-3">
+                                <div class="flex items-center justify-between p-3 bg-indigo-50 rounded-lg">
+                                    <div class="flex items-center gap-3">
+                                        <span class="w-3 h-3 rounded-full bg-primary-600"></span>
+                                        <span class="text-sm font-medium text-slate-700">API Calls</span>
+                                    </div>
+                                    <span class="text-sm font-bold text-slate-900">60%</span>
+                                </div>
+                                <div class="flex items-center justify-between p-3 bg-teal-50 rounded-lg">
+                                    <div class="flex items-center gap-3">
+                                        <span class="w-3 h-3 rounded-full bg-teal-600"></span>
+                                        <span class="text-sm font-medium text-slate-700">Database</span>
+                                    </div>
+                                    <span class="text-sm font-bold text-slate-900">25%</span>
+                                </div>
+                                <div class="flex items-center justify-between p-3 bg-amber-50 rounded-lg">
+                                    <div class="flex items-center gap-3">
+                                        <span class="w-3 h-3 rounded-full bg-amber-600"></span>
+                                        <span class="text-sm font-medium text-slate-700">Authentication</span>
+                                    </div>
+                                    <span class="text-sm font-bold text-slate-900">15%</span>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -316,11 +570,12 @@
                                     </button>
                                 </div>
                             </div>
-
                         </div>
+
                         <footer class="mt-8 text-center text-sm text-slate-400">
                             &copy; 2024 OrbitScale Inc. All rights reserved.
                         </footer>
+                    </div>
             </main>
         </div>
     </div>

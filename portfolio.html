@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Case Studies - OrbitScale</title>
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
     <script src="https://cdn.tailwindcss.com"></script>
@@ -213,9 +214,10 @@
 
     <main class="pt-32 pb-24">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h1 class="text-4xl lg:text-6xl font-display font-bold text-slate-900 mb-6">Built with OrbitScale.</h1>
-                <p class="text-xl text-slate-600 max-w-2xl mx-auto">
+            <div class="text-center mb-16 scroll-reveal">
+                <span class="text-primary-600 font-bold uppercase tracking-wider text-sm mb-4 block animate-fade-in-down">Success Stories</span>
+                <h1 class="text-4xl lg:text-6xl font-display font-bold text-slate-900 mb-6 animate-fade-in-up delay-200">Built with OrbitScale.</h1>
+                <p class="text-xl text-slate-600 max-w-2xl mx-auto animate-fade-in-up delay-400">
                     See how leading companies are using our platform to scale their infrastructure.
                 </p>
             </div>
@@ -224,7 +226,7 @@
             <div class="masonry-grid gap-6">
 
                 <!-- Item 1 -->
-                <div class="masonry-item relative group rounded-2xl overflow-hidden shadow-lg cursor-pointer">
+                <div class="masonry-item relative group rounded-2xl overflow-hidden shadow-lg cursor-pointer hover-lift scroll-reveal animate-fade-in-up delay-100">
                     <img src="https://images.unsplash.com/photo-1481487163816-ce437dc6b5b5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
                         alt="Case Study 1"
                         class="w-full object-cover transform transition duration-500 group-hover:scale-110">
@@ -289,6 +291,73 @@
                 </div>
 
             </div>
+
+            <!-- Client Testimonials -->
+            <section class="mt-32">
+                <div class="text-center mb-16 scroll-reveal">
+                    <h2 class="text-3xl lg:text-5xl font-display font-bold text-slate-900 mb-4 animate-fade-in-up">What our clients say</h2>
+                    <p class="text-xl text-slate-600 animate-fade-in-up delay-200">Real results from real companies</p>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Testimonial 1 -->
+                    <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-lg scroll-reveal hover-lift animate-fade-in-up delay-300">
+                        <div class="flex items-center gap-2 text-yellow-400 mb-4">
+                            <i class="ph-fill ph-star"></i>
+                            <i class="ph-fill ph-star"></i>
+                            <i class="ph-fill ph-star"></i>
+                            <i class="ph-fill ph-star"></i>
+                            <i class="ph-fill ph-star"></i>
+                        </div>
+                        <p class="text-slate-600 mb-6 leading-relaxed">"OrbitScale reduced our deployment time from hours to minutes. The ROI was immediate and measurable."</p>
+                        <div class="flex items-center gap-3">
+                            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?fit=crop&w=100&h=100" class="w-12 h-12 rounded-full object-cover">
+                            <div>
+                                <p class="font-bold text-slate-900">Michael Chen</p>
+                                <p class="text-sm text-slate-500">CTO, FinTech Corp</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 2 -->
+                    <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-lg scroll-reveal hover-lift animate-fade-in-up delay-500">
+                        <div class="flex items-center gap-2 text-yellow-400 mb-4">
+                            <i class="ph-fill ph-star"></i>
+                            <i class="ph-fill ph-star"></i>
+                            <i class="ph-fill ph-star"></i>
+                            <i class="ph-fill ph-star"></i>
+                            <i class="ph-fill ph-star"></i>
+                        </div>
+                        <p class="text-slate-600 mb-6 leading-relaxed">"The best decision we made this year. Support is incredible and the platform just works."</p>
+                        <div class="flex items-center gap-3">
+                            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?fit=crop&w=100&h=100" class="w-12 h-12 rounded-full object-cover">
+                            <div>
+                                <p class="font-bold text-slate-900">Sarah Martinez</p>
+                                <p class="text-sm text-slate-500">VP Engineering, HealthFlow</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 3 -->
+                    <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-lg scroll-reveal hover-lift animate-fade-in-up delay-700">
+                        <div class="flex items-center gap-2 text-yellow-400 mb-4">
+                            <i class="ph-fill ph-star"></i>
+                            <i class="ph-fill ph-star"></i>
+                            <i class="ph-fill ph-star"></i>
+                            <i class="ph-fill ph-star"></i>
+                            <i class="ph-fill ph-star"></i>
+                        </div>
+                        <p class="text-slate-600 mb-6 leading-relaxed">"We scaled from 10K to 1M users without changing a single line of infrastructure code."</p>
+                        <div class="flex items-center gap-3">
+                            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?fit=crop&w=100&h=100" class="w-12 h-12 rounded-full object-cover">
+                            <div>
+                                <p class="font-bold text-slate-900">David Park</p>
+                                <p class="text-sm text-slate-500">Founder, EduLearn</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </div>
     </main>
 

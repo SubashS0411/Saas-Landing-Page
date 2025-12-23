@@ -4,11 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OrbitScale - Enterprise SaaS Platform</title>
-    <meta name="description" content="Scale your workflow, not your workload.">
+    <title>OrbitScale - The Future of SaaS Scaling</title>
+    <meta name="description" content="Scale your workflow, not your workload. The ultimate platform for modern teams.">
 
     <!-- Icons -->
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;700;800&display=swap" rel="stylesheet">
 
     <!-- Tailwind -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -18,12 +23,30 @@
             theme: {
                 extend: {
                     colors: {
-                        primary: { DEFAULT: '#6366f1', 500: '#6366f1', 600: '#4f46e5', 700: '#4338ca' },
-                        accent: { DEFAULT: '#14b8a6', 500: '#14b8a6', 600: '#0d9488' }
+                        primary: { DEFAULT: '#8b5cf6', 50: '#f5f3ff', 100: '#ede9fe', 200: '#ddd6fe', 300: '#c4b5fd', 400: '#a78bfa', 500: '#8b5cf6', 600: '#7c3aed', 700: '#6d28d9', 800: '#5b21b6', 900: '#4c1d95' },
+                        secondary: { DEFAULT: '#ec4899', 50: '#fdf2f8', 100: '#fce7f3', 200: '#fbcfe8', 300: '#f9a8d4', 400: '#f472b6', 500: '#ec4899', 600: '#db2777', 700: '#be185d', 800: '#9d174d', 900: '#831843' },
+                        accent: { DEFAULT: '#f97316', 50: '#fff7ed', 100: '#ffedd5', 200: '#fed7aa', 300: '#fdba74', 400: '#fb923c', 500: '#f97316', 600: '#ea580c', 700: '#c2410c', 800: '#9a3412', 900: '#7c2d12' },
                     },
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
-                        display: ['Plus Jakarta Sans', 'sans-serif'],
+                        display: ['Outfit', 'sans-serif'],
+                    },
+                    animation: {
+                        'blob': 'blob 7s infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                        'float-delayed': 'float 6s ease-in-out 3s infinite',
+                    },
+                    keyframes: {
+                        blob: {
+                            '0%': { transform: 'translate(0px, 0px) scale(1)' },
+                            '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
+                            '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
+                            '100%': { transform: 'translate(0px, 0px) scale(1)' },
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        }
                     }
                 }
             }
@@ -32,467 +55,343 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+        .text-gradient {
+            background: linear-gradient(135deg, #8b5cf6 0%, #ec4899 50%, #f97316 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .bg-gradient-primary {
+            background: linear-gradient(135deg, #8b5cf6 0%, #ec4899 100%);
+        }
+    </style>
 </head>
 
-<body class="font-sans antialiased text-slate-800 bg-white selection:bg-primary selection:text-white relative">
+<body class="font-sans antialiased text-slate-800 bg-slate-50 selection:bg-primary-500 selection:text-white overflow-x-hidden">
 
     <!-- Navbar -->
-    <nav
-        class="fixed top-0 w-full z-50 backdrop-blur-md bg-white/70 border-b border-slate-200 transition-colors duration-300">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <nav class="fixed top-0 w-full z-50 transition-all duration-300" id="navbar">
+        <div class="absolute inset-0 bg-white/80 backdrop-blur-md border-b border-slate-200/50"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
             <div class="flex justify-between items-center h-20">
-
                 <!-- Logo -->
-                <div class="flex-shrink-0 flex items-center gap-2 cursor-pointer"
-                    onclick="window.location.href='index.html'">
-                    <div
-                        class="w-8 h-8 rounded-lg bg-gradient-to-br from-primary-500 to-indigo-700 flex items-center justify-center text-white font-bold text-xl">
-                        O
+                <a href="index.html" class="flex items-center gap-2 group">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-primary flex items-center justify-center text-white shadow-lg shadow-primary-500/30 group-hover:scale-110 transition-transform duration-300">
+                        <i class="ph-bold ph-planet text-xl"></i>
                     </div>
-                    <span class="font-display font-bold text-xl tracking-tight text-slate-900">OrbitScale</span>
-                </div>
+                    <span class="font-display font-bold text-2xl tracking-tight text-slate-900">Orbit<span class="text-primary-600">Scale</span></span>
+                </a>
 
                 <!-- Desktop Menu -->
-                <div class="hidden md:flex items-center space-x-8 rtl:space-x-reverse">
-
-                    <!-- Home Dropdown -->
-                    <div class="relative group">
-                        <button
-                            class="flex items-center gap-1 text-slate-800 font-bold hover:text-primary-600 transition h-20">
-                            Home <i class="ph ph-caret-down text-sm"></i>
+                <div class="hidden md:flex items-center space-x-1">
+                    <div class="relative group px-3 py-2">
+                        <button class="flex items-center gap-1 text-slate-600 font-medium hover:text-primary-600 transition">
+                            Product <i class="ph-bold ph-caret-down text-xs mt-0.5"></i>
                         </button>
-                        <!-- Dropdown Menu -->
-                        <div
-                            class="absolute top-16 left-0 w-60 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform group-hover:translate-y-0 translate-y-2 z-50">
-                            <div class="bg-white rounded-xl shadow-xl border border-slate-100 overflow-hidden p-2">
-                                <a href="index.html"
-                                    class="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-slate-50 transition group/item">
-                                    <div
-                                        class="w-8 h-8 rounded-lg bg-indigo-50 text-indigo-600 flex items-center justify-center group-hover/item:bg-indigo-600 group-hover/item:text-white transition">
-                                        <i class="ph ph-sun"></i>
-                                    </div>
-                                    <div class="text-left">
-                                        <p class="font-bold text-sm text-slate-900">Home Ver. 1</p>
-                                        <p class="text-xs text-slate-500">Light / Enterprise</p>
-                                    </div>
+                        <div class="absolute top-full left-1/2 -translate-x-1/2 pt-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-2 group-hover:translate-y-0">
+                            <div class="w-64 bg-white rounded-2xl shadow-xl border border-slate-100 p-2 overflow-hidden">
+                                <a href="index.html" class="flex items-center gap-3 p-3 rounded-xl hover:bg-slate-50 transition">
+                                    <div class="w-8 h-8 rounded-lg bg-primary-50 text-primary-600 flex items-center justify-center"><i class="ph-fill ph-rocket-launch"></i></div>
+                                    <div><div class="font-bold text-sm text-slate-900">Platform</div><div class="text-xs text-slate-500">For scaling teams</div></div>
                                 </a>
-                                <a href="index-v2.html"
-                                    class="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-slate-50 transition group/item">
-                                    <div
-                                        class="w-8 h-8 rounded-lg bg-slate-900 text-white flex items-center justify-center group-hover/item:bg-slate-800 transition">
-                                        <i class="ph ph-moon"></i>
-                                    </div>
-                                    <div class="text-left">
-                                        <p class="font-bold text-sm text-slate-900">Home Ver. 2</p>
-                                        <p class="text-xs text-slate-500">Dark / Developer</p>
-                                    </div>
+                                <a href="index-v2.html" class="flex items-center gap-3 p-3 rounded-xl hover:bg-slate-50 transition">
+                                    <div class="w-8 h-8 rounded-lg bg-slate-900 text-white flex items-center justify-center"><i class="ph-fill ph-code"></i></div>
+                                    <div><div class="font-bold text-sm text-slate-900">Developer API</div><div class="text-xs text-slate-500">Documentation</div></div>
                                 </a>
                             </div>
                         </div>
                     </div>
-
-                    <!-- Dashboard Dropdown -->
-                    <div class="relative group">
-                        <button
-                            class="flex items-center gap-2 text-slate-600 font-medium hover:text-primary-600 transition h-20">
-                            <i class="ph ph-squares-four text-lg"></i> Dashboard <i
-                                class="ph ph-caret-down text-sm"></i>
-                        </button>
-                        <!-- Dropdown Menu -->
-                        <div
-                            class="absolute top-16 left-0 w-60 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform group-hover:translate-y-0 translate-y-2 z-50">
-                            <div class="bg-white rounded-xl shadow-xl border border-slate-100 overflow-hidden p-2">
-                                <a href="user-dashboard.html"
-                                    class="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-slate-50 transition group/item">
-                                    <i
-                                        class="ph ph-squares-four text-lg text-slate-400 group-hover/item:text-primary-600"></i>
-                                    <span class="text-sm font-medium text-slate-700">User Dashboard</span>
-                                </a>
-                                <a href="admin-dashboard.html"
-                                    class="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-slate-50 transition group/item">
-                                    <i
-                                        class="ph ph-shield-check text-lg text-slate-400 group-hover/item:text-primary-600"></i>
-                                    <span class="text-sm font-medium text-slate-700">Admin Dashboard</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <a href="about.html" class="text-slate-600 hover:text-primary-600 font-medium transition">About</a>
-                    <a href="services.html"
-                        class="text-slate-600 hover:text-primary-600 font-medium transition">Services</a>
-                    <a href="pricing.html"
-                        class="text-slate-600 hover:text-primary-600 font-medium transition">Pricing</a>
-                    <a href="blog.html" class="text-slate-600 hover:text-primary-600 font-medium transition">Blog</a>
+                    <a href="services.html" class="px-4 py-2 text-slate-600 font-medium hover:text-primary-600 transition rounded-full hover:bg-slate-100/50">Solutions</a>
+                    <a href="pricing.html" class="px-4 py-2 text-slate-600 font-medium hover:text-primary-600 transition rounded-full hover:bg-slate-100/50">Pricing</a>
+                    <a href="about.html" class="px-4 py-2 text-slate-600 font-medium hover:text-primary-600 transition rounded-full hover:bg-slate-100/50">Company</a>
                 </div>
 
-                <!-- Right Actions -->
-                <div class="hidden md:flex items-center space-x-4 rtl:space-x-reverse">
-                    <!-- Dashboard Icon -->
-
-                    <a href="login.html" class="text-slate-600 hover:text-slate-900 font-medium">Login</a>
-                    <a href="register.html"
-                        class="bg-primary-600 hover:bg-primary-700 text-white px-5 py-2.5 rounded-full font-medium transition shadow-lg shadow-primary-500/20">
-                        Get Started
-                    </a>
-
-                    <!-- RTL Toggle -->
-                    <button
-                        class="rtl-toggle-btn w-10 h-10 rounded-full flex items-center justify-center text-slate-500 hover:bg-slate-100 transition"
-                        aria-label="Toggle Direction">
-                        <i class="ph ph-globe text-xl"></i>
+                <!-- Actions -->
+                <div class="hidden md:flex items-center gap-4">
+                    <a href="login.html" class="text-slate-600 font-medium hover:text-primary-600 transition">Log in</a>
+                    <a href="register.html" class="px-6 py-2.5 rounded-full bg-slate-900 text-white font-medium hover:bg-slate-800 transition shadow-lg shadow-slate-900/20 hover:-translate-y-0.5">Get Started</a>
+                    <button class="rtl-toggle-btn w-10 h-10 rounded-full border border-slate-200 flex items-center justify-center text-slate-500 hover:bg-slate-50 hover:text-primary-600 transition">
+                        <i class="ph ph-globe text-lg"></i>
                     </button>
                 </div>
 
-                <!-- Mobile Menu Button -->
-                <div class="md:hidden flex items-center">
-                    <button class="rtl-toggle-btn p-2 text-slate-600 mr-2">
-                        <i class="ph ph-globe text-xl"></i>
-                    </button>
-                    <button id="mobile-menu-btn"
-                        class="p-2 rounded-lg text-slate-600 hover:bg-slate-100 focus:outline-none"
-                        aria-expanded="false">
-                        <i class="ph ph-list text-2xl"></i>
-                    </button>
-                </div>
+                <!-- Mobile Toggle -->
+                <button id="mobile-menu-btn" class="md:hidden p-2 text-slate-600">
+                    <i class="ph ph-list text-2xl"></i>
+                </button>
             </div>
         </div>
     </nav>
 
-    <!-- Mobile Menu Drawer (Moved outside nav for proper layering) -->
-    <div id="mobile-menu-overlay"
-        class="fixed inset-0 bg-slate-900/50 backdrop-blur-sm z-[60] hidden transition-opacity"></div>
-
-    <div id="mobile-menu"
-        class="fixed top-0 right-0 rtl:right-auto rtl:left-0 w-80 h-full bg-white shadow-2xl z-[70] transform translate-x-full rtl:-translate-x-full transition-transform duration-300 ease-in-out flex flex-col">
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu-overlay" class="fixed inset-0 bg-slate-900/20 backdrop-blur-sm z-[60] hidden opacity-0 transition-opacity duration-300"></div>
+    
+    <!-- Mobile Menu Drawer -->
+    <div id="mobile-menu" class="fixed top-0 right-0 rtl:right-auto rtl:left-0 w-[300px] h-full bg-white shadow-2xl z-[70] transform translate-x-full rtl:-translate-x-full transition-transform duration-300 flex flex-col">
         <div class="p-6 border-b border-slate-100 flex justify-between items-center">
             <span class="font-display font-bold text-xl text-slate-900">Menu</span>
-            <button id="mobile-menu-close" class="p-2 text-slate-500 hover:bg-slate-50 rounded-lg">
+            <button id="mobile-menu-close" class="p-2 text-slate-400 hover:text-slate-600 hover:bg-slate-50 rounded-lg transition">
                 <i class="ph ph-x text-xl"></i>
             </button>
         </div>
-        <div class="p-6 space-y-4 flex-1 overflow-y-auto">
-            <a href="index.html"
-                class="block text-lg font-bold text-primary-600 bg-primary-50 px-3 py-2 rounded-lg">Home Ver. 1
-                <span class="text-xs font-normal text-slate-500 ml-2">(Light)</span></a>
-            <a href="index-v2.html" class="block text-lg font-bold text-slate-800 hover:text-primary-600 px-3 py-2">Home
-                Ver. 2 <span class="text-xs font-normal text-slate-500 ml-2">(Dark)</span></a>
-
-            <div class="pl-4 border-l-2 border-slate-100 space-y-3 my-2">
-                <a href="user-dashboard.html"
-                    class="block text-base font-medium text-slate-600 hover:text-primary-600">User Dashboard</a>
-                <a href="admin-dashboard.html"
-                    class="block text-base font-medium text-slate-600 hover:text-primary-600">Admin Dashboard</a>
-            </div>
-
-            <a href="about.html" class="block text-lg font-medium text-slate-700 hover:text-primary-600 mt-4">About</a>
-            <a href="services.html" class="block text-lg font-medium text-slate-700 hover:text-primary-600">Services</a>
-            <a href="pricing.html" class="block text-lg font-medium text-slate-700 hover:text-primary-600">Pricing</a>
-            <a href="blog.html" class="block text-lg font-medium text-slate-700 hover:text-primary-600">Blog</a>
-            <hr class="border-slate-100 my-4">
-            <a href="login.html" class="block text-lg font-medium text-slate-700 hover:text-primary-600">Login</a>
-            <a href="register.html"
-                class="block w-full text-center bg-primary-600 text-white px-5 py-3 rounded-xl font-bold shadow-lg shadow-primary-500/20 mt-4">
-                Get Started
-            </a>
+        <div class="flex-1 overflow-y-auto p-6 space-y-2">
+            <a href="index.html" class="block px-4 py-3 rounded-xl bg-primary-50 text-primary-700 font-medium">Home</a>
+            <a href="services.html" class="block px-4 py-3 rounded-xl text-slate-600 hover:bg-slate-50 font-medium">Solutions</a>
+            <a href="pricing.html" class="block px-4 py-3 rounded-xl text-slate-600 hover:bg-slate-50 font-medium">Pricing</a>
+            <a href="about.html" class="block px-4 py-3 rounded-xl text-slate-600 hover:bg-slate-50 font-medium">Company</a>
+            <div class="my-4 border-t border-slate-100"></div>
+            <a href="login.html" class="block px-4 py-3 rounded-xl text-slate-600 hover:bg-slate-50 font-medium">Log in</a>
+            <a href="register.html" class="block w-full py-3 rounded-xl bg-primary-600 text-white text-center font-bold shadow-lg shadow-primary-500/30 mt-4">Get Started Free</a>
         </div>
+    </div>
 
-    <!-- Main Content -->
-    <main class="pt-20">
+    <main>
         <!-- Hero Section -->
-        <section class="relative overflow-hidden py-12 lg:py-20">
-            <div class="absolute inset-0 z-0">
-                <div class="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-bl from-indigo-50 to-white opacity-50">
-                </div>
-                <div class="absolute bottom-0 left-0 w-full h-1/2 mesh-bg opacity-30"></div>
+        <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
+            <!-- Background Blobs -->
+            <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full z-0 pointer-events-none">
+                <div class="absolute top-20 left-10 w-72 h-72 bg-purple-300 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob"></div>
+                <div class="absolute top-20 right-10 w-72 h-72 bg-yellow-300 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-2000"></div>
+                <div class="absolute -bottom-8 left-1/2 w-72 h-72 bg-pink-300 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-4000"></div>
             </div>
 
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                <div class="grid lg:grid-cols-2 gap-12 items-center">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-slate-200 shadow-sm mb-8 animate-fade-in-up">
+                    <span class="relative flex h-3 w-3">
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary-400 opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-3 w-3 bg-primary-500"></span>
+                    </span>
+                    <span class="text-sm font-medium text-slate-600">v2.0 is now available</span>
+                    <a href="#" class="text-sm font-bold text-primary-600 hover:text-primary-700 flex items-center gap-1 ml-2">Learn more <i class="ph-bold ph-arrow-right"></i></a>
+                </div>
 
-                    <!-- Text Content (Left) -->
-                    <div class="text-center lg:text-left rtl:lg:text-right space-y-8">
-                        <div
-                            class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-indigo-50 border border-indigo-100 text-indigo-600 text-sm font-semibold animate-fade-in-up">
-                            <span class="w-2 h-2 rounded-full bg-indigo-600"></span>
-                            New: Enterprise V2 is live
+                <h1 class="text-5xl lg:text-7xl font-display font-bold text-slate-900 tracking-tight mb-8 leading-[1.1]">
+                    Scale your workflow,<br>
+                    <span class="text-gradient">not your workload.</span>
+                </h1>
+
+                <p class="text-xl text-slate-600 max-w-2xl mx-auto mb-10 leading-relaxed">
+                    The all-in-one platform designed to help modern teams build, deploy, and manage web applications with zero friction.
+                </p>
+
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-20">
+                    <a href="register.html" class="w-full sm:w-auto px-8 py-4 rounded-full bg-slate-900 text-white font-bold text-lg hover:bg-slate-800 transition shadow-xl shadow-slate-900/20 hover:-translate-y-1">
+                        Start Building Free
+                    </a>
+                    <a href="#" class="w-full sm:w-auto px-8 py-4 rounded-full bg-white text-slate-700 font-bold text-lg border border-slate-200 hover:border-slate-300 hover:bg-slate-50 transition flex items-center justify-center gap-2">
+                        <i class="ph-fill ph-play-circle text-xl text-primary-600"></i> Watch Demo
+                    </a>
+                </div>
+
+                <!-- Hero Visual -->
+                <div class="relative max-w-5xl mx-auto">
+                    <div class="absolute -inset-1 bg-gradient-to-r from-primary-500 via-secondary-500 to-accent-500 rounded-2xl blur opacity-20"></div>
+                    <div class="relative bg-white rounded-2xl border border-slate-200 shadow-2xl overflow-hidden">
+                        <div class="flex items-center gap-2 px-4 py-3 border-b border-slate-100 bg-slate-50/50">
+                            <div class="flex gap-1.5">
+                                <div class="w-3 h-3 rounded-full bg-red-400"></div>
+                                <div class="w-3 h-3 rounded-full bg-yellow-400"></div>
+                                <div class="w-3 h-3 rounded-full bg-green-400"></div>
+                            </div>
+                            <div class="flex-1 text-center">
+                                <div class="inline-block px-3 py-1 rounded-md bg-white border border-slate-200 text-xs text-slate-400 font-mono">orbitscale.app/dashboard</div>
+                            </div>
                         </div>
-                        <h1
-                            class="text-5xl lg:text-6xl font-display font-bold text-slate-900 tracking-tight leading-tight">
-                            Scale your workflow, <br>
-                            <span
-                                class="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-violet-600">not
-                                your workload.</span>
-                        </h1>
-                        <p class="text-xl text-slate-600 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
-                            The all-in-one platform for modern teams to build, deploy, and scale web applications with
-                            zero friction.
-                        </p>
-                        <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                            <a href="#"
-                                class="inline-flex justify-center items-center px-8 py-4 text-lg font-semibold rounded-full text-white bg-primary-600 hover:bg-primary-700 shadow-xl shadow-primary-500/20 transition-all hover:-translate-y-1">
-                                Start Free Trial
-                                <i class="ph ph-arrow-right ml-2"></i>
-                            </a>
-                            <a href="#"
-                                class="inline-flex justify-center items-center px-8 py-4 text-lg font-semibold rounded-full text-slate-700 bg-white border border-slate-200 hover:bg-slate-50 transition-all hover:-translate-y-1">
-                                View Demo
-                            </a>
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2400&q=80" alt="Dashboard Interface" class="w-full h-auto opacity-90">
+                        
+                        <!-- Floating Elements -->
+                        <div class="absolute top-1/4 -right-12 bg-white p-4 rounded-xl shadow-xl border border-slate-100 animate-float hidden lg:block">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-full bg-green-100 text-green-600 flex items-center justify-center"><i class="ph-fill ph-check-circle text-xl"></i></div>
+                                <div>
+                                    <div class="text-xs text-slate-500 font-medium">Deployment Status</div>
+                                    <div class="text-sm font-bold text-slate-900">Successful</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="absolute bottom-1/4 -left-12 bg-white p-4 rounded-xl shadow-xl border border-slate-100 animate-float-delayed hidden lg:block">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center"><i class="ph-fill ph-users text-xl"></i></div>
+                                <div>
+                                    <div class="text-xs text-slate-500 font-medium">Active Users</div>
+                                    <div class="text-sm font-bold text-slate-900">+1,240 today</div>
+                                </div>
+                            </div>
                         </div>
                     </div>
+                </div>
+            </div>
+        </section>
 
-                    <!-- Image Content (Right/Tilted) -->
-                    <div class="relative lg:h-[600px] flex items-center justify-center">
-                        <div class="relative w-full max-w-lg lg:max-w-none hero-tilt group">
-                            <!-- Helper: Placeholder for Dashboard Image -->
-                            <div
-                                class="w-full aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl border-4 border-slate-900/5 bg-white relative">
-                                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
-                                    alt="Dashboard Preview" class="object-cover w-full h-full">
+        <!-- Logos Section -->
+        <section class="py-10 border-y border-slate-200 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <p class="text-center text-sm font-semibold text-slate-500 uppercase tracking-wider mb-8">Trusted by innovative teams worldwide</p>
+                <div class="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
+                    <!-- Using text as placeholders for logos to keep it clean -->
+                    <div class="text-2xl font-bold font-display text-slate-800 flex items-center gap-2"><i class="ph-fill ph-apple-logo"></i> Acme Inc.</div>
+                    <div class="text-2xl font-bold font-display text-slate-800 flex items-center gap-2"><i class="ph-fill ph-google-logo"></i> GlobalTech</div>
+                    <div class="text-2xl font-bold font-display text-slate-800 flex items-center gap-2"><i class="ph-fill ph-microsoft-logo"></i> Nebula</div>
+                    <div class="text-2xl font-bold font-display text-slate-800 flex items-center gap-2"><i class="ph-fill ph-amazon-logo"></i> CloudFlow</div>
+                    <div class="text-2xl font-bold font-display text-slate-800 flex items-center gap-2"><i class="ph-fill ph-spotify-logo"></i> StreamLine</div>
+                </div>
+            </div>
+        </section>
 
-                                <!-- Floating Badge -->
-                                <div
-                                    class="absolute -bottom-6 -left-6 bg-white p-4 rounded-xl shadow-xl border border-slate-100 animate-bounce delay-700">
-                                    <div class="flex items-center gap-3">
-                                        <div
-                                            class="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center text-green-600">
-                                            <i class="ph ph-trend-up text-xl"></i>
-                                        </div>
-                                        <div>
-                                            <p class="text-xs text-slate-500 font-medium">Growth</p>
-                                            <p class="text-lg font-bold text-slate-900">+128%</p>
-                                        </div>
-                                    </div>
+        <!-- Features Grid (Bento Style) -->
+        <section class="py-24 bg-slate-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <h2 class="text-3xl lg:text-4xl font-display font-bold text-slate-900 mb-4">Everything you need to scale</h2>
+                    <p class="text-lg text-slate-600">Powerful features packaged in a beautiful interface. Built for developers, designed for everyone.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <!-- Large Card -->
+                    <div class="md:col-span-2 bg-white rounded-3xl p-8 border border-slate-200 shadow-sm hover:shadow-md transition group overflow-hidden relative">
+                        <div class="relative z-10">
+                            <div class="w-12 h-12 rounded-xl bg-primary-100 text-primary-600 flex items-center justify-center mb-6 text-2xl"><i class="ph-fill ph-chart-line-up"></i></div>
+                            <h3 class="text-2xl font-bold text-slate-900 mb-3">Real-time Analytics</h3>
+                            <p class="text-slate-600 max-w-md">Monitor your application performance, user growth, and revenue metrics in real-time with our advanced dashboard.</p>
+                        </div>
+                        <div class="absolute right-0 bottom-0 w-1/2 h-full bg-gradient-to-l from-primary-50 to-transparent opacity-50"></div>
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="absolute -bottom-10 -right-10 w-64 rounded-xl shadow-lg border border-slate-200 transform rotate-6 group-hover:rotate-3 transition-transform duration-500" alt="Analytics">
+                    </div>
+
+                    <!-- Tall Card -->
+                    <div class="md:row-span-2 bg-slate-900 rounded-3xl p-8 border border-slate-800 shadow-sm hover:shadow-md transition text-white relative overflow-hidden group">
+                        <div class="absolute inset-0 bg-gradient-to-br from-slate-800 to-slate-900"></div>
+                        <div class="relative z-10 h-full flex flex-col">
+                            <div class="w-12 h-12 rounded-xl bg-white/10 text-white flex items-center justify-center mb-6 text-2xl backdrop-blur-sm"><i class="ph-fill ph-shield-check"></i></div>
+                            <h3 class="text-2xl font-bold mb-3">Enterprise Security</h3>
+                            <p class="text-slate-400 mb-8">Bank-grade encryption and SOC2 compliance out of the box.</p>
+                            
+                            <div class="mt-auto space-y-4">
+                                <div class="flex items-center gap-3 p-3 rounded-xl bg-white/5 border border-white/10">
+                                    <i class="ph-fill ph-lock-key text-green-400"></i>
+                                    <span class="text-sm font-medium">End-to-end Encryption</span>
+                                </div>
+                                <div class="flex items-center gap-3 p-3 rounded-xl bg-white/5 border border-white/10">
+                                    <i class="ph-fill ph-fingerprint text-blue-400"></i>
+                                    <span class="text-sm font-medium">Biometric Auth</span>
+                                </div>
+                                <div class="flex items-center gap-3 p-3 rounded-xl bg-white/5 border border-white/10">
+                                    <i class="ph-fill ph-shield text-purple-400"></i>
+                                    <span class="text-sm font-medium">DDoS Protection</span>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                </div>
-            </div>
-        </section>
+                    <!-- Small Card 1 -->
+                    <div class="bg-white rounded-3xl p-8 border border-slate-200 shadow-sm hover:shadow-md transition group">
+                        <div class="w-12 h-12 rounded-xl bg-secondary-100 text-secondary-600 flex items-center justify-center mb-6 text-2xl"><i class="ph-fill ph-lightning"></i></div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">Instant Deploy</h3>
+                        <p class="text-slate-600 text-sm">Push to git and we handle the rest. Live in seconds.</p>
+                    </div>
 
-        <!-- Trusted By -->
-        <section class="py-12 border-y border-slate-100 bg-white/50">
-            <div class="max-w-7xl mx-auto px-4 text-center">
-                <p class="text-sm font-semibold text-slate-400 uppercase tracking-widest mb-8">Trusted by industry
-                    leaders</p>
-                <div
-                    class="flex flex-wrap justify-center gap-8 lg:gap-16 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
-                    <!-- Placeholders for Logos -->
-                    <h3 class="text-2xl font-bold text-slate-400">ACME Corp</h3>
-                    <h3 class="text-2xl font-bold text-slate-400">GlobalBank</h3>
-                    <h3 class="text-2xl font-bold text-slate-400">TechStart</h3>
-                    <h3 class="text-2xl font-bold text-slate-400">Nebula</h3>
-                    <h3 class="text-2xl font-bold text-slate-400">Vertex</h3>
-                </div>
-            </div>
-        </section>
-
-        <!-- Features Section (Zig-Zag) -->
-        <section class="py-20 lg:py-32 overflow-hidden" id="features">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-24">
-
-                <!-- Feature 1: Text Left, Image Right -->
-                <div class="grid lg:grid-cols-2 gap-16 items-center">
-                    <div>
-                        <div
-                            class="w-12 h-12 rounded-xl bg-indigo-100 flex items-center justify-center text-primary-600 mb-6 font-bold">
-                            <i class="ph ph-lightning text-2xl"></i>
-                        </div>
-                        <h2 class="text-3xl lg:text-4xl font-display font-bold text-slate-900 mb-6">Lightning fast
-                            deployment.</h2>
-                        <p class="text-lg text-slate-600 leading-relaxed mb-8">
-                            Deploy your application to our global edge network in seconds. We handle the infrastructure
-                            so you can focus on shipping code.
-                        </p>
-                        <ul class="space-y-4">
-                            <li class="flex items-center gap-3 text-slate-700 font-medium">
-                                <i class="ph ph-check-circle text-green-500 text-xl"></i>
-                                <span>Zero-downtime deployments</span>
-                            </li>
-                            <li class="flex items-center gap-3 text-slate-700 font-medium">
-                                <i class="ph ph-check-circle text-green-500 text-xl"></i>
-                                <span>Instant rollback capabilities</span>
-                            </li>
-                            <li class="flex items-center gap-3 text-slate-700 font-medium">
-                                <i class="ph ph-check-circle text-green-500 text-xl"></i>
-                                <span>Automated SSL certificate management</span>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="relative group">
-                        <div
-                            class="absolute inset-0 bg-gradient-to-tr from-indigo-100 to-purple-100 rounded-3xl transform rotate-3 scale-95 opacity-70 -z-10 transition-transform group-hover:rotate-6">
-                        </div>
-                        <img src="https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                            alt="Deployment Feature" class="rounded-2xl shadow-2xl border border-slate-100">
-                    </div>
-                </div>
-
-                <!-- Feature 2: Image Left, Text Right -->
-                <div class="grid lg:grid-cols-2 gap-16 items-center">
-                    <div class="relative order-last lg:order-first group">
-                        <div
-                            class="absolute inset-0 bg-gradient-to-tl from-teal-100 to-green-100 rounded-3xl transform -rotate-3 scale-95 opacity-70 -z-10 transition-transform group-hover:-rotate-6">
-                        </div>
-                        <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                            alt="Analytics Feature" class="rounded-2xl shadow-2xl border border-slate-100">
-                    </div>
-                    <div>
-                        <div
-                            class="w-12 h-12 rounded-xl bg-teal-100 flex items-center justify-center text-teal-600 mb-6 font-bold">
-                            <i class="ph ph-chart-bar text-2xl"></i>
-                        </div>
-                        <h2 class="text-3xl lg:text-4xl font-display font-bold text-slate-900 mb-6">Real-time analytics.
-                        </h2>
-                        <p class="text-lg text-slate-600 leading-relaxed mb-8">
-                            Understand your users like never before. Our privacy-preserving analytics engine gives you
-                            actionable insights without compromising user trust.
-                        </p>
-                        <a href="#"
-                            class="text-primary-600 font-bold hover:text-primary-700 flex items-center gap-2 hover:gap-3 transition-all">
-                            Explore Analytics Suite <i class="ph ph-arrow-right"></i>
-                        </a>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- Feature 3: Text Left, Image Right -->
-        <div class="grid lg:grid-cols-2 gap-16 items-center">
-                    <div>
-                        <div
-                            class="w-12 h-12 rounded-xl bg-purple-100 flex items-center justify-center text-purple-600 mb-6 font-bold">
-                            <i class="ph ph-shield-check text-2xl"></i>
-                        </div>
-                        <h2 class="text-3xl lg:text-4xl font-display font-bold text-slate-900 mb-6">Enterprise-grade security.</h2>
-                        <p class="text-lg text-slate-600 leading-relaxed mb-8">
-                            Your data deserves the best protection. We implement industry-leading security standards to keep your applications safe.
-                        </p>
-                        <ul class="space-y-4">
-                            <li class="flex items-center gap-3 text-slate-700 font-medium">
-                                <i class="ph ph-check-circle text-green-500 text-xl"></i>
-                                <span>SOC 2 Type II compliant infrastructure</span>
-                            </li>
-                            <li class="flex items-center gap-3 text-slate-700 font-medium">
-                                <i class="ph ph-check-circle text-green-500 text-xl"></i>
-                                <span>End-to-end encryption at rest and in transit</span>
-                            </li>
-                            <li class="flex items-center gap-3 text-slate-700 font-medium">
-                                <i class="ph ph-check-circle text-green-500 text-xl"></i>
-                                <span>24/7 monitoring and threat detection</span>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="relative group">
-                        <div
-                            class="absolute inset-0 bg-gradient-to-tr from-purple-100 to-pink-100 rounded-3xl transform rotate-3 scale-95 opacity-70 -z-10 transition-transform group-hover:rotate-6">
-                        </div>
-                        <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                            alt="Security Feature" class="rounded-2xl shadow-2xl border border-slate-100">
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- Statistics Section -->
-        <section class="py-20 lg:py-32 bg-slate-900 text-white overflow-hidden relative">
-            <div class="absolute inset-0 opacity-10">
-                <div class="absolute top-0 left-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
-            </div>
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                <div class="text-center mb-16">
-                    <h2 class="text-4xl lg:text-5xl font-display font-bold mb-4">Trusted by thousands</h2>
-                    <p class="text-xl text-slate-300">Join the companies scaling with confidence</p>
-                </div>
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-8 lg:gap-12">
-                    <div class="text-center">
-                        <div class="text-5xl font-bold mb-2 text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-400">99.99%</div>
-                        <p class="text-slate-400 font-medium">Uptime SLA</p>
-                    </div>
-                    <div class="text-center">
-                        <div class="text-5xl font-bold mb-2 text-transparent bg-clip-text bg-gradient-to-r from-teal-400 to-green-400">50M+</div>
-                        <p class="text-slate-400 font-medium">API Requests/day</p>
-                    </div>
-                    <div class="text-center">
-                        <div class="text-5xl font-bold mb-2 text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-red-400">180+</div>
-                        <p class="text-slate-400 font-medium">Countries</p>
-                    </div>
-                    <div class="text-center">
-                        <div class="text-5xl font-bold mb-2 text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-400">5,000+</div>
-                        <p class="text-slate-400 font-medium">Customers</p>
+                    <!-- Small Card 2 -->
+                    <div class="bg-white rounded-3xl p-8 border border-slate-200 shadow-sm hover:shadow-md transition group">
+                        <div class="w-12 h-12 rounded-xl bg-accent-100 text-accent-600 flex items-center justify-center mb-6 text-2xl"><i class="ph-fill ph-users-three"></i></div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-2">Team Collaboration</h3>
+                        <p class="text-slate-600 text-sm">Built-in comments, reviews, and approval workflows.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Testimonials Section -->
-        <section class="py-20 lg:py-32 bg-gradient-to-b from-white to-slate-50">
+        <!-- How it Works -->
+        <section class="py-24 bg-white overflow-hidden">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-16">
-                    <h2 class="text-4xl lg:text-5xl font-display font-bold text-slate-900 mb-4">Loved by developers worldwide</h2>
-                    <p class="text-xl text-slate-600">See what our customers have to say</p>
+                <div class="grid lg:grid-cols-2 gap-16 items-center">
+                    <div>
+                        <h2 class="text-3xl lg:text-4xl font-display font-bold text-slate-900 mb-6">Workflow that adapts to you</h2>
+                        <p class="text-lg text-slate-600 mb-8">Stop fighting with your tools. OrbitScale integrates seamlessly into your existing development process.</p>
+                        
+                        <div class="space-y-8">
+                            <div class="flex gap-4">
+                                <div class="flex-shrink-0 w-10 h-10 rounded-full bg-primary-100 text-primary-600 flex items-center justify-center font-bold">1</div>
+                                <div>
+                                    <h4 class="text-lg font-bold text-slate-900 mb-1">Connect your repository</h4>
+                                    <p class="text-slate-600">We support GitHub, GitLab, and Bitbucket out of the box.</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-4">
+                                <div class="flex-shrink-0 w-10 h-10 rounded-full bg-primary-100 text-primary-600 flex items-center justify-center font-bold">2</div>
+                                <div>
+                                    <h4 class="text-lg font-bold text-slate-900 mb-1">Configure your build</h4>
+                                    <p class="text-slate-600">Auto-detection for Node, Python, Go, and more.</p>
+                                </div>
+                            </div>
+                            <div class="flex gap-4">
+                                <div class="flex-shrink-0 w-10 h-10 rounded-full bg-primary-100 text-primary-600 flex items-center justify-center font-bold">3</div>
+                                <div>
+                                    <h4 class="text-lg font-bold text-slate-900 mb-1">Go live globally</h4>
+                                    <p class="text-slate-600">Instant deployment to our edge network in 35+ regions.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="relative">
+                        <div class="absolute inset-0 bg-gradient-to-tr from-primary-200 to-secondary-200 rounded-full filter blur-3xl opacity-30 animate-pulse"></div>
+                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Team working" class="relative rounded-2xl shadow-2xl border border-slate-100 z-10">
+                    </div>
                 </div>
+            </div>
+        </section>
+
+        <!-- Testimonials -->
+        <section class="py-24 bg-slate-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl lg:text-4xl font-display font-bold text-center text-slate-900 mb-16">Loved by developers</h2>
                 <div class="grid md:grid-cols-3 gap-8">
-                    <!-- Testimonial 1 -->
-                    <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm hover:shadow-lg transition-shadow">
-                        <div class="flex gap-1 mb-4">
-                            <i class="ph-fill ph-star text-yellow-400 text-xl"></i>
-                            <i class="ph-fill ph-star text-yellow-400 text-xl"></i>
-                            <i class="ph-fill ph-star text-yellow-400 text-xl"></i>
-                            <i class="ph-fill ph-star text-yellow-400 text-xl"></i>
-                            <i class="ph-fill ph-star text-yellow-400 text-xl"></i>
+                    <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100">
+                        <div class="flex gap-1 text-yellow-400 mb-4">
+                            <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i>
                         </div>
-                        <p class="text-slate-700 mb-6 leading-relaxed">
-                            "OrbitScale has completely transformed how we deploy. What used to take hours now takes minutes. The developer experience is phenomenal!"
-                        </p>
+                        <p class="text-slate-700 mb-6">"The best developer experience I've had in years. It just works."</p>
                         <div class="flex items-center gap-3">
-                            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?fit=crop&w=100&h=100" class="w-12 h-12 rounded-full" alt="User">
+                            <div class="w-10 h-10 rounded-full bg-slate-200 overflow-hidden">
+                                <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="User" class="w-full h-full object-cover">
+                            </div>
                             <div>
-                                <p class="font-bold text-slate-900">James Wilson</p>
-                                <p class="text-sm text-slate-500">CTO, TechCorp</p>
+                                <div class="font-bold text-slate-900">Sarah Jenkins</div>
+                                <div class="text-xs text-slate-500">Frontend Lead</div>
                             </div>
                         </div>
                     </div>
-                    <!-- Testimonial 2 -->
-                    <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm hover:shadow-lg transition-shadow">
-                        <div class="flex gap-1 mb-4">
-                            <i class="ph-fill ph-star text-yellow-400 text-xl"></i>
-                            <i class="ph-fill ph-star text-yellow-400 text-xl"></i>
-                            <i class="ph-fill ph-star text-yellow-400 text-xl"></i>
-                            <i class="ph-fill ph-star text-yellow-400 text-xl"></i>
-                            <i class="ph-fill ph-star text-yellow-400 text-xl"></i>
+                    <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100">
+                        <div class="flex gap-1 text-yellow-400 mb-4">
+                            <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i>
                         </div>
-                        <p class="text-slate-700 mb-6 leading-relaxed">
-                            "The analytics dashboard gives us insights we never had before. We can make data-driven decisions with confidence."
-                        </p>
+                        <p class="text-slate-700 mb-6">"We cut our deployment costs by 40% after switching to OrbitScale."</p>
                         <div class="flex items-center gap-3">
-                            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?fit=crop&w=100&h=100" class="w-12 h-12 rounded-full" alt="User">
+                            <div class="w-10 h-10 rounded-full bg-slate-200 overflow-hidden">
+                                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="User" class="w-full h-full object-cover">
+                            </div>
                             <div>
-                                <p class="font-bold text-slate-900">Sarah Chen</p>
-                                <p class="text-sm text-slate-500">Product Lead, StartupX</p>
+                                <div class="font-bold text-slate-900">Mark Thompson</div>
+                                <div class="text-xs text-slate-500">CTO, StartupInc</div>
                             </div>
                         </div>
                     </div>
-                    <!-- Testimonial 3 -->
-                    <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm hover:shadow-lg transition-shadow">
-                        <div class="flex gap-1 mb-4">
-                            <i class="ph-fill ph-star text-yellow-400 text-xl"></i>
-                            <i class="ph-fill ph-star text-yellow-400 text-xl"></i>
-                            <i class="ph-fill ph-star text-yellow-400 text-xl"></i>
-                            <i class="ph-fill ph-star text-yellow-400 text-xl"></i>
-                            <i class="ph-fill ph-star text-yellow-400 text-xl"></i>
+                    <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100">
+                        <div class="flex gap-1 text-yellow-400 mb-4">
+                            <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i>
                         </div>
-                        <p class="text-slate-700 mb-6 leading-relaxed">
-                            "Best investment we've made. The support team is incredibly responsive and the platform just works. Highly recommend!"
-                        </p>
+                        <p class="text-slate-700 mb-6">"Security compliance was a nightmare until we found this platform."</p>
                         <div class="flex items-center gap-3">
-                            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?fit=crop&w=100&h=100" class="w-12 h-12 rounded-full" alt="User">
+                            <div class="w-10 h-10 rounded-full bg-slate-200 overflow-hidden">
+                                <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="User" class="w-full h-full object-cover">
+                            </div>
                             <div>
-                                <p class="font-bold text-slate-900">Michael Roberts</p>
-                                <p class="text-sm text-slate-500">Founder, DevStudio</p>
+                                <div class="font-bold text-slate-900">Emily Chen</div>
+                                <div class="text-xs text-slate-500">DevOps Engineer</div>
                             </div>
                         </div>
                     </div>
@@ -500,145 +399,74 @@
             </div>
         </section>
 
-        <!-- Integration Section -->
-        <section class="py-20 lg:py-32">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-16">
-                    <h2 class="text-4xl lg:text-5xl font-display font-bold text-slate-900 mb-4">Integrates with your favorite tools</h2>
-                    <p class="text-xl text-slate-600">Connect seamlessly with the tools you already use</p>
-                </div>
-                <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8">
-                    <div class="flex items-center justify-center p-6 bg-white rounded-xl border border-slate-200 hover:border-primary-300 hover:shadow-lg transition">
-                        <div class="text-center">
-                            <i class="ph ph-github-logo text-5xl text-slate-700 mb-2"></i>
-                            <p class="text-sm font-medium text-slate-600">GitHub</p>
-                        </div>
-                    </div>
-                    <div class="flex items-center justify-center p-6 bg-white rounded-xl border border-slate-200 hover:border-primary-300 hover:shadow-lg transition">
-                        <div class="text-center">
-                            <i class="ph ph-gitlab-logo text-5xl text-orange-600 mb-2"></i>
-                            <p class="text-sm font-medium text-slate-600">GitLab</p>
-                        </div>
-                    </div>
-                    <div class="flex items-center justify-center p-6 bg-white rounded-xl border border-slate-200 hover:border-primary-300 hover:shadow-lg transition">
-                        <div class="text-center">
-                            <i class="ph ph-slack-logo text-5xl text-purple-600 mb-2"></i>
-                            <p class="text-sm font-medium text-slate-600">Slack</p>
-                        </div>
-                    </div>
-                    <div class="flex items-center justify-center p-6 bg-white rounded-xl border border-slate-200 hover:border-primary-300 hover:shadow-lg transition">
-                        <div class="text-center">
-                            <i class="ph ph-notion-logo text-5xl text-slate-800 mb-2"></i>
-                            <p class="text-sm font-medium text-slate-600">Notion</p>
-                        </div>
-                    </div>
-                    <div class="flex items-center justify-center p-6 bg-white rounded-xl border border-slate-200 hover:border-primary-300 hover:shadow-lg transition">
-                        <div class="text-center">
-                            <i class="ph ph-figma-logo text-5xl text-red-500 mb-2"></i>
-                            <p class="text-sm font-medium text-slate-600">Figma</p>
-                        </div>
-                    </div>
-                    <div class="flex items-center justify-center p-6 bg-white rounded-xl border border-slate-200 hover:border-primary-300 hover:shadow-lg transition">
-                        <div class="text-center">
-                            <i class="ph ph-database text-5xl text-blue-600 mb-2"></i>
-                            <p class="text-sm font-medium text-slate-600">More</p>
-                        </div>
+        <!-- CTA -->
+        <section class="py-20 px-4">
+            <div class="max-w-6xl mx-auto bg-slate-900 rounded-[2.5rem] overflow-hidden relative">
+                <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
+                <div class="absolute top-0 right-0 w-96 h-96 bg-primary-500 rounded-full mix-blend-overlay filter blur-3xl opacity-20"></div>
+                <div class="absolute bottom-0 left-0 w-96 h-96 bg-secondary-500 rounded-full mix-blend-overlay filter blur-3xl opacity-20"></div>
+                
+                <div class="relative z-10 py-20 px-6 text-center">
+                    <h2 class="text-4xl lg:text-5xl font-display font-bold text-white mb-6">Ready to start your journey?</h2>
+                    <p class="text-xl text-slate-300 mb-10 max-w-2xl mx-auto">Join 10,000+ developers building the future of the web. Start your 14-day free trial today.</p>
+                    <div class="flex flex-col sm:flex-row justify-center gap-4">
+                        <a href="register.html" class="px-8 py-4 rounded-full bg-white text-slate-900 font-bold text-lg hover:bg-slate-100 transition">Get Started Free</a>
+                        <a href="contact.html" class="px-8 py-4 rounded-full bg-transparent border border-slate-600 text-white font-bold text-lg hover:bg-slate-800 transition">Contact Sales</a>
                     </div>
                 </div>
             </div>
         </section>
-
-        <!-- CTA Section -->
-        <section class="py-20">
-            <div class="max-w-5xl mx-auto px-4 text-center">
-                <div class="bg-primary-600 rounded-3xl p-12 lg:p-20 relative overflow-hidden">
-                    <div
-                        class="absolute top-0 left-0 w-full h-full opacity-10 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]">
-                    </div>
-                    <div class="relative z-10">
-                        <h2 class="text-3xl lg:text-5xl font-display font-bold text-white mb-6">Ready to launch? Start
-                            your free trial.</h2>
-                        <button
-                            class="bg-white text-primary-600 px-10 py-4 rounded-full font-bold text-xl shadow-lg hover:shadow-xl hover:scale-105 transition-all">
-                            Get Started Now
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </section>
-
     </main>
 
-    <!-- Final CTA -->
-    <section class="py-24 bg-gradient-to-br from-primary-600 via-purple-600 to-indigo-700 text-white relative overflow-hidden">
-        <div class="absolute inset-0 opacity-10">
-            <div class="absolute top-0 left-0 w-96 h-96 bg-white rounded-full blur-3xl animate-float"></div>
-            <div class="absolute bottom-0 right-0 w-96 h-96 bg-white rounded-full blur-3xl animate-float delay-700"></div>
-        </div>
-        <div class="max-w-4xl mx-auto px-4 text-center relative z-10 scroll-reveal">
-            <h2 class="text-4xl lg:text-5xl font-display font-bold mb-6 animate-fade-in-up">Ready to scale without limits?</h2>
-            <p class="text-xl text-indigo-100 mb-10 animate-fade-in-up delay-200">Join thousands of developers already building the future with OrbitScale</p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up delay-400">
-                <a href="register.html" class="inline-flex items-center justify-center gap-2 bg-white text-primary-600 px-8 py-4 rounded-full font-bold text-lg shadow-xl hover:shadow-2xl transition-all hover-scale">
-                    Start Free Trial
-                    <i class="ph ph-arrow-right"></i>
-                </a>
-                <a href="contact.html" class="inline-flex items-center justify-center gap-2 bg-white/10 backdrop-blur-sm text-white px-8 py-4 rounded-full font-bold text-lg border-2 border-white/20 hover:bg-white/20 transition-all hover-scale">
-                    Talk to Sales
-                </a>
-            </div>
-            <p class="text-sm text-indigo-200 mt-8 animate-fade-in-up delay-700">No credit card required • 14-day free trial • Cancel anytime</p>
-        </div>
-    </section>
-
     <!-- Footer -->
-    <footer class="bg-slate-50 pt-20 pb-10 border-t border-slate-200">
+    <footer class="bg-white border-t border-slate-200 pt-16 pb-8">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-2 md:grid-cols-5 gap-8 mb-12">
-                <div class="col-span-2">
-                    <div class="flex items-center gap-2 mb-4">
-                        <div
-                            class="w-8 h-8 rounded-lg bg-primary-600 flex items-center justify-center text-white font-bold">
-                            O</div>
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 mb-12">
+                <div class="col-span-2 lg:col-span-2">
+                    <a href="index.html" class="flex items-center gap-2 mb-4">
+                        <div class="w-8 h-8 rounded-lg bg-gradient-primary flex items-center justify-center text-white"><i class="ph-bold ph-planet"></i></div>
                         <span class="font-display font-bold text-xl text-slate-900">OrbitScale</span>
+                    </a>
+                    <p class="text-slate-500 text-sm max-w-xs mb-6">Making cloud infrastructure accessible, scalable, and secure for everyone.</p>
+                    <div class="flex gap-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-slate-50 flex items-center justify-center text-slate-500 hover:bg-primary-50 hover:text-primary-600 transition"><i class="ph-fill ph-twitter-logo text-xl"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-slate-50 flex items-center justify-center text-slate-500 hover:bg-primary-50 hover:text-primary-600 transition"><i class="ph-fill ph-github-logo text-xl"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-slate-50 flex items-center justify-center text-slate-500 hover:bg-primary-50 hover:text-primary-600 transition"><i class="ph-fill ph-linkedin-logo text-xl"></i></a>
                     </div>
-                    <p class="text-slate-500 max-w-xs">Making cloud automation accessible for everyone. Built with love
-                        in San Francisco.</p>
                 </div>
                 <div>
                     <h4 class="font-bold text-slate-900 mb-4">Product</h4>
-                    <ul class="space-y-2 text-slate-600">
-                        <li><a href="#" class="hover:text-primary-600">Features</a></li>
-                        <li><a href="#" class="hover:text-primary-600">Integrations</a></li>
-                        <li><a href="pricing.html" class="hover:text-primary-600">Pricing</a></li>
+                    <ul class="space-y-2 text-sm text-slate-600">
+                        <li><a href="#" class="hover:text-primary-600 transition">Features</a></li>
+                        <li><a href="#" class="hover:text-primary-600 transition">Integrations</a></li>
+                        <li><a href="pricing.html" class="hover:text-primary-600 transition">Pricing</a></li>
+                        <li><a href="#" class="hover:text-primary-600 transition">Changelog</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-slate-900 mb-4">Resources</h4>
+                    <ul class="space-y-2 text-sm text-slate-600">
+                        <li><a href="#" class="hover:text-primary-600 transition">Documentation</a></li>
+                        <li><a href="#" class="hover:text-primary-600 transition">API Reference</a></li>
+                        <li><a href="blog.html" class="hover:text-primary-600 transition">Blog</a></li>
+                        <li><a href="#" class="hover:text-primary-600 transition">Community</a></li>
                     </ul>
                 </div>
                 <div>
                     <h4 class="font-bold text-slate-900 mb-4">Company</h4>
-                    <ul class="space-y-2 text-slate-600">
-                        <li><a href="about.html" class="hover:text-primary-600">About</a></li>
-                        <li><a href="blog.html" class="hover:text-primary-600">Blog</a></li>
-                        <li><a href="contact.html" class="hover:text-primary-600">Careers</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="font-bold text-slate-900 mb-4">Legal</h4>
-                    <ul class="space-y-2 text-slate-600">
-                        <li><a href="#" class="hover:text-primary-600">Privacy</a></li>
-                        <li><a href="#" class="hover:text-primary-600">Terms</a></li>
-                        <li><a href="#" class="hover:text-primary-600">Security</a></li>
+                    <ul class="space-y-2 text-sm text-slate-600">
+                        <li><a href="about.html" class="hover:text-primary-600 transition">About</a></li>
+                        <li><a href="#" class="hover:text-primary-600 transition">Careers</a></li>
+                        <li><a href="#" class="hover:text-primary-600 transition">Legal</a></li>
+                        <li><a href="contact.html" class="hover:text-primary-600 transition">Contact</a></li>
                     </ul>
                 </div>
             </div>
-            <div class="pt-8 border-t border-slate-200 flex flex-col md:flex-row justify-between items-center gap-4">
-                <p class="text-slate-500 text-sm">© 2024 OrbitScale Inc. All rights reserved.</p>
-                <div class="flex space-x-4">
-                    <a href="#" class="text-slate-400 hover:text-primary-600"><i
-                            class="ph ph-twitter-logo text-xl"></i></a>
-                    <a href="#" class="text-slate-400 hover:text-primary-600"><i
-                            class="ph ph-github-logo text-xl"></i></a>
-                    <a href="#" class="text-slate-400 hover:text-primary-600"><i
-                            class="ph ph-linkedin-logo text-xl"></i></a>
+            <div class="pt-8 border-t border-slate-100 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-slate-400 text-sm">© 2025 OrbitScale Inc. All rights reserved.</p>
+                <div class="flex gap-6 text-sm text-slate-500">
+                    <a href="#" class="hover:text-slate-900">Privacy Policy</a>
+                    <a href="#" class="hover:text-slate-900">Terms of Service</a>
                 </div>
             </div>
         </div>
@@ -648,5 +476,4 @@
     <script src="js/main.js"></script>
     <script src="js/rtl-toggle.js"></script>
 </body>
-
 </html>

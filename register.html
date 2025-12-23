@@ -27,7 +27,7 @@
 </head>
 
 <body
-    class="bg-slate-900 min-h-screen flex items-center justify-center p-4 selection:bg-primary selection:text-white overflow-hidden relative">
+    class="bg-slate-900 min-h-screen flex flex-col selection:bg-primary selection:text-white overflow-x-hidden relative">
 
     <div class="absolute inset-0 z-0">
         <div
@@ -36,166 +36,84 @@
         <div class="absolute top-1/4 right-1/4 w-96 h-96 bg-purple-600/20 rounded-full blur-3xl animate-pulse"></div>
     </div>
 
-    <!-- Navbar (Dark) -->
-    <nav class="fixed top-0 w-full z-50 glass-dark border-b border-slate-800 transition-colors duration-300">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Navbar -->
+    <nav class="fixed top-0 w-full z-50 transition-all duration-300" id="navbar">
+        <div class="absolute inset-0 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-b border-slate-200/50 dark:border-slate-800/50"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
             <div class="flex justify-between items-center h-20">
-
                 <!-- Logo -->
-                <div class="flex-shrink-0 flex items-center gap-2 cursor-pointer"
-                    onclick="window.location.href='index.html'">
-                    <div
-                        class="w-8 h-8 rounded-lg bg-gradient-to-br from-primary-500 to-indigo-700 flex items-center justify-center text-white font-bold text-xl">
-                        O
+                <a href="index.html" class="flex items-center gap-2 group">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-violet-500 to-pink-500 flex items-center justify-center text-white shadow-lg shadow-violet-500/30 group-hover:scale-110 transition-transform duration-300">
+                        <i class="ph-bold ph-planet text-xl"></i>
                     </div>
-                    <span class="font-display font-bold text-xl tracking-tight text-white">OrbitScale</span>
-                </div>
+                    <span class="font-display font-bold text-2xl tracking-tight text-slate-900 dark:text-white">Orbit<span class="text-primary-600 dark:text-primary-500">Scale</span></span>
+                </a>
 
                 <!-- Desktop Menu -->
-                <div class="hidden md:flex items-center space-x-8 rtl:space-x-reverse">
-
-                    <!-- Home Dropdown -->
-                    <div class="relative group">
-                        <button
-                            class="flex items-center gap-1 text-slate-300 font-medium hover:text-white transition h-20">
-                            Home <i class="ph ph-caret-down text-sm"></i>
+                <div class="hidden md:flex items-center space-x-1">
+                    <div class="relative group px-3 py-2">
+                        <button class="flex items-center gap-1 text-slate-600 dark:text-slate-300 font-medium hover:text-primary-600 dark:hover:text-primary-400 transition">
+                            Product <i class="ph-bold ph-caret-down text-xs mt-0.5"></i>
                         </button>
-                        <!-- Dropdown Menu -->
-                        <div
-                            class="absolute top-16 left-0 w-60 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform group-hover:translate-y-0 translate-y-2 z-50">
-                            <div class="bg-slate-800 rounded-xl shadow-xl border border-slate-700 overflow-hidden p-2">
-                                <a href="index.html"
-                                    class="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-slate-700 transition group/item">
-                                    <div
-                                        class="w-8 h-8 rounded-lg bg-indigo-900/50 text-indigo-400 flex items-center justify-center group-hover/item:bg-indigo-600 group-hover/item:text-white transition">
-                                        <i class="ph ph-sun"></i>
-                                    </div>
-                                    <div class="text-left">
-                                        <p class="font-bold text-sm text-white">Home Ver. 1</p>
-                                        <p class="text-xs text-slate-400">Light / Enterprise</p>
-                                    </div>
+                        <div class="absolute top-full left-1/2 -translate-x-1/2 pt-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-2 group-hover:translate-y-0">
+                            <div class="w-64 bg-white dark:bg-slate-800 rounded-2xl shadow-xl border border-slate-100 dark:border-slate-700 p-2 overflow-hidden">
+                                <a href="index.html" class="flex items-center gap-3 p-3 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-700 transition">
+                                    <div class="w-8 h-8 rounded-lg bg-primary-50 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400 flex items-center justify-center"><i class="ph-fill ph-rocket-launch"></i></div>
+                                    <div><div class="font-bold text-sm text-slate-900 dark:text-white">Platform</div><div class="text-xs text-slate-500 dark:text-slate-400">For scaling teams</div></div>
                                 </a>
-                                <a href="index-v2.html"
-                                    class="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-slate-700 transition group/item">
-                                    <div
-                                        class="w-8 h-8 rounded-lg bg-slate-900 text-white flex items-center justify-center group-hover/item:bg-slate-950 transition">
-                                        <i class="ph ph-moon"></i>
-                                    </div>
-                                    <div class="text-left">
-                                        <p class="font-bold text-sm text-white">Home Ver. 2</p>
-                                        <p class="text-xs text-slate-400">Dark / Developer</p>
-                                    </div>
+                                <a href="index-v2.html" class="flex items-center gap-3 p-3 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-700 transition">
+                                    <div class="w-8 h-8 rounded-lg bg-slate-900 dark:bg-slate-700 text-white flex items-center justify-center"><i class="ph-fill ph-code"></i></div>
+                                    <div><div class="font-bold text-sm text-slate-900 dark:text-white">Developer API</div><div class="text-xs text-slate-500 dark:text-slate-400">Documentation</div></div>
                                 </a>
                             </div>
                         </div>
                     </div>
-
-                    <!-- Dashboard Dropdown -->
-                    <div class="relative group">
-                        <button
-                            class="flex items-center gap-2 text-slate-400 font-medium hover:text-white transition h-20">
-                            <i class="ph ph-squares-four text-lg"></i> Dashboard <i
-                                class="ph ph-caret-down text-sm"></i>
-                        </button>
-                        <!-- Dropdown Menu -->
-                        <div
-                            class="absolute top-16 left-0 w-60 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform group-hover:translate-y-0 translate-y-2 z-50">
-                            <div class="bg-slate-800 rounded-xl shadow-xl border border-slate-700 overflow-hidden p-2">
-                                <a href="user-dashboard.html"
-                                    class="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-slate-700 transition group/item">
-                                    <i
-                                        class="ph ph-squares-four text-lg text-slate-400 group-hover/item:text-indigo-400"></i>
-                                    <span class="text-sm font-medium text-slate-300 group-hover/item:text-white">User
-                                        Dashboard</span>
-                                </a>
-                                <a href="admin-dashboard.html"
-                                    class="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-slate-700 transition group/item">
-                                    <i
-                                        class="ph ph-shield-check text-lg text-slate-400 group-hover/item:text-indigo-400"></i>
-                                    <span class="text-sm font-medium text-slate-300 group-hover/item:text-white">Admin
-                                        Dashboard</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <a href="about.html" class="text-slate-400 hover:text-white font-medium transition">About</a>
-                    <a href="services.html" class="text-slate-400 hover:text-white font-medium transition">Services</a>
-                    <a href="pricing.html" class="text-slate-400 hover:text-white font-medium transition">Pricing</a>
-                    <a href="blog.html" class="text-slate-400 hover:text-white font-medium transition">Blog</a>
+                    <a href="services.html" class="px-4 py-2 text-slate-600 dark:text-slate-300 font-medium hover:text-primary-600 dark:hover:text-primary-400 transition rounded-full hover:bg-slate-100/50 dark:hover:bg-slate-800/50">Solutions</a>
+                    <a href="pricing.html" class="px-4 py-2 text-slate-600 dark:text-slate-300 font-medium hover:text-primary-600 dark:hover:text-primary-400 transition rounded-full hover:bg-slate-100/50 dark:hover:bg-slate-800/50">Pricing</a>
+                    <a href="about.html" class="px-4 py-2 text-slate-600 dark:text-slate-300 font-medium hover:text-primary-600 dark:hover:text-primary-400 transition rounded-full hover:bg-slate-100/50 dark:hover:bg-slate-800/50">Company</a>
                 </div>
 
-                <!-- Right Actions -->
-                <div class="hidden md:flex items-center space-x-4 rtl:space-x-reverse">
-                    <!-- Dashboard Icon -->
-
-                    <a href="login.html" class="text-slate-400 hover:text-white font-medium">Login</a>
-                    <a href="register.html"
-                        class="bg-indigo-600 hover:bg-indigo-700 text-white px-5 py-2.5 rounded-full font-medium transition shadow-lg shadow-indigo-500/20">
-                        Start Building
-                    </a>
-
-                    <!-- RTL Toggle -->
-                    <button
-                        class="rtl-toggle-btn w-10 h-10 rounded-full flex items-center justify-center text-slate-400 hover:bg-slate-800 transition">
-                        <i class="ph ph-globe text-xl"></i>
+                <!-- Actions -->
+                <div class="hidden md:flex items-center gap-4">
+                    <a href="login.html" class="text-slate-600 dark:text-slate-300 font-medium hover:text-primary-600 dark:hover:text-primary-400 transition">Log in</a>
+                    <a href="register.html" class="px-6 py-2.5 rounded-full bg-slate-900 dark:bg-white text-white dark:text-slate-900 font-medium hover:bg-slate-800 dark:hover:bg-slate-100 transition shadow-lg shadow-slate-900/20 hover:-translate-y-0.5">Get Started</a>
+                    <button class="rtl-toggle-btn w-10 h-10 rounded-full border border-slate-200 dark:border-slate-700 flex items-center justify-center text-slate-500 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-primary-600 dark:hover:text-primary-400 transition">
+                        <i class="ph ph-globe text-lg"></i>
                     </button>
                 </div>
 
-                <!-- Mobile Menu Button -->
-                <div class="md:hidden flex items-center">
-                    <button class="rtl-toggle-btn p-2 text-slate-400 mr-2">
-                        <i class="ph ph-globe text-xl"></i>
-                    </button>
-                    <button id="mobile-menu-btn"
-                        class="p-2 rounded-lg text-slate-400 hover:bg-slate-800 focus:outline-none"
-                        aria-expanded="false">
-                        <i class="ph ph-list text-2xl"></i>
-                    </button>
-                </div>
+                <!-- Mobile Toggle -->
+                <button id="mobile-menu-btn" class="md:hidden p-2 text-slate-600 dark:text-slate-300">
+                    <i class="ph ph-list text-2xl"></i>
+                </button>
             </div>
         </div>
     </nav>
 
-    <!-- Mobile Menu Drawer (Moved outside nav for proper layering) -->
-    <div id="mobile-menu-overlay"
-        class="fixed inset-0 bg-slate-900/50 backdrop-blur-sm z-[60] hidden transition-opacity"></div>
-
-    <div id="mobile-menu"
-        class="fixed top-0 right-0 rtl:right-auto rtl:left-0 w-80 h-full bg-slate-900 shadow-2xl z-[70] transform translate-x-full rtl:-translate-x-full transition-transform duration-300 ease-in-out flex flex-col border-l rtl:border-l-0 rtl:border-r border-slate-800">
-        <div class="p-6 border-b border-slate-800 flex justify-between items-center">
-            <span class="font-display font-bold text-xl text-white">Menu</span>
-            <button id="mobile-menu-close" class="p-2 text-slate-400 hover:bg-slate-800 rounded-lg">
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu-overlay" class="fixed inset-0 bg-slate-900/20 backdrop-blur-sm z-[60] hidden opacity-0 transition-opacity duration-300"></div>
+    
+    <!-- Mobile Menu Drawer -->
+    <div id="mobile-menu" class="fixed top-0 right-0 rtl:right-auto rtl:left-0 w-[300px] h-full bg-white dark:bg-slate-900 shadow-2xl z-[70] transform translate-x-full rtl:-translate-x-full transition-transform duration-300 flex flex-col">
+        <div class="p-6 border-b border-slate-100 dark:border-slate-800 flex justify-between items-center">
+            <span class="font-display font-bold text-xl text-slate-900 dark:text-white">Menu</span>
+            <button id="mobile-menu-close" class="p-2 text-slate-400 hover:text-slate-600 dark:hover:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg transition">
                 <i class="ph ph-x text-xl"></i>
             </button>
         </div>
-        <div class="p-6 space-y-4 flex-1 overflow-y-auto">
-            <a href="index.html"
-                class="block text-lg font-bold text-slate-300 hover:text-white px-3 py-2 rounded-lg">Home Ver. 1
-                <span class="text-xs font-normal text-slate-500 ml-2">(Light)</span></a>
-            <a href="index-v2.html"
-                class="block text-lg font-bold text-primary-400 bg-slate-800/50 px-3 py-2 border border-slate-700 rounded-lg">Home
-                Ver. 2 <span class="text-xs font-normal text-slate-500 ml-2">(Dark)</span></a>
-
-            <div class="pl-4 border-l-2 border-slate-800 space-y-3 my-2">
-                <a href="user-dashboard.html"
-                    class="block text-base font-medium text-slate-400 hover:text-primary-400">User Dashboard</a>
-                <a href="admin-dashboard.html"
-                    class="block text-base font-medium text-slate-400 hover:text-primary-400">Admin Dashboard</a>
-            </div>
-
-            <a href="about.html" class="block text-lg font-medium text-slate-300 hover:text-primary-400 mt-4">About</a>
-            <a href="services.html" class="block text-lg font-medium text-slate-300 hover:text-primary-400">Services</a>
-            <a href="pricing.html" class="block text-lg font-medium text-slate-300 hover:text-primary-400">Pricing</a>
-            <a href="blog.html" class="block text-lg font-medium text-slate-300 hover:text-primary-400">Blog</a>
-            <hr class="border-slate-800 my-4">
-            <a href="login.html" class="block text-lg font-medium text-slate-300 hover:text-primary-400">Login</a>
-            <a href="register.html"
-                class="block w-full text-center bg-primary-600 text-white px-5 py-3 rounded-xl font-bold shadow-lg shadow-primary-500/20 mt-4">
-                Get Started
-            </a>
+        <div class="flex-1 overflow-y-auto p-6 space-y-2">
+            <a href="index.html" class="block px-4 py-3 rounded-xl bg-primary-50 dark:bg-primary-900/20 text-primary-700 dark:text-primary-400 font-medium">Home</a>
+            <a href="services.html" class="block px-4 py-3 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 font-medium">Solutions</a>
+            <a href="pricing.html" class="block px-4 py-3 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 font-medium">Pricing</a>
+            <a href="about.html" class="block px-4 py-3 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 font-medium">Company</a>
+            <div class="my-4 border-t border-slate-100 dark:border-slate-800"></div>
+            <a href="login.html" class="block px-4 py-3 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 font-medium">Log in</a>
+            <a href="register.html" class="block w-full py-3 rounded-xl bg-primary-600 text-white text-center font-bold shadow-lg shadow-primary-500/30 mt-4">Get Started Free</a>
         </div>
     </div>
 
+    <!-- Main Content -->
+    <main class="flex-grow flex items-center justify-center p-4 relative z-10 pt-20">
     <div class="glass-dark w-full max-w-md p-8 sm:p-10 rounded-3xl relative z-10 shadow-2xl border border-slate-700/50">
 
         <div class="text-center mb-10">
@@ -268,6 +186,60 @@
         </p>
 
     </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 pt-16 pb-8 relative z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 mb-12">
+                <div class="col-span-2 lg:col-span-2">
+                    <a href="index.html" class="flex items-center gap-2 mb-4">
+                        <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-violet-500 to-pink-500 flex items-center justify-center text-white shadow-lg shadow-violet-500/30 group-hover:scale-110 transition-transform duration-300"><i class="ph-bold ph-planet"></i></div>
+                        <span class="font-display font-bold text-xl text-slate-900 dark:text-white">OrbitScale</span>
+                    </a>
+                    <p class="text-slate-500 dark:text-slate-400 text-sm max-w-xs mb-6">Making cloud infrastructure accessible, scalable, and secure for everyone.</p>
+                    <div class="flex gap-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-slate-50 dark:bg-slate-800 flex items-center justify-center text-slate-500 dark:text-slate-400 hover:bg-primary-50 dark:hover:bg-primary-900/30 hover:text-primary-600 dark:hover:text-primary-400 transition"><i class="ph-fill ph-twitter-logo text-xl"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-slate-50 dark:bg-slate-800 flex items-center justify-center text-slate-500 dark:text-slate-400 hover:bg-primary-50 dark:hover:bg-primary-900/30 hover:text-primary-600 dark:hover:text-primary-400 transition"><i class="ph-fill ph-github-logo text-xl"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-slate-50 dark:bg-slate-800 flex items-center justify-center text-slate-500 dark:text-slate-400 hover:bg-primary-50 dark:hover:bg-primary-900/30 hover:text-primary-600 dark:hover:text-primary-400 transition"><i class="ph-fill ph-linkedin-logo text-xl"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-bold text-slate-900 dark:text-white mb-4">Product</h4>
+                    <ul class="space-y-2 text-sm text-slate-600 dark:text-slate-400">
+                        <li><a href="#" class="hover:text-primary-600 dark:hover:text-primary-400 transition">Features</a></li>
+                        <li><a href="#" class="hover:text-primary-600 dark:hover:text-primary-400 transition">Integrations</a></li>
+                        <li><a href="pricing.html" class="hover:text-primary-600 dark:hover:text-primary-400 transition">Pricing</a></li>
+                        <li><a href="#" class="hover:text-primary-600 dark:hover:text-primary-400 transition">Changelog</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-slate-900 dark:text-white mb-4">Resources</h4>
+                    <ul class="space-y-2 text-sm text-slate-600 dark:text-slate-400">
+                        <li><a href="#" class="hover:text-primary-600 dark:hover:text-primary-400 transition">Documentation</a></li>
+                        <li><a href="#" class="hover:text-primary-600 dark:hover:text-primary-400 transition">API Reference</a></li>
+                        <li><a href="blog.html" class="hover:text-primary-600 dark:hover:text-primary-400 transition">Blog</a></li>
+                        <li><a href="#" class="hover:text-primary-600 dark:hover:text-primary-400 transition">Community</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-slate-900 dark:text-white mb-4">Company</h4>
+                    <ul class="space-y-2 text-sm text-slate-600 dark:text-slate-400">
+                        <li><a href="about.html" class="hover:text-primary-600 dark:hover:text-primary-400 transition">About</a></li>
+                        <li><a href="#" class="hover:text-primary-600 dark:hover:text-primary-400 transition">Careers</a></li>
+                        <li><a href="#" class="hover:text-primary-600 dark:hover:text-primary-400 transition">Legal</a></li>
+                        <li><a href="contact.html" class="hover:text-primary-600 dark:hover:text-primary-400 transition">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="pt-8 border-t border-slate-100 dark:border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-slate-400 text-sm">© 2025 OrbitScale Inc. All rights reserved.</p>
+                <div class="flex gap-6 text-sm text-slate-500 dark:text-slate-400">
+                    <a href="#" class="hover:text-slate-900 dark:hover:text-white">Privacy Policy</a>
+                    <a href="#" class="hover:text-slate-900 dark:hover:text-white">Terms of Service</a>
+                </div>
+            </div>
+        </footer>
 
     <script src="js/main.js"></script>
     <script src="js/rtl-toggle.js"></script>

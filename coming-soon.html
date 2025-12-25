@@ -9,14 +9,17 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
+            darkMode: 'class',
             theme: {
                 extend: {
                     colors: {
-                        primary: '#6366f1',
+                        primary: { 50: '#f5f3ff', 100: '#ede9fe', 200: '#ddd6fe', 300: '#c4b5fd', 400: '#a78bfa', 500: '#8b5cf6', 600: '#7c3aed', 700: '#6d28d9', 800: '#5b21b6', 900: '#4c1d95', DEFAULT: '#8b5cf6' },
+                        secondary: { 50: '#fdf2f8', 100: '#fce7f3', 200: '#fbcfe8', 300: '#f9a8d4', 400: '#f472b6', 500: '#ec4899', 600: '#db2777', 700: '#be185d', 800: '#9d174d', 900: '#831843', DEFAULT: '#ec4899' },
+                        accent: { 50: '#fff7ed', 100: '#ffedd5', 200: '#fed7aa', 300: '#fdba74', 400: '#fb923c', 500: '#f97316', 600: '#ea580c', 700: '#c2410c', 800: '#9a3412', 900: '#7c2d12', DEFAULT: '#f97316' }
                     },
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
-                        display: ['Plus Jakarta Sans', 'sans-serif'],
+                        display: ['Outfit', 'sans-serif'],
                     }
                 }
             }
@@ -43,161 +46,96 @@
         </div>
     </div>
 
-    <!-- Navbar (Dark) -->
-    <nav class="fixed top-0 w-full z-50 glass-dark border-b border-slate-800 transition-colors duration-300">
+    <!-- Navbar -->
+    <nav class="fixed top-0 w-full z-50 backdrop-blur-md bg-slate-900/80 border-b border-slate-700 transition-colors duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
-
                 <!-- Logo -->
-                <div class="flex-shrink-0 flex items-center gap-2 cursor-pointer"
-                    onclick="window.location.href='index.html'">
-                    <div
-                        class="w-8 h-8 rounded-lg bg-gradient-to-br from-primary-500 to-indigo-700 flex items-center justify-center text-white font-bold text-xl">
-                        O
-                    </div>
+                <div class="flex-shrink-0 flex items-center gap-2 cursor-pointer" onclick="window.location.href='index.html'">
+                    <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-primary-500 to-secondary-500 flex items-center justify-center text-white font-bold text-xl">O</div>
                     <span class="font-display font-bold text-xl tracking-tight text-white">OrbitScale</span>
                 </div>
-
                 <!-- Desktop Menu -->
                 <div class="hidden md:flex items-center space-x-8 rtl:space-x-reverse">
-
                     <!-- Home Dropdown -->
                     <div class="relative group">
-                        <button
-                            class="flex items-center gap-1 text-slate-300 font-medium hover:text-white transition h-20">
-                            Home <i class="ph ph-caret-down text-sm"></i>
-                        </button>
-                        <!-- Dropdown Menu -->
-                        <div
-                            class="absolute top-16 left-0 w-60 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform group-hover:translate-y-0 translate-y-2 z-50">
+                        <button class="flex items-center gap-1 text-slate-300 font-medium hover:text-primary-400 transition h-20">Home <i class="ph ph-caret-down text-sm"></i></button>
+                        <div class="absolute top-16 left-0 w-60 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform group-hover:translate-y-0 translate-y-2 z-50">
                             <div class="bg-slate-800 rounded-xl shadow-xl border border-slate-700 overflow-hidden p-2">
-                                <a href="index.html"
-                                    class="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-slate-700 transition group/item">
-                                    <div
-                                        class="w-8 h-8 rounded-lg bg-indigo-900/50 text-indigo-400 flex items-center justify-center group-hover/item:bg-indigo-600 group-hover/item:text-white transition">
-                                        <i class="ph ph-sun"></i>
-                                    </div>
-                                    <div class="text-left">
-                                        <p class="font-bold text-sm text-white">Home Ver. 1</p>
-                                        <p class="text-xs text-slate-400">Light / Enterprise</p>
-                                    </div>
+                                <a href="index.html" class="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-slate-700 transition group/item">
+                                    <div class="w-8 h-8 rounded-lg bg-indigo-900/50 text-indigo-400 flex items-center justify-center group-hover/item:bg-indigo-600 group-hover/item:text-white transition"><i class="ph ph-sun"></i></div>
+                                    <div class="text-left"><p class="font-bold text-sm text-white">Home Ver. 1</p><p class="text-xs text-slate-400">Light / Enterprise</p></div>
                                 </a>
-                                <a href="index-v2.html"
-                                    class="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-slate-700 transition group/item">
-                                    <div
-                                        class="w-8 h-8 rounded-lg bg-slate-900 text-white flex items-center justify-center group-hover/item:bg-slate-950 transition">
-                                        <i class="ph ph-moon"></i>
-                                    </div>
-                                    <div class="text-left">
-                                        <p class="font-bold text-sm text-white">Home Ver. 2</p>
-                                        <p class="text-xs text-slate-400">Dark / Developer</p>
-                                    </div>
+                                <a href="index-v2.html" class="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-slate-700 transition group/item">
+                                    <div class="w-8 h-8 rounded-lg bg-slate-600 text-white flex items-center justify-center group-hover/item:bg-slate-800 transition"><i class="ph ph-moon"></i></div>
+                                    <div class="text-left"><p class="font-bold text-sm text-white">Home Ver. 2</p><p class="text-xs text-slate-400">Dark / Developer</p></div>
                                 </a>
                             </div>
                         </div>
                     </div>
-
                     <!-- Dashboard Dropdown -->
                     <div class="relative group">
-                        <button
-                            class="flex items-center gap-2 text-slate-400 font-medium hover:text-white transition h-20">
-                            <i class="ph ph-squares-four text-lg"></i> Dashboard <i
-                                class="ph ph-caret-down text-sm"></i>
-                        </button>
-                        <!-- Dropdown Menu -->
-                        <div
-                            class="absolute top-16 left-0 w-60 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform group-hover:translate-y-0 translate-y-2 z-50">
+                        <button class="flex items-center gap-2 text-slate-300 font-medium hover:text-primary-400 transition h-20"><i class="ph ph-squares-four text-lg"></i> Dashboard <i class="ph ph-caret-down text-sm"></i></button>
+                        <div class="absolute top-16 left-0 w-60 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform group-hover:translate-y-0 translate-y-2 z-50">
                             <div class="bg-slate-800 rounded-xl shadow-xl border border-slate-700 overflow-hidden p-2">
-                                <a href="user-dashboard.html"
-                                    class="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-slate-700 transition group/item">
-                                    <i
-                                        class="ph ph-squares-four text-lg text-slate-400 group-hover/item:text-indigo-400"></i>
-                                    <span class="text-sm font-medium text-slate-300 group-hover/item:text-white">User
-                                        Dashboard</span>
-                                </a>
-                                <a href="admin-dashboard.html"
-                                    class="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-slate-700 transition group/item">
-                                    <i
-                                        class="ph ph-shield-check text-lg text-slate-400 group-hover/item:text-indigo-400"></i>
-                                    <span class="text-sm font-medium text-slate-300 group-hover/item:text-white">Admin
-                                        Dashboard</span>
-                                </a>
+                                <a href="user-dashboard.html" class="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-slate-700 transition group/item"><i class="ph ph-squares-four text-lg text-slate-400 group-hover/item:text-primary-400"></i><span class="text-sm font-medium text-slate-300">User Dashboard</span></a>
+                                <a href="admin-dashboard.html" class="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-slate-700 transition group/item"><i class="ph ph-shield-check text-lg text-slate-400 group-hover/item:text-primary-400"></i><span class="text-sm font-medium text-slate-300">Admin Dashboard</span></a>
                             </div>
                         </div>
                     </div>
-                    <a href="about.html" class="text-slate-400 hover:text-white font-medium transition">About</a>
-                    <a href="services.html" class="text-slate-400 hover:text-white font-medium transition">Services</a>
-                    <a href="pricing.html" class="text-slate-400 hover:text-white font-medium transition">Pricing</a>
-                    <a href="blog.html" class="text-slate-400 hover:text-white font-medium transition">Blog</a>
+                    <!-- Pages Dropdown -->
+                    <div class="relative group">
+                        <button class="flex items-center gap-1 text-slate-300 font-medium hover:text-primary-400 transition h-20">Pages <i class="ph ph-caret-down text-sm"></i></button>
+                        <div class="absolute top-16 left-0 w-60 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform group-hover:translate-y-0 translate-y-2 z-50">
+                            <div class="bg-slate-800 rounded-xl shadow-xl border border-slate-700 overflow-hidden p-2">
+                                <a href="about.html" class="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-slate-700 transition"><span class="text-sm font-medium text-slate-300">About</span></a>
+                                <a href="services.html" class="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-slate-700 transition"><span class="text-sm font-medium text-slate-300">Services</span></a>
+                                <a href="pricing.html" class="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-slate-700 transition"><span class="text-sm font-medium text-slate-300">Pricing</span></a>
+                                <a href="contact.html" class="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-slate-700 transition"><span class="text-sm font-medium text-slate-300">Contact</span></a>
+                                <a href="blog.html" class="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-slate-700 transition"><span class="text-sm font-medium text-slate-300">Blog</span></a>
+                                <a href="portfolio.html" class="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-slate-700 transition"><span class="text-sm font-medium text-slate-300">Portfolio</span></a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-
                 <!-- Right Actions -->
                 <div class="hidden md:flex items-center space-x-4 rtl:space-x-reverse">
-                    <a href="login.html" class="text-slate-400 hover:text-white font-medium">Login</a>
-                    <a href="register.html"
-                        class="bg-indigo-600 hover:bg-indigo-700 text-white px-5 py-2.5 rounded-full font-medium transition shadow-lg shadow-indigo-500/20">
-                        Start Building
-                    </a>
-
-                    <!-- RTL Toggle -->
-                    <button
-                        class="rtl-toggle-btn w-10 h-10 rounded-full flex items-center justify-center text-slate-400 hover:bg-slate-800 transition">
-                        <i class="ph ph-globe text-xl"></i>
-                    </button>
+                    <a href="login.html" class="text-slate-300 hover:text-white font-medium">Login</a>
+                    <a href="register.html" class="bg-primary-600 hover:bg-primary-700 text-white px-5 py-2.5 rounded-full font-medium transition shadow-lg shadow-primary-500/20">Get Started</a>
+                    <button class="rtl-toggle-btn w-10 h-10 rounded-full flex items-center justify-center text-slate-400 hover:bg-slate-800 transition" aria-label="Toggle Direction"><i class="ph ph-globe text-xl"></i></button>
                 </div>
-
                 <!-- Mobile Menu Button -->
                 <div class="md:hidden flex items-center">
-                    <button class="rtl-toggle-btn p-2 text-slate-400 mr-2">
-                        <i class="ph ph-globe text-xl"></i>
-                    </button>
-                    <button id="mobile-menu-btn"
-                        class="p-2 rounded-lg text-slate-400 hover:bg-slate-800 focus:outline-none"
-                        aria-expanded="false">
-                        <i class="ph ph-list text-2xl"></i>
-                    </button>
+                    <button class="rtl-toggle-btn p-2 text-slate-300 mr-2"><i class="ph ph-globe text-xl"></i></button>
+                    <button id="mobile-menu-btn" class="p-2 rounded-lg text-slate-300 hover:bg-slate-800 focus:outline-none" aria-expanded="false"><i class="ph ph-list text-2xl"></i></button>
                 </div>
             </div>
         </div>
     </nav>
 
-    <!-- Mobile Menu Drawer (Moved outside nav for proper layering) -->
-    <div id="mobile-menu-overlay"
-        class="fixed inset-0 bg-slate-900/50 backdrop-blur-sm z-[60] hidden transition-opacity"></div>
-
-    <div id="mobile-menu"
-        class="fixed top-0 right-0 rtl:right-auto rtl:left-0 w-80 h-full bg-slate-900 shadow-2xl z-[70] transform translate-x-full rtl:-translate-x-full transition-transform duration-300 ease-in-out flex flex-col border-l rtl:border-l-0 rtl:border-r border-slate-800">
-        <div class="p-6 border-b border-slate-800 flex justify-between items-center">
+    <!-- Mobile Menu Drawer -->
+    <div id="mobile-menu-overlay" class="fixed inset-0 bg-slate-900/50 backdrop-blur-sm z-[60] hidden transition-opacity"></div>
+    <div id="mobile-menu" class="fixed top-0 left-0 w-full h-auto min-h-[50vh] bg-slate-800 shadow-2xl z-[70] transform -translate-y-full transition-transform duration-300 ease-in-out flex flex-col rounded-b-3xl">
+        <div class="p-6 border-b border-slate-700 flex justify-between items-center">
             <span class="font-display font-bold text-xl text-white">Menu</span>
-            <button id="mobile-menu-close" class="p-2 text-slate-400 hover:bg-slate-800 rounded-lg">
-                <i class="ph ph-x text-xl"></i>
-            </button>
+            <button id="mobile-menu-close" class="p-2 text-slate-400 hover:bg-slate-700 rounded-lg"><i class="ph ph-x text-xl"></i></button>
         </div>
         <div class="p-6 space-y-4 flex-1 overflow-y-auto">
-            <a href="index.html"
-                class="block text-lg font-bold text-slate-300 hover:text-white px-3 py-2 rounded-lg">Home Ver. 1
-                <span class="text-xs font-normal text-slate-500 ml-2">(Light)</span></a>
-            <a href="index-v2.html"
-                class="block text-lg font-bold text-primary-400 bg-slate-800/50 px-3 py-2 border border-slate-700 rounded-lg">Home
-                Ver. 2 <span class="text-xs font-normal text-slate-500 ml-2">(Dark)</span></a>
-
-            <div class="pl-4 border-l-2 border-slate-800 space-y-3 my-2">
-                <a href="user-dashboard.html"
-                    class="block text-base font-medium text-slate-400 hover:text-primary-400">User Dashboard</a>
-                <a href="admin-dashboard.html"
-                    class="block text-base font-medium text-slate-400 hover:text-primary-400">Admin Dashboard</a>
+            <a href="index.html" class="block text-lg font-bold text-white hover:text-primary-400 px-3 py-2">Home Ver. 1 <span class="text-xs font-normal text-slate-400 ml-2">(Light)</span></a>
+            <a href="index-v2.html" class="block text-lg font-bold text-white hover:text-primary-400 px-3 py-2">Home Ver. 2 <span class="text-xs font-normal text-slate-400 ml-2">(Dark)</span></a>
+            <div class="pl-4 border-l-2 border-slate-700 space-y-3 my-2">
+                <a href="user-dashboard.html" class="block text-base font-medium text-slate-300 hover:text-primary-400">User Dashboard</a>
+                <a href="admin-dashboard.html" class="block text-base font-medium text-slate-300 hover:text-primary-400">Admin Dashboard</a>
             </div>
-
             <a href="about.html" class="block text-lg font-medium text-slate-300 hover:text-primary-400 mt-4">About</a>
             <a href="services.html" class="block text-lg font-medium text-slate-300 hover:text-primary-400">Services</a>
             <a href="pricing.html" class="block text-lg font-medium text-slate-300 hover:text-primary-400">Pricing</a>
+            <a href="contact.html" class="block text-lg font-medium text-slate-300 hover:text-primary-400">Contact</a>
             <a href="blog.html" class="block text-lg font-medium text-slate-300 hover:text-primary-400">Blog</a>
-            <hr class="border-slate-800 my-4">
+            <a href="portfolio.html" class="block text-lg font-medium text-slate-300 hover:text-primary-400">Portfolio</a>
+            <hr class="border-slate-700 my-4">
             <a href="login.html" class="block text-lg font-medium text-slate-300 hover:text-primary-400">Login</a>
-            <a href="register.html"
-                class="block w-full text-center bg-primary-600 text-white px-5 py-3 rounded-xl font-bold shadow-lg shadow-primary-500/20 mt-4">
-                Get Started
-            </a>
+            <a href="register.html" class="block w-full text-center bg-primary-600 text-white px-5 py-3 rounded-xl font-bold shadow-lg shadow-primary-500/20 mt-4">Get Started</a>
         </div>
     </div>
 

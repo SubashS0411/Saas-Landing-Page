@@ -6,6 +6,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     initMobileMenu();
     initDashboardMenu();
+    initDashboardSwitcher();
     initPricingToggle();
     initSidebarToggle();
     initScrollReveal();
@@ -128,6 +129,73 @@ function initDashboardMenu() {
         
         overlay.addEventListener('click', closeMenu);
     }
+}
+
+/* Global dashboard switcher for marketing navbars */
+function initDashboardSwitcher() {
+    const dropdowns = [];
+
+    // Desktop nav: replace single dashboard link with dropdown
+    document.querySelectorAll('a[href="user-dashboard.html"]').forEach(link => {
+        const parent = link.parentElement;
+        if (!parent || parent.classList.contains('nav-dashboard-dropdown')) return;
+
+        const wrapper = document.createElement('div');
+        wrapper.className = 'relative nav-dashboard-dropdown px-3 py-2';
+        wrapper.innerHTML = `
+            <button class="nav-dash-toggle flex items-center gap-1 text-slate-600 dark:text-slate-300 font-medium hover:text-primary-600 dark:hover:text-primary-400 transition">
+                Dashboards <i class="ph-bold ph-caret-down text-xs mt-0.5"></i>
+            </button>
+            <div class="nav-dash-menu hidden absolute top-full left-0 mt-3 w-48 bg-white dark:bg-slate-800 rounded-2xl shadow-xl border border-slate-100 dark:border-slate-700 py-2">
+                <a href="user-dashboard.html" class="block px-4 py-2 text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-700 text-sm">User Dashboard</a>
+                <a href="admin-dashboard.html" class="block px-4 py-2 text-slate-700 dark:text-slate-200 hover:bg-slate-50 dark:hover:bg-slate-700 text-sm">Admin Dashboard</a>
+            </div>
+        `;
+
+        parent.replaceChild(wrapper, link);
+
+        const toggle = wrapper.querySelector('.nav-dash-toggle');
+        const menu = wrapper.querySelector('.nav-dash-menu');
+        if (toggle && menu) dropdowns.push({ toggle, menu });
+    });
+
+    // Mobile nav: swap single dashboard link for two explicit links
+    document.querySelectorAll('#mobile-menu').forEach(menu => {
+        const dashLink = menu.querySelector('a[href="user-dashboard.html"]');
+        if (!dashLink) return;
+
+        const adminLink = dashLink.cloneNode(true);
+        adminLink.href = 'admin-dashboard.html';
+        adminLink.textContent = 'Admin Dashboard';
+        adminLink.className = 'block px-4 py-3 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 font-medium';
+
+        dashLink.href = 'user-dashboard.html';
+        dashLink.textContent = 'User Dashboard';
+        dashLink.className = 'block px-4 py-3 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 font-medium';
+
+        dashLink.insertAdjacentElement('afterend', adminLink);
+    });
+
+    if (dropdowns.length === 0) return;
+
+    const closeAll = () => dropdowns.forEach(({ menu }) => menu.classList.add('hidden'));
+
+    dropdowns.forEach(({ toggle, menu }) => {
+        toggle.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const wasHidden = menu.classList.contains('hidden');
+            closeAll();
+            if (wasHidden) menu.classList.remove('hidden');
+        });
+    });
+
+    document.addEventListener('click', (e) => {
+        if (!e.target.closest('.nav-dashboard-dropdown')) closeAll();
+    });
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeAll();
+    });
 }
 
 /* Sidebar Toggle for Dashboard Pages */

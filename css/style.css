@@ -369,6 +369,130 @@ html[dir="rtl"] .hero-tilt {
     }
 }
 
+/* Dashboard Mobile Optimizations */
+@media (max-width: 768px) {
+    /* Fix main content padding on tablets and mobile */
+    .dashboard-page #main-content {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+    
+    /* Ensure proper padding and spacing */
+    .dashboard-page main > div {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    
+    /* Optimize KPI cards for mobile */
+    .dashboard-page .glass-card {
+        padding: 1.25rem !important;
+    }
+    
+    /* Better hero section on mobile */
+    .dashboard-page .dashboard-hero {
+        padding: 1.5rem !important;
+        border-radius: 1rem !important;
+    }
+    
+    /* Improve action button layouts */
+    .dashboard-page .dashboard-header-actions {
+        width: 100%;
+    }
+    
+    .dashboard-page .dashboard-header-actions button {
+        flex: 1;
+        min-width: 0;
+    }
+    
+    /* Fix grid layouts on tablets */
+    .dashboard-page .dashboard-grid-4 {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 0.75rem;
+    }
+    
+    /* Optimize charts on mobile */
+    .dashboard-page .dashboard-chart {
+        height: 240px !important;
+        min-height: 240px;
+    }
+    
+    /* Better table scrolling */
+    .dashboard-page .dashboard-table {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    /* Better font sizes */
+    .dashboard-page h1 {
+        font-size: 1.5rem !important;
+        line-height: 2rem !important;
+    }
+    
+    .dashboard-page h2 {
+        font-size: 1.25rem !important;
+        line-height: 1.75rem !important;
+    }
+    
+    .dashboard-page h3 {
+        font-size: 1rem !important;
+        line-height: 1.5rem !important;
+    }
+}
+
+/* Extra small devices (phones under 480px) */
+@media (max-width: 480px) {
+    /* Single column layout for very small screens */
+    .dashboard-page .dashboard-grid-4 {
+        grid-template-columns: 1fr !important;
+        gap: 1rem;
+    }
+    
+    /* Even tighter padding on small phones */
+    .dashboard-page .glass-card {
+        padding: 1rem !important;
+        border-radius: 0.75rem !important;
+    }
+    
+    .dashboard-page .dashboard-hero {
+        padding: 1.25rem !important;
+    }
+    
+    /* Stack action buttons */
+    .dashboard-page .dashboard-header-actions {
+        flex-direction: column;
+    }
+    
+    .dashboard-page .dashboard-header-actions button {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    /* Smaller KPI metrics */
+    .dashboard-page .glass-card p:first-of-type {
+        font-size: 1.5rem !important;
+    }
+    
+    /* Better mobile navigation */
+    .dashboard-page main > div {
+        padding-left: 1rem;
+        padding-right: 1rem;
+        gap: 1rem !important;
+    }
+}
+
+/* Medium devices optimization (tablets 768px - 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+    /* Optimize for tablets */
+    .dashboard-page .glass-card {
+        padding: 1.25rem !important;
+    }
+    
+    /* Better grid spacing on tablets */
+    .dashboard-page .dashboard-grid-4 {
+        gap: 1rem;
+    }
+}
+
 /* Accessibility improvements */
 @media (prefers-reduced-motion: reduce) {
     *,

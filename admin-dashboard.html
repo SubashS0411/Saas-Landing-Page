@@ -4,8 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin - OrbitScale</title>
+    <title>Admin Dashboard - OrbitScale</title>
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;700;800&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -13,80 +16,99 @@
             theme: {
                 extend: {
                     colors: {
-                        primary: { 50: '#f5f3ff', 100: '#ede9fe', 200: '#ddd6fe', 300: '#c4b5fd', 400: '#a78bfa', 500: '#8b5cf6', 600: '#7c3aed', 700: '#6d28d9', 800: '#5b21b6', 900: '#4c1d95', DEFAULT: '#8b5cf6' },
-                        secondary: { 50: '#fdf2f8', 100: '#fce7f3', 200: '#fbcfe8', 300: '#f9a8d4', 400: '#f472b6', 500: '#ec4899', 600: '#db2777', 700: '#be185d', 800: '#9d174d', 900: '#831843', DEFAULT: '#ec4899' },
-                        accent: { 50: '#fff7ed', 100: '#ffedd5', 200: '#fed7aa', 300: '#fdba74', 400: '#fb923c', 500: '#f97316', 600: '#ea580c', 700: '#c2410c', 800: '#9a3412', 900: '#7c2d12', DEFAULT: '#f97316' }
+                        primary: { DEFAULT: '#8b5cf6', 50: '#f5f3ff', 100: '#ede9fe', 200: '#ddd6fe', 300: '#c4b5fd', 400: '#a78bfa', 500: '#8b5cf6', 600: '#7c3aed', 700: '#6d28d9', 800: '#5b21b6', 900: '#4c1d95' },
+                        secondary: { DEFAULT: '#ec4899', 50: '#fdf2f8', 100: '#fce7f3', 200: '#fbcfe8', 300: '#f9a8d4', 400: '#f472b6', 500: '#ec4899', 600: '#db2777', 700: '#be185d', 800: '#9d174d', 900: '#831843' },
+                        accent: { DEFAULT: '#f97316', 50: '#fff7ed', 100: '#ffedd5', 200: '#fed7aa', 300: '#fdba74', 400: '#fb923c', 500: '#f97316', 600: '#ea580c', 700: '#c2410c', 800: '#9a3412', 900: '#7c2d12' },
                     },
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
                         display: ['Outfit', 'sans-serif'],
-                    }
+                    },
                 }
             }
         }
     </script>
     <link rel="stylesheet" href="css/style.css">
     <style>
-        .no-scrollbar::-webkit-scrollbar {
-            display: none;
-        }
+        .glass-card { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(12px); }
+        .sparkline-container { height: 50px; }
     </style>
 </head>
 
-<body class="font-sans antialiased text-slate-800 bg-slate-50 dark:bg-slate-900 dark:text-slate-200 flex flex-col min-h-screen">
+<body class="font-sans antialiased bg-slate-950 text-slate-100 min-h-screen selection:bg-primary-500 selection:text-white dashboard-page">
 
-    <!-- Navbar -->
+    <!-- Navbar (Same as marketing pages) -->
     <nav class="fixed top-0 w-full z-50 transition-all duration-300" id="navbar">
-        <div class="absolute inset-0 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-b border-slate-200/50 dark:border-slate-800/50"></div>
+        <div class="absolute inset-0 bg-slate-950/80 backdrop-blur-md border-b border-white/10"></div>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-            <div class="flex justify-between items-center h-20">
+            <div class="flex justify-between items-center h-16 sm:h-20">
                 <!-- Logo -->
                 <a href="index.html" class="flex items-center gap-2 group">
-                    <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-violet-500 to-pink-500 flex items-center justify-center text-white shadow-lg shadow-violet-500/30 group-hover:scale-110 transition-transform duration-300">
-                        <i class="ph-bold ph-planet text-xl"></i>
+                    <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-br from-violet-500 to-pink-500 flex items-center justify-center text-white shadow-lg shadow-violet-500/30 group-hover:scale-110 transition-transform duration-300">
+                        <i class="ph-bold ph-planet text-lg sm:text-xl"></i>
                     </div>
-                    <span class="font-display font-bold text-2xl tracking-tight text-slate-900 dark:text-white">Orbit<span class="text-primary-600 dark:text-primary-500">Scale</span></span>
+                    <span class="font-display font-bold text-xl sm:text-2xl tracking-tight text-white">Orbit<span class="text-primary-500">Scale</span></span>
                 </a>
 
                 <!-- Desktop Menu -->
                 <div class="hidden md:flex items-center space-x-1">
                     <div class="relative group px-3 py-2">
-                        <button class="flex items-center gap-1 text-slate-600 dark:text-slate-300 font-medium hover:text-primary-600 dark:hover:text-primary-400 transition">
+                        <button class="flex items-center gap-1 text-slate-300 font-medium hover:text-primary-400 transition">
                             Product <i class="ph-bold ph-caret-down text-xs mt-0.5"></i>
                         </button>
                         <div class="absolute top-full left-1/2 -translate-x-1/2 pt-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-2 group-hover:translate-y-0">
-                            <div class="w-64 bg-white dark:bg-slate-800 rounded-2xl shadow-xl border border-slate-100 dark:border-slate-700 p-2 overflow-hidden">
-                                <a href="index.html" class="flex items-center gap-3 p-3 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-700 transition">
-                                    <div class="w-8 h-8 rounded-lg bg-primary-50 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400 flex items-center justify-center"><i class="ph-fill ph-rocket-launch"></i></div>
-                                    <div><div class="font-bold text-sm text-slate-900 dark:text-white">Platform</div><div class="text-xs text-slate-500 dark:text-slate-400">For scaling teams</div></div>
+                            <div class="w-64 bg-slate-800 rounded-2xl shadow-xl border border-slate-700 p-2 overflow-hidden">
+                                <a href="index.html" class="flex items-center gap-3 p-3 rounded-xl hover:bg-slate-700 transition">
+                                    <div class="w-8 h-8 rounded-lg bg-primary-900/30 text-primary-400 flex items-center justify-center"><i class="ph-fill ph-rocket-launch"></i></div>
+                                    <div><div class="font-bold text-sm text-white">Platform</div><div class="text-xs text-slate-400">For scaling teams</div></div>
                                 </a>
-                                <a href="index-v2.html" class="flex items-center gap-3 p-3 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-700 transition">
-                                    <div class="w-8 h-8 rounded-lg bg-slate-900 dark:bg-slate-700 text-white flex items-center justify-center"><i class="ph-fill ph-code"></i></div>
-                                    <div><div class="font-bold text-sm text-slate-900 dark:text-white">Developer API</div><div class="text-xs text-slate-500 dark:text-slate-400">Documentation</div></div>
+                                <a href="index-v2.html" class="flex items-center gap-3 p-3 rounded-xl hover:bg-slate-700 transition">
+                                    <div class="w-8 h-8 rounded-lg bg-slate-700 text-white flex items-center justify-center"><i class="ph-fill ph-code"></i></div>
+                                    <div><div class="font-bold text-sm text-white">Developer API</div><div class="text-xs text-slate-400">Documentation</div></div>
                                 </a>
                             </div>
                         </div>
                     </div>
-                    <a href="services.html" class="px-4 py-2 text-slate-600 dark:text-slate-300 font-medium hover:text-primary-600 dark:hover:text-primary-400 transition rounded-full hover:bg-slate-100/50 dark:hover:bg-slate-800/50">Solutions</a>
-                    <a href="pricing.html" class="px-4 py-2 text-slate-600 dark:text-slate-300 font-medium hover:text-primary-600 dark:hover:text-primary-400 transition rounded-full hover:bg-slate-100/50 dark:hover:bg-slate-800/50">Pricing</a>
-                    <a href="about.html" class="px-4 py-2 text-slate-600 dark:text-slate-300 font-medium hover:text-primary-600 dark:hover:text-primary-400 transition rounded-full hover:bg-slate-100/50 dark:hover:bg-slate-800/50">Company</a>
+                    <a href="services.html" class="px-4 py-2 text-slate-300 font-medium hover:text-primary-400 transition rounded-full hover:bg-white/5">Solutions</a>
+                    <a href="pricing.html" class="px-4 py-2 text-slate-300 font-medium hover:text-primary-400 transition rounded-full hover:bg-white/5">Pricing</a>
+                    <a href="about.html" class="px-4 py-2 text-slate-300 font-medium hover:text-primary-400 transition rounded-full hover:bg-white/5">Company</a>
+                    <!-- Dashboard Dropdown -->
+                    <div class="relative group px-3 py-2">
+                        <button class="flex items-center gap-1 text-white font-medium bg-white/10 px-3 py-1.5 rounded-lg">
+                            Dashboards <i class="ph-bold ph-caret-down text-xs mt-0.5"></i>
+                        </button>
+                        <div class="absolute top-full left-1/2 -translate-x-1/2 pt-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-2 group-hover:translate-y-0">
+                            <div class="w-48 bg-slate-800 rounded-2xl shadow-xl border border-slate-700 py-2 overflow-hidden">
+                                <a href="user-dashboard.html" class="block px-4 py-2.5 text-slate-300 hover:bg-slate-700 text-sm">
+                                    <i class="ph ph-user mr-2"></i>User Dashboard
+                                </a>
+                                <a href="admin-dashboard.html" class="block px-4 py-2.5 text-white bg-primary-600/20 text-sm font-medium">
+                                    <i class="ph ph-shield-check mr-2"></i>Admin Dashboard
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- Actions -->
-                <div class="hidden md:flex items-center gap-4">
-                    <a href="login.html" class="text-slate-600 dark:text-slate-300 font-medium hover:text-primary-600 dark:hover:text-primary-400 transition">Log in</a>
-                    <a href="register.html" class="px-6 py-2.5 rounded-full bg-slate-900 dark:bg-white text-white dark:text-slate-900 font-medium hover:bg-slate-800 dark:hover:bg-slate-100 transition shadow-lg shadow-slate-900/20 hover:-translate-y-0.5">Get Started</a>
-                    <button class="rtl-toggle-btn w-10 h-10 rounded-full border border-slate-200 dark:border-slate-700 flex items-center justify-center text-slate-500 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-primary-600 dark:hover:text-primary-400 transition">
+                <div class="hidden md:flex items-center gap-3">
+                    <button class="rtl-toggle-btn w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-slate-400 hover:bg-white/10 hover:text-primary-400 transition">
                         <i class="ph ph-globe text-lg"></i>
                     </button>
+                    <button class="p-2.5 rounded-full border border-white/20 text-slate-400 hover:bg-white/10 hover:text-primary-400 transition relative">
+                        <i class="ph ph-bell text-lg"></i>
+                        <span class="absolute top-1 right-1 w-2 h-2 bg-red-500 rounded-full"></span>
+                    </button>
+                    <a href="login.html" class="px-5 py-2 rounded-full bg-white/10 border border-white/20 text-white font-medium hover:bg-white/20 transition text-sm">Logout</a>
+                    <div class="w-9 h-9 rounded-full bg-gradient-to-br from-red-500 to-orange-500 flex items-center justify-center text-white text-xs font-bold shadow-lg shadow-red-500/30">AD</div>
                 </div>
 
                 <!-- Mobile Toggle -->
                 <div class="md:hidden flex items-center gap-2">
-                    <button id="sidebar-toggle-btn" class="p-2 text-slate-600 hover:bg-slate-100 rounded-lg">
-                        <i class="ph ph-sidebar text-xl"></i>
+                    <button class="rtl-toggle-btn p-2 text-slate-400 hover:text-primary-400 hover:bg-white/10 rounded-lg transition" title="Toggle RTL/LTR">
+                        <i class="ph ph-globe text-xl"></i>
                     </button>
-                    <button id="mobile-menu-btn" class="p-2 text-slate-600 dark:text-slate-300">
+                    <button id="mobile-menu-btn" class="p-2 text-slate-300">
                         <i class="ph ph-list text-2xl"></i>
                     </button>
                 </div>
@@ -95,547 +117,703 @@
     </nav>
 
     <!-- Mobile Menu Overlay -->
-    <div id="mobile-menu-overlay" class="fixed inset-0 bg-slate-900/20 backdrop-blur-sm z-[60] hidden opacity-0 transition-opacity duration-300"></div>
+    <div id="mobile-menu-overlay" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-[60] opacity-0 pointer-events-none transition-opacity duration-300"></div>
     
     <!-- Mobile Menu Drawer -->
-    <div id="mobile-menu" class="fixed top-0 right-0 rtl:right-auto rtl:left-0 w-[300px] h-full bg-white dark:bg-slate-900 shadow-2xl z-[70] transform translate-x-full rtl:-translate-x-full transition-transform duration-300 flex flex-col">
-        <div class="p-6 border-b border-slate-100 dark:border-slate-800 flex justify-between items-center">
-            <span class="font-display font-bold text-xl text-slate-900 dark:text-white">Menu</span>
-            <button id="mobile-menu-close" class="p-2 text-slate-400 hover:text-slate-600 dark:hover:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg transition">
-                <i class="ph ph-x text-xl"></i>
-            </button>
+    <div id="mobile-menu" class="fixed top-0 w-[300px] h-full bg-slate-900 shadow-2xl z-[70] transition-transform duration-300 ease-in-out flex flex-col">
+        <div class="p-6 border-b border-white/10 flex justify-between items-center">
+            <span class="font-display font-bold text-xl text-white">Menu</span>
+            <div class="flex items-center gap-2">
+                <button class="rtl-toggle-btn p-2 text-slate-400 hover:text-primary-400 hover:bg-white/10 rounded-lg transition" title="Toggle RTL/LTR">
+                    <i class="ph ph-globe text-xl"></i>
+                </button>
+                <button id="mobile-menu-close" class="p-2 text-slate-400 hover:text-white hover:bg-white/10 rounded-lg transition">
+                    <i class="ph ph-x text-xl"></i>
+                </button>
+            </div>
         </div>
         <div class="flex-1 overflow-y-auto p-6 space-y-2">
-            <a href="index.html" class="block px-4 py-3 rounded-xl bg-primary-50 dark:bg-primary-900/20 text-primary-700 dark:text-primary-400 font-medium">Home</a>
-            <a href="services.html" class="block px-4 py-3 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 font-medium">Solutions</a>
-            <a href="pricing.html" class="block px-4 py-3 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 font-medium">Pricing</a>
-            <a href="about.html" class="block px-4 py-3 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 font-medium">Company</a>
-            <div class="my-4 border-t border-slate-100 dark:border-slate-800"></div>
-            <a href="login.html" class="block px-4 py-3 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 font-medium">Log in</a>
-            <a href="register.html" class="block w-full py-3 rounded-xl bg-primary-600 text-white text-center font-bold shadow-lg shadow-primary-500/30 mt-4">Get Started Free</a>
+            <a href="index.html" class="block px-4 py-3 rounded-xl text-slate-300 hover:bg-white/10 font-medium">Home</a>
+            <a href="services.html" class="block px-4 py-3 rounded-xl text-slate-300 hover:bg-white/10 font-medium">Solutions</a>
+            <a href="pricing.html" class="block px-4 py-3 rounded-xl text-slate-300 hover:bg-white/10 font-medium">Pricing</a>
+            <a href="about.html" class="block px-4 py-3 rounded-xl text-slate-300 hover:bg-white/10 font-medium">Company</a>
+            <div class="my-4 border-t border-white/10"></div>
+            <p class="px-4 text-xs uppercase tracking-wider text-slate-500 mb-2">Dashboards</p>
+            <a href="user-dashboard.html" class="block px-4 py-3 rounded-xl text-slate-300 hover:bg-white/10 font-medium">
+                <i class="ph ph-user mr-2"></i>User Dashboard
+            </a>
+            <a href="admin-dashboard.html" class="block px-4 py-3 rounded-xl bg-primary-600/20 text-primary-400 font-medium">
+                <i class="ph ph-shield-check mr-2"></i>Admin Dashboard
+            </a>
+            <div class="my-4 border-t border-white/10"></div>
+            <p class="px-4 text-xs uppercase tracking-wider text-slate-500 mb-2">Admin Navigation</p>
+            <a href="#" class="block px-4 py-3 rounded-xl bg-white/10 text-white font-medium">
+                <i class="ph ph-compass mr-2"></i>Overview
+            </a>
+            <a href="#" class="block px-4 py-3 rounded-xl text-slate-300 hover:bg-white/10 font-medium">
+                <i class="ph ph-users mr-2"></i>Users
+            </a>
+            <a href="#" class="block px-4 py-3 rounded-xl text-slate-300 hover:bg-white/10 font-medium">
+                <i class="ph ph-currency-circle-dollar mr-2"></i>Revenue
+            </a>
+            <a href="#" class="block px-4 py-3 rounded-xl text-slate-300 hover:bg-white/10 font-medium">
+                <i class="ph ph-activity mr-2"></i>System Health
+            </a>
+            <a href="#" class="block px-4 py-3 rounded-xl text-slate-300 hover:bg-white/10 font-medium">
+                <i class="ph ph-gear-six mr-2"></i>Settings
+            </a>
+            <div class="my-4 border-t border-white/10"></div>
+            <a href="login.html" class="block w-full py-3 rounded-xl bg-white/10 border border-white/20 text-white text-center font-medium mt-4">Logout</a>
         </div>
     </div>
 
-    <div class="flex rtl:flex-row-reverse h-screen overflow-hidden pt-20">
-
-        <!-- Sidebar (Darker for Admin) -->
-        <aside
-            class="fixed inset-y-0 left-0 rtl:left-auto rtl:right-0 top-20 z-40 w-64 bg-slate-950 text-slate-400 border-r rtl:border-r-0 rtl:border-l border-slate-900 transform -translate-x-full rtl:translate-x-full md:rtl:translate-x-0 transition-transform duration-300 md:translate-x-0 md:static md:flex flex-col">
-            <div class="h-20 flex items-center px-6 border-b border-slate-900">
-                <div class="flex items-center gap-2">
-                    <div
-                        class="w-8 h-8 rounded-lg bg-red-600 flex items-center justify-center text-white font-bold text-xl">
-                        A</div>
-                    <span class="font-display font-bold text-xl text-white">AdminPanel</span>
-                </div>
+    <!-- Desktop Left Sidebar -->
+    <aside id="desktop-sidebar" class="hidden md:flex fixed top-16 sm:top-20 left-0 h-[calc(100vh-4rem)] sm:h-[calc(100vh-5rem)] w-64 bg-slate-900/80 border-r border-white/10 backdrop-blur-xl z-40 flex-col">
+        <div class="p-4 flex-1">
+            <div class="mb-6">
+                <h3 class="text-xs uppercase tracking-wider text-slate-500 font-semibold px-3 mb-2">Navigation</h3>
             </div>
-
-            <div class="flex-1 overflow-y-auto py-6 px-4 space-y-1">
-                <a href="#"
-                    class="flex items-center gap-3 px-4 py-3 bg-red-600/10 text-red-500 rounded-xl font-medium transition">
-                    <i class="ph ph-chart-bar text-xl"></i> Overview
+            <nav class="space-y-1">
+                <a href="#" class="flex items-center gap-3 px-3 py-2.5 rounded-xl bg-white/10 text-white font-medium">
+                    <i class="ph ph-compass text-lg"></i>Overview
                 </a>
-                <a href="#"
-                    class="flex items-center gap-3 px-4 py-3 hover:bg-slate-900 hover:text-slate-200 rounded-xl font-medium transition">
-                    <i class="ph ph-users text-xl"></i> Users
+                <a href="#" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-400 hover:text-white hover:bg-white/5 font-medium transition">
+                    <i class="ph ph-users text-lg"></i>Users
                 </a>
-                <a href="#"
-                    class="flex items-center gap-3 px-4 py-3 hover:bg-slate-900 hover:text-slate-200 rounded-xl font-medium transition">
-                    <i class="ph ph-database text-xl"></i> Database
+                <a href="#" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-400 hover:text-white hover:bg-white/5 font-medium transition">
+                    <i class="ph ph-currency-circle-dollar text-lg"></i>Revenue
                 </a>
-                <a href="#"
-                    class="flex items-center gap-3 px-4 py-3 hover:bg-slate-900 hover:text-slate-200 rounded-xl font-medium transition">
-                    <i class="ph ph-warning-octagon text-xl"></i> Errors
+                <a href="#" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-400 hover:text-white hover:bg-white/5 font-medium transition">
+                    <i class="ph ph-activity text-lg"></i>System Health
                 </a>
-            </div>
-
-            <div class="p-6 border-t border-slate-900">
-                <a href="index.html"
-                    class="flex items-center gap-3 px-4 py-2 text-slate-400 hover:text-white transition">
-                    <i class="ph ph-sign-out text-xl"></i> Logout
+                <a href="#" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-400 hover:text-white hover:bg-white/5 font-medium transition">
+                    <i class="ph ph-gear-six text-lg"></i>Settings
                 </a>
-            </div>
-        </aside>
-
-        <!-- Main Content -->
-        <div class="flex-1 flex flex-col h-full overflow-hidden bg-slate-100">
-
-            <!-- Content -->
-            <main class="flex-1 overflow-y-auto p-8">
-                <div class="max-w-7xl mx-auto space-y-8">
-
-                    <!-- Stats Row -->
-                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 animate-fade-in-up">
-                        <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover-lift">
-                            <div class="flex justify-between items-start mb-4">
-                                <div>
-                                    <p class="text-sm text-slate-500 font-medium mb-1">Monthly Recurring Revenue</p>
-                                    <h3 class="text-3xl font-bold text-slate-900">$124,500</h3>
-                                </div>
-                                <div class="w-10 h-10 rounded-lg bg-green-100 flex items-center justify-center">
-                                    <i class="ph ph-trend-up text-green-600 text-xl"></i>
-                                </div>
-                            </div>
-                            <div class="flex items-center gap-1 text-green-500 text-sm mt-2 font-medium">
-                                <i class="ph ph-arrow-up"></i> +12% from last month
-                            </div>
-                            <!-- Mini Area Chart -->
-                            <svg class="w-full h-12 mt-3" viewBox="0 0 200 40">
-                                <defs>
-                                    <linearGradient id="greenGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-                                        <stop offset="0%" style="stop-color:#10b981;stop-opacity:0.3" />
-                                        <stop offset="100%" style="stop-color:#10b981;stop-opacity:0" />
-                                    </linearGradient>
-                                </defs>
-                                <path d="M0,35 L20,30 L40,28 L60,32 L80,25 L100,20 L120,22 L140,18 L160,15 L180,12 L200,10 L200,40 L0,40 Z"
-                                    fill="url(#greenGradient)" />
-                                <path d="M0,35 L20,30 L40,28 L60,32 L80,25 L100,20 L120,22 L140,18 L160,15 L180,12 L200,10"
-                                    stroke="#10b981" stroke-width="2" fill="none" />
-                            </svg>
-                        </div>
-                        <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover-lift delay-100">
-                            <div class="flex justify-between items-start mb-4">
-                                <div>
-                                    <p class="text-sm text-slate-500 font-medium mb-1">Active Users</p>
-                                    <h3 class="text-3xl font-bold text-slate-900">12,840</h3>
-                                </div>
-                                <div class="w-10 h-10 rounded-lg bg-blue-100 flex items-center justify-center">
-                                    <i class="ph ph-users text-blue-600 text-xl"></i>
-                                </div>
-                            </div>
-                            <div class="flex items-center gap-1 text-green-500 text-sm mt-2 font-medium">
-                                <i class="ph ph-arrow-up"></i> +5.4%
-                            </div>
-                            <!-- Mini Line Chart -->
-                            <svg class="w-full h-12 mt-3" viewBox="0 0 200 40">
-                                <path d="M0,30 L25,28 L50,32 L75,25 L100,27 L125,22 L150,20 L175,18 L200,15"
-                                    stroke="#3b82f6" stroke-width="2.5" fill="none" stroke-linecap="round" />
-                            </svg>
-                        </div>
-                        <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover-lift delay-200">
-                            <div class="flex justify-between items-start mb-4">
-                                <div>
-                                    <p class="text-sm text-slate-500 font-medium mb-1">Churn Rate</p>
-                                    <h3 class="text-3xl font-bold text-slate-900">2.1%</h3>
-                                </div>
-                                <div class="w-10 h-10 rounded-lg bg-red-100 flex items-center justify-center">
-                                    <i class="ph ph-warning text-red-600 text-xl"></i>
-                                </div>
-                            </div>
-                            <div class="flex items-center gap-1 text-red-500 text-sm mt-2 font-medium">
-                                <i class="ph ph-arrow-up"></i> +0.4%
-                            </div>
-                            <!-- Mini Bar Chart -->
-                            <svg class="w-full h-12 mt-3" viewBox="0 0 200 40">
-                                <rect x="0" y="25" width="15" height="15" fill="#ef4444" rx="2" />
-                                <rect x="25" y="20" width="15" height="20" fill="#ef4444" rx="2" />
-                                <rect x="50" y="22" width="15" height="18" fill="#ef4444" rx="2" />
-                                <rect x="75" y="18" width="15" height="22" fill="#ef4444" rx="2" />
-                                <rect x="100" y="15" width="15" height="25" fill="#ef4444" rx="2" />
-                                <rect x="125" y="20" width="15" height="20" fill="#ef4444" rx="2" />
-                                <rect x="150" y="23" width="15" height="17" fill="#ef4444" rx="2" />
-                                <rect x="175" y="19" width="15" height="21" fill="#ef4444" rx="2" />
-                            </svg>
-                        </div>
-                        <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover-lift delay-300">
-                            <div class="flex justify-between items-start mb-4">
-                                <div>
-                                    <p class="text-sm text-slate-500 font-medium mb-1">Server Load</p>
-                                    <h3 class="text-3xl font-bold text-slate-900">42%</h3>
-                                </div>
-                                <div class="w-10 h-10 rounded-lg bg-purple-100 flex items-center justify-center">
-                                    <i class="ph ph-cpu text-purple-600 text-xl"></i>
-                                </div>
-                            </div>
-                            <div class="w-full bg-slate-100 rounded-full h-2 mt-4">
-                                <div class="bg-gradient-to-r from-green-500 to-green-600 h-2 rounded-full progress-animate" style="width: 42%"></div>
-                            </div>
-                            <!-- Mini Donut Chart -->
-                            <div class="flex items-center justify-center mt-3">
-                                <svg class="w-16 h-16 transform -rotate-90">
-                                    <circle cx="32" cy="32" r="28" stroke="#e2e8f0" stroke-width="8" fill="none"/>
-                                    <circle cx="32" cy="32" r="28" stroke="#8b5cf6" stroke-width="8" fill="none"
-                                        stroke-dasharray="176" stroke-dashoffset="102" stroke-linecap="round" class="chart-animate"/>
-                                </svg>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Large Graph Section -->
-                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-8 animate-fade-in-up delay-400">
-                        <!-- Revenue Trend Chart -->
-                        <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
-                            <div class="flex justify-between items-center mb-6">
-                                <div>
-                                    <h3 class="font-bold text-lg text-slate-900">Revenue Trend</h3>
-                                    <p class="text-sm text-slate-500">Last 12 months</p>
-                                </div>
-                                <select class="bg-slate-50 border border-slate-200 rounded-lg text-sm px-3 py-2 outline-none">
-                                    <option>Last 12 Months</option>
-                                    <option>Last 6 Months</option>
-                                    <option>Last 30 Days</option>
-                                </select>
-                            </div>
-                            <svg class="w-full h-64" viewBox="0 0 800 250">
-                                <defs>
-                                    <linearGradient id="revenueGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-                                        <stop offset="0%" style="stop-color:#6366f1;stop-opacity:0.3" />
-                                        <stop offset="100%" style="stop-color:#6366f1;stop-opacity:0" />
-                                    </linearGradient>
-                                </defs>
-                                <!-- Grid Lines -->
-                                <line x1="0" y1="200" x2="800" y2="200" stroke="#e2e8f0" stroke-width="1" />
-                                <line x1="0" y1="150" x2="800" y2="150" stroke="#e2e8f0" stroke-width="1" stroke-dasharray="4 4" />
-                                <line x1="0" y1="100" x2="800" y2="100" stroke="#e2e8f0" stroke-width="1" stroke-dasharray="4 4" />
-                                <line x1="0" y1="50" x2="800" y2="50" stroke="#e2e8f0" stroke-width="1" stroke-dasharray="4 4" />
-                                <!-- Area -->
-                                <path d="M0,200 L67,180 L134,170 L201,160 L268,155 L335,140 L402,130 L469,120 L536,110 L603,95 L670,85 L737,75 L800,60 L800,250 L0,250 Z"
-                                    fill="url(#revenueGradient)" />
-                                <!-- Line -->
-                                <path d="M0,200 L67,180 L134,170 L201,160 L268,155 L335,140 L402,130 L469,120 L536,110 L603,95 L670,85 L737,75 L800,60"
-                                    stroke="#6366f1" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round" />
-                                <!-- Data Points -->
-                                <circle cx="0" cy="200" r="4" fill="#6366f1" />
-                                <circle cx="134" cy="170" r="4" fill="#6366f1" />
-                                <circle cx="268" cy="155" r="4" fill="#6366f1" />
-                                <circle cx="402" cy="130" r="4" fill="#6366f1" />
-                                <circle cx="536" cy="110" r="4" fill="#6366f1" />
-                                <circle cx="670" cy="85" r="4" fill="#6366f1" />
-                                <circle cx="800" cy="60" r="4" fill="#6366f1" />
-                            </svg>
-                            <div class="grid grid-cols-3 gap-4 mt-6 text-center">
-                                <div>
-                                    <p class="text-2xl font-bold text-green-600">+24%</p>
-                                    <p class="text-xs text-slate-500">Growth Rate</p>
-                                </div>
-                                <div>
-                                    <p class="text-2xl font-bold text-slate-900">$1.2M</p>
-                                    <p class="text-xs text-slate-500">Yearly Total</p>
-                                </div>
-                                <div>
-                                    <p class="text-2xl font-bold text-primary-600">$103K</p>
-                                    <p class="text-xs text-slate-500">Average/Month</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- User Growth Chart -->
-                        <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
-                            <div class="flex justify-between items-center mb-6">
-                                <div>
-                                    <h3 class="font-bold text-lg text-slate-900">User Growth</h3>
-                                    <p class="text-sm text-slate-500">New vs Returning</p>
-                                </div>
-                                <div class="flex gap-3 text-sm">
-                                    <div class="flex items-center gap-1">
-                                        <span class="w-3 h-3 rounded-full bg-primary-600"></span>
-                                        <span class="text-slate-600">New</span>
-                                    </div>
-                                    <div class="flex items-center gap-1">
-                                        <span class="w-3 h-3 rounded-full bg-teal-500"></span>
-                                        <span class="text-slate-600">Returning</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <svg class="w-full h-64" viewBox="0 0 800 250">
-                                <!-- Grid -->
-                                <line x1="0" y1="230" x2="800" y2="230" stroke="#e2e8f0" stroke-width="2" />
-                                <!-- New Users Bars (Primary) -->
-                                <rect x="20" y="180" width="40" height="50" fill="#6366f1" rx="4" class="animate-scale-in" />
-                                <rect x="100" y="160" width="40" height="70" fill="#6366f1" rx="4" class="animate-scale-in delay-100" />
-                                <rect x="180" y="140" width="40" height="90" fill="#6366f1" rx="4" class="animate-scale-in delay-200" />
-                                <rect x="260" y="120" width="40" height="110" fill="#6366f1" rx="4" class="animate-scale-in delay-300" />
-                                <rect x="340" y="100" width="40" height="130" fill="#6366f1" rx="4" class="animate-scale-in delay-400" />
-                                <rect x="420" y="90" width="40" height="140" fill="#6366f1" rx="4" class="animate-scale-in delay-500" />
-                                <rect x="500" y="75" width="40" height="155" fill="#6366f1" rx="4" class="animate-scale-in delay-700" />
-                                <rect x="580" y="60" width="40" height="170" fill="#6366f1" rx="4" class="animate-scale-in delay-700" />
-                                <rect x="660" y="50" width="40" height="180" fill="#6366f1" rx="4" class="animate-scale-in delay-1000" />
-                                <rect x="740" y="40" width="40" height="190" fill="#6366f1" rx="4" class="animate-scale-in delay-1000" />
-                                <!-- Returning Users Bars (Teal) -->
-                                <rect x="60" y="200" width="40" height="30" fill="#14b8a6" rx="4" class="animate-scale-in delay-100" />
-                                <rect x="140" y="190" width="40" height="40" fill="#14b8a6" rx="4" class="animate-scale-in delay-200" />
-                                <rect x="220" y="180" width="40" height="50" fill="#14b8a6" rx="4" class="animate-scale-in delay-300" />
-                                <rect x="300" y="170" width="40" height="60" fill="#14b8a6" rx="4" class="animate-scale-in delay-400" />
-                                <rect x="380" y="160" width="40" height="70" fill="#14b8a6" rx="4" class="animate-scale-in delay-500" />
-                                <rect x="460" y="150" width="40" height="80" fill="#14b8a6" rx="4" class="animate-scale-in delay-700" />
-                                <rect x="540" y="140" width="40" height="90" fill="#14b8a6" rx="4" class="animate-scale-in delay-700" />
-                                <rect x="620" y="130" width="40" height="100" fill="#14b8a6" rx="4" class="animate-scale-in delay-1000" />
-                                <rect x="700" y="120" width="40" height="110" fill="#14b8a6" rx="4" class="animate-scale-in delay-1000" />
-                            </svg>
-                            <div class="grid grid-cols-2 gap-4 mt-6">
-                                <div class="p-4 bg-indigo-50 rounded-xl">
-                                    <p class="text-2xl font-bold text-primary-600">8,420</p>
-                                    <p class="text-sm text-slate-600">New Users This Month</p>
-                                </div>
-                                <div class="p-4 bg-teal-50 rounded-xl">
-                                    <p class="text-2xl font-bold text-teal-600">4,420</p>
-                                    <p class="text-sm text-slate-600">Returning Users</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Main Section: Users Table & System Health -->
-                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-
-                        <!-- User Table -->
-                        <div
-                            class="lg:col-span-2 bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
-                            <div class="p-6 border-b border-slate-100 flex justify-between items-center">
-                                <h3 class="font-bold text-lg text-slate-900">Recent Signups</h3>
-                                <button class="text-primary-600 text-sm font-medium hover:text-primary-700">View
-                                    All</button>
-                            </div>
-                            <div class="overflow-x-auto">
-                                <table class="w-full text-left text-sm">
-                                    <thead class="bg-slate-50 text-slate-500 font-medium border-b border-slate-100">
-                                        <tr>
-                                            <th class="px-6 py-4">User</th>
-                                            <th class="px-6 py-4">Status</th>
-                                            <th class="px-6 py-4">Plan</th>
-                                            <th class="px-6 py-4 text-right">Action</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody class="divide-y divide-slate-100">
-                                        <tr class="hover:bg-slate-50 transition">
-                                            <td class="px-6 py-4">
-                                                <div class="flex items-center gap-3">
-                                                    <div
-                                                        class="w-8 h-8 rounded-full bg-indigo-100 text-indigo-600 flex items-center justify-center font-bold">
-                                                        JD</div>
-                                                    <div>
-                                                        <p class="font-bold text-slate-900">John Doe</p>
-                                                        <p class="text-slate-500 text-xs">john@example.com</p>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td class="px-6 py-4"><span
-                                                    class="px-2 py-1 rounded-full bg-green-100 text-green-700 text-xs font-bold">Active</span>
-                                            </td>
-                                            <td class="px-6 py-4 text-slate-600">Enterprise</td>
-                                            <td class="px-6 py-4 text-right"><button
-                                                    class="text-slate-400 hover:text-slate-600"><i
-                                                        class="ph ph-dots-three-vertical text-xl"></i></button></td>
-                                        </tr>
-                                        <tr class="hover:bg-slate-50 transition">
-                                            <td class="px-6 py-4">
-                                                <div class="flex items-center gap-3">
-                                                    <div
-                                                        class="w-8 h-8 rounded-full bg-pink-100 text-pink-600 flex items-center justify-center font-bold">
-                                                        AS</div>
-                                                    <div>
-                                                        <p class="font-bold text-slate-900">Alice Smith</p>
-                                                        <p class="text-slate-500 text-xs">alice@test.com</p>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td class="px-6 py-4"><span
-                                                    class="px-2 py-1 rounded-full bg-yellow-100 text-yellow-700 text-xs font-bold">Pending</span>
-                                            </td>
-                                            <td class="px-6 py-4 text-slate-600">Starter</td>
-                                            <td class="px-6 py-4 text-right"><button
-                                                    class="text-slate-400 hover:text-slate-600"><i
-                                                        class="ph ph-dots-three-vertical text-xl"></i></button></td>
-                                        </tr>
-                                        <tr class="hover:bg-slate-50 transition">
-                                            <td class="px-6 py-4">
-                                                <div class="flex items-center gap-3">
-                                                    <div
-                                                        class="w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center font-bold">
-                                                        MR</div>
-                                                    <div>
-                                                        <p class="font-bold text-slate-900">Mike Ross</p>
-                                                        <p class="text-slate-500 text-xs">mike@law.com</p>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td class="px-6 py-4"><span
-                                                    class="px-2 py-1 rounded-full bg-red-100 text-red-700 text-xs font-bold">Churned</span>
-                                            </td>
-                                            <td class="px-6 py-4 text-slate-600">Growth</td>
-                                            <td class="px-6 py-4 text-right"><button
-                                                    class="text-slate-400 hover:text-slate-600"><i
-                                                        class="ph ph-dots-three-vertical text-xl"></i></button></td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-
-                        <!-- System Health -->
-                        <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6">
-                            <h3 class="font-bold text-lg text-slate-900 mb-6">System Health</h3>
-                            <div class="space-y-6">
-                                <div class="flex items-center justify-between">
-                                    <div class="flex items-center gap-3">
-                                        <div class="w-3 h-3 rounded-full bg-green-500 shadow shadow-green-500/50"></div>
-                                        <span class="font-medium text-slate-700">API Server (US-East)</span>
-                                    </div>
-                                    <span class="text-xs text-slate-500 font-mono">12ms</span>
-                                </div>
-                                <div class="flex items-center justify-between">
-                                    <div class="flex items-center gap-3">
-                                        <div class="w-3 h-3 rounded-full bg-green-500 shadow shadow-green-500/50"></div>
-                                        <span class="font-medium text-slate-700">API Server (EU-West)</span>
-                                    </div>
-                                    <span class="text-xs text-slate-500 font-mono">45ms</span>
-                                </div>
-                                <div class="flex items-center justify-between">
-                                    <div class="flex items-center gap-3">
-                                        <div class="w-3 h-3 rounded-full bg-yellow-500 shadow shadow-yellow-500/50">
-                                        </div>
-                                        <span class="font-medium text-slate-700">Database Primary</span>
-                                    </div>
-                                    <span class="text-xs text-slate-500 font-mono">Load: 85%</span>
-                                </div>
-                                <div class="flex items-center justify-between">
-                                    <div class="flex items-center gap-3">
-                                        <div class="w-3 h-3 rounded-full bg-green-500 shadow shadow-green-500/50"></div>
-                                        <span class="font-medium text-slate-700">Worker Nodes</span>
-                                    </div>
-                                    <span class="text-xs text-slate-500 font-mono">Healthy</span>
-                                </div>
-                            </div>
-
-                            <div class="mt-8 pt-6 border-t border-slate-100">
-                                <h4 class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-4">Recent Alerts
-                                </h4>
-                                <div class="space-y-3">
-                                    <div class="flex gap-3 text-sm">
-                                        <i class="ph ph-warning text-yellow-500 text-lg"></i>
-                                        <p class="text-slate-600 leading-tight">High latency detected in AP-South
-                                            region.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Support Tickets & Logs -->
-                        <div class="col-span-1 lg:col-span-3 grid grid-cols-1 md:grid-cols-2 gap-8">
-                            <!-- Support Tickets -->
-                            <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6">
-                                <div class="flex justify-between items-center mb-6">
-                                    <h3 class="font-bold text-lg text-slate-900">Support Tickets</h3>
-                                    <span class="px-2 py-1 rounded bg-red-100 text-red-600 text-xs font-bold">3
-                                        New</span>
-                                </div>
-                                <div class="space-y-4">
-                                    <div class="flex gap-4 p-3 hover:bg-slate-50 rounded-xl transition cursor-pointer">
-                                        <div
-                                            class="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center text-slate-500 shrink-0 font-bold">
-                                            BS
-                                        </div>
-                                        <div>
-                                            <p class="text-sm font-bold text-slate-900">API Latency Issues</p>
-                                            <p class="text-xs text-slate-500 line-clamp-1">Bob Smith • High Priority •
-                                                2h ago</p>
-                                        </div>
-                                    </div>
-                                    <div class="flex gap-4 p-3 hover:bg-slate-50 rounded-xl transition cursor-pointer">
-                                        <div
-                                            class="w-10 h-10 rounded-full bg-purple-100 flex items-center justify-center text-purple-600 shrink-0 font-bold">
-                                            JL
-                                        </div>
-                                        <div>
-                                            <p class="text-sm font-bold text-slate-900">Billing Question</p>
-                                            <p class="text-xs text-slate-500 line-clamp-1">Jane Lee • Medium Priority •
-                                                5h ago</p>
-                                        </div>
-                                    </div>
-                                    <div class="flex gap-4 p-3 hover:bg-slate-50 rounded-xl transition cursor-pointer">
-                                        <div
-                                            class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 shrink-0 font-bold">
-                                            DK
-                                        </div>
-                                        <div>
-                                            <p class="text-sm font-bold text-slate-900">Feature Request</p>
-                                            <p class="text-xs text-slate-500 line-clamp-1">David Kim • Low Priority • 1d
-                                                ago</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- System Logs -->
-                            <div
-                                class="bg-slate-900 rounded-2xl shadow-sm p-6 text-slate-300 font-mono text-xs overflow-hidden">
-                                <h3 class="font-bold text-lg text-white font-sans mb-4">System Console</h3>
-                                <div class="space-y-2 h-48 overflow-y-auto no-scrollbar">
-                                    <p class="text-green-400">>[14:20:05] Auto-scaling group 'worker-pool-a' scaled up
-                                        to 5 instances.</p>
-                                    <p>>[14:18:22] Database backup completed successfully (3.2GB).</p>
-                                    <p class="text-yellow-400">>[14:15:10] Warning: Redis cache memory usage at 85%.</p>
-                                    <p>>[14:12:45] Deployment #4829 deployed to staging via CI/CD.</p>
-                                    <p class="text-red-400">>[14:10:01] Error: Rate limit exceeded for IP 192.168.1.1
-                                    </p>
-                                    <p>>[14:05:30] User 9283 updated organization settings.</p>
-                                    <p>>[14:00:00] Cron job 'daily_digest' started.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </main>
-        </div>
-    </div>
-
-    <!-- Footer -->
-    <footer class="bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 pt-16 pb-8">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 mb-12">
-                <div class="col-span-2 lg:col-span-2">
-                    <a href="index.html" class="flex items-center gap-2 mb-4">
-                        <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-violet-500 to-pink-500 flex items-center justify-center text-white shadow-lg shadow-violet-500/30 group-hover:scale-110 transition-transform duration-300"><i class="ph-bold ph-planet"></i></div>
-                        <span class="font-display font-bold text-xl text-slate-900 dark:text-white">OrbitScale</span>
-                    </a>
-                    <p class="text-slate-500 dark:text-slate-400 text-sm max-w-xs mb-6">Making cloud infrastructure accessible, scalable, and secure for everyone.</p>
-                    <div class="flex gap-4">
-                        <a href="#" class="w-10 h-10 rounded-full bg-slate-50 dark:bg-slate-800 flex items-center justify-center text-slate-500 dark:text-slate-400 hover:bg-primary-50 dark:hover:bg-primary-900/30 hover:text-primary-600 dark:hover:text-primary-400 transition"><i class="ph-fill ph-twitter-logo text-xl"></i></a>
-                        <a href="#" class="w-10 h-10 rounded-full bg-slate-50 dark:bg-slate-800 flex items-center justify-center text-slate-500 dark:text-slate-400 hover:bg-primary-50 dark:hover:bg-primary-900/30 hover:text-primary-600 dark:hover:text-primary-400 transition"><i class="ph-fill ph-github-logo text-xl"></i></a>
-                        <a href="#" class="w-10 h-10 rounded-full bg-slate-50 dark:bg-slate-800 flex items-center justify-center text-slate-500 dark:text-slate-400 hover:bg-primary-50 dark:hover:bg-primary-900/30 hover:text-primary-600 dark:hover:text-primary-400 transition"><i class="ph-fill ph-linkedin-logo text-xl"></i></a>
-                    </div>
-                </div>
-                <div>
-                    <h4 class="font-bold text-slate-900 dark:text-white mb-4">Product</h4>
-                    <ul class="space-y-2 text-sm text-slate-600 dark:text-slate-400">
-                        <li><a href="#" class="hover:text-primary-600 dark:hover:text-primary-400 transition">Features</a></li>
-                        <li><a href="#" class="hover:text-primary-600 dark:hover:text-primary-400 transition">Integrations</a></li>
-                        <li><a href="pricing.html" class="hover:text-primary-600 dark:hover:text-primary-400 transition">Pricing</a></li>
-                        <li><a href="#" class="hover:text-primary-600 dark:hover:text-primary-400 transition">Changelog</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="font-bold text-slate-900 dark:text-white mb-4">Resources</h4>
-                    <ul class="space-y-2 text-sm text-slate-600 dark:text-slate-400">
-                        <li><a href="#" class="hover:text-primary-600 dark:hover:text-primary-400 transition">Documentation</a></li>
-                        <li><a href="#" class="hover:text-primary-600 dark:hover:text-primary-400 transition">API Reference</a></li>
-                        <li><a href="blog.html" class="hover:text-primary-600 dark:hover:text-primary-400 transition">Blog</a></li>
-                        <li><a href="#" class="hover:text-primary-600 dark:hover:text-primary-400 transition">Community</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="font-bold text-slate-900 dark:text-white mb-4">Company</h4>
-                    <ul class="space-y-2 text-sm text-slate-600 dark:text-slate-400">
-                        <li><a href="about.html" class="hover:text-primary-600 dark:hover:text-primary-400 transition">About</a></li>
-                        <li><a href="#" class="hover:text-primary-600 dark:hover:text-primary-400 transition">Careers</a></li>
-                        <li><a href="#" class="hover:text-primary-600 dark:hover:text-primary-400 transition">Legal</a></li>
-                        <li><a href="contact.html" class="hover:text-primary-600 dark:hover:text-primary-400 transition">Contact</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="pt-8 border-t border-slate-100 dark:border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4">
-                <p class="text-slate-400 text-sm">© 2025 OrbitScale Inc. All rights reserved.</p>
-                <div class="flex gap-6 text-sm text-slate-500 dark:text-slate-400">
-                    <a href="#" class="hover:text-slate-900 dark:hover:text-white">Privacy Policy</a>
-                    <a href="#" class="hover:text-slate-900 dark:hover:text-white">Terms of Service</a>
-                </div>
+            </nav>
+            <div class="my-6 border-t border-white/10"></div>
+            <div class="space-y-1">
+                <h3 class="text-xs uppercase tracking-wider text-slate-500 font-semibold px-3 mb-2">Quick Actions</h3>
+                <a href="#" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-400 hover:text-white hover:bg-white/5 font-medium transition">
+                    <i class="ph ph-plus-circle text-lg"></i>Add User
+                </a>
+                <a href="#" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-400 hover:text-white hover:bg-white/5 font-medium transition">
+                    <i class="ph ph-download text-lg"></i>Export Data
+                </a>
+                <a href="#" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-400 hover:text-white hover:bg-white/5 font-medium transition">
+                    <i class="ph ph-clipboard-text text-lg"></i>View Logs
+                </a>
             </div>
         </div>
-    </footer>
+        <div class="p-4 border-t border-white/10">
+            <span class="text-xs text-slate-500">Admin Panel v1.7.2</span>
+        </div>
+    </aside>
 
-    <script src="js/main.js"></script>
-    <script src="js/rtl-toggle.js"></script>
+    <main id="main-content" class="pt-16 sm:pt-20 pb-12 md:ml-64">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-5 sm:space-y-6 lg:space-y-8 pt-5 sm:pt-6">
+            
+            <!-- Admin Hero -->
+            <section class="relative overflow-hidden bg-gradient-to-br from-red-600/20 via-slate-900 to-orange-600/20 border border-white/10 rounded-2xl sm:rounded-2xl lg:rounded-3xl p-5 sm:p-6 lg:p-8 dashboard-hero">
+                <div class="absolute top-0 right-0 w-32 sm:w-64 h-32 sm:h-64 bg-red-500/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+                <div class="absolute bottom-0 left-0 w-24 sm:w-48 h-24 sm:h-48 bg-orange-500/20 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2"></div>
+                <div class="relative">
+                    <div class="flex items-center gap-2 mb-2 sm:mb-3 flex-wrap">
+                        <span class="px-2.5 sm:px-3 py-1 rounded-full bg-red-500/20 text-red-400 text-xs font-medium">
+                            <i class="ph ph-shield-check mr-1"></i>Admin Access
+                        </span>
+                        <span class="text-slate-400 text-xs sm:text-sm hidden sm:inline">Orbital Command</span>
+                    </div>
+                    <h1 class="text-xl sm:text-2xl lg:text-3xl font-display font-bold text-white mb-2 sm:mb-2">Welcome, Administrator 🛡️</h1>
+                    <p class="text-slate-400 text-sm sm:text-sm lg:text-base max-w-lg mb-4">Monitor platform health, manage users, and track revenue from your command center.</p>
+                    <div class="flex flex-wrap gap-2 sm:gap-3 dashboard-header-actions">
+                        <button class="flex-1 sm:flex-none px-4 sm:px-5 py-2.5 sm:py-2.5 rounded-xl bg-red-600 text-white font-medium hover:bg-red-700 transition shadow-lg shadow-red-600/30 text-sm">
+                            <i class="ph ph-plus-circle mr-2"></i>Add User
+                        </button>
+                        <button class="flex-1 sm:flex-none px-4 sm:px-5 py-2.5 sm:py-2.5 rounded-xl bg-white/10 border border-white/20 text-white font-medium hover:bg-white/20 transition text-sm">
+                            <i class="ph ph-download-simple mr-2"></i>Export Data
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- KPIs Grid -->
+            <section class="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-4 dashboard-grid-4">
+                <div class="glass-card border border-white/10 rounded-xl sm:rounded-xl lg:rounded-2xl p-4 sm:p-4 lg:p-5 group hover:border-emerald-500/50 transition-all duration-300">
+                    <div class="flex items-center justify-between mb-3">
+                        <div class="w-10 h-10 sm:w-10 sm:h-10 rounded-xl bg-emerald-500/20 flex items-center justify-center text-emerald-400">
+                            <i class="ph ph-currency-dollar text-lg sm:text-xl"></i>
+                        </div>
+                        <span class="text-emerald-400 text-xs font-medium">+8.2%</span>
+                    </div>
+                    <p class="text-2xl sm:text-2xl lg:text-3xl font-bold text-white mb-1">$1.8M</p>
+                    <p class="text-xs sm:text-xs lg:text-sm text-slate-400">Total Revenue</p>
+                    <div id="spark-rev" class="sparkline-container mt-1 sm:mt-2 hidden sm:block"></div>
+                </div>
+                <div class="glass-card border border-white/10 rounded-xl sm:rounded-xl lg:rounded-2xl p-4 sm:p-4 lg:p-5 group hover:border-purple-500/50 transition-all duration-300">
+                    <div class="flex items-center justify-between mb-3">
+                        <div class="w-10 h-10 sm:w-10 sm:h-10 rounded-xl bg-purple-500/20 flex items-center justify-center text-purple-400">
+                            <i class="ph ph-users text-lg sm:text-xl"></i>
+                        </div>
+                        <span class="text-blue-400 text-xs font-medium">1,204 live</span>
+                    </div>
+                    <p class="text-2xl sm:text-2xl lg:text-3xl font-bold text-white mb-1">48.3k</p>
+                    <p class="text-xs sm:text-xs lg:text-sm text-slate-400">Active Users</p>
+                    <div id="spark-users" class="sparkline-container mt-1 sm:mt-2 hidden sm:block"></div>
+                </div>
+                <div class="glass-card border border-white/10 rounded-xl sm:rounded-xl lg:rounded-2xl p-4 sm:p-4 lg:p-5 group hover:border-emerald-500/50 transition-all duration-300">
+                    <div class="flex items-center justify-between mb-3">
+                        <div class="w-10 h-10 sm:w-10 sm:h-10 rounded-xl bg-emerald-500/20 flex items-center justify-center text-emerald-400">
+                            <i class="ph ph-trend-down text-lg sm:text-xl"></i>
+                        </div>
+                        <span class="text-emerald-400 text-xs font-medium">-0.6%</span>
+                    </div>
+                    <p class="text-2xl sm:text-2xl lg:text-3xl font-bold text-white mb-1">2.4%</p>
+                    <p class="text-xs sm:text-xs lg:text-sm text-slate-400">Churn Rate</p>
+                    <div id="spark-churn" class="sparkline-container mt-1 sm:mt-2 hidden sm:block"></div>
+                </div>
+                <div class="glass-card border border-white/10 rounded-xl sm:rounded-xl lg:rounded-2xl p-4 sm:p-4 lg:p-5 group hover:border-orange-500/50 transition-all duration-300">
+                    <div class="flex items-center justify-between mb-3">
+                        <div class="w-10 h-10 sm:w-10 sm:h-10 rounded-xl bg-orange-500/20 flex items-center justify-center text-orange-400">
+                            <i class="ph ph-hard-drives text-lg sm:text-xl"></i>
+                        </div>
+                        <span class="text-orange-400 text-xs font-medium">54% avg</span>
+                    </div>
+                    <p class="text-2xl sm:text-2xl lg:text-3xl font-bold text-white mb-1">72%</p>
+                    <p class="text-xs sm:text-xs lg:text-sm text-slate-400">Server Load</p>
+                    <div id="spark-load" class="sparkline-container mt-1 sm:mt-2 hidden sm:block"></div>
+                </div>
+            </section>
+
+            <!-- Revenue Chart + Support Tickets -->
+            <section class="grid lg:grid-cols-3 gap-4 sm:gap-4 lg:gap-6">
+                <!-- Revenue Chart -->
+                <div class="lg:col-span-2 glass-card border border-white/10 rounded-xl sm:rounded-xl lg:rounded-2xl p-5 sm:p-5 lg:p-6">
+                    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-5">
+                        <div>
+                            <h3 class="font-semibold text-white text-sm sm:text-base">Revenue Growth</h3>
+                            <p class="text-xs sm:text-sm text-slate-400">ARR & MRR trajectory</p>
+                        </div>
+                        <div class="flex items-center gap-3 text-[10px] sm:text-xs">
+                            <span class="inline-flex items-center gap-1.5"><span class="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-blue-500"></span>ARR</span>
+                            <span class="inline-flex items-center gap-1.5"><span class="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-emerald-500"></span>MRR</span>
+                        </div>
+                    </div>
+                    <div id="area-revenue" class="h-48 sm:h-64 lg:h-72 dashboard-chart"></div>
+                </div>
+
+                <!-- Support Tickets -->
+                <div class="glass-card border border-white/10 rounded-xl sm:rounded-xl lg:rounded-2xl p-5 sm:p-5 lg:p-6 flex flex-col">
+                    <div class="flex items-center justify-between mb-4">
+                        <div>
+                            <h3 class="font-semibold text-white text-sm sm:text-base">Support Queue</h3>
+                            <p class="text-xs sm:text-sm text-slate-400">Recent tickets</p>
+                        </div>
+                        <button class="text-primary-400 hover:text-primary-300 text-xs sm:text-sm font-medium">View all</button>
+                    </div>
+                    <div class="space-y-2 sm:space-y-3 flex-1 overflow-y-auto">
+                        <div class="p-2.5 sm:p-3 rounded-lg sm:rounded-xl bg-red-500/10 border border-red-500/30 group hover:border-red-500/50 transition">
+                            <div class="flex items-start justify-between gap-2">
+                                <span class="text-white text-xs sm:text-sm font-medium line-clamp-1">Payments failing on EU region</span>
+                                <span class="text-emerald-400 text-[10px] sm:text-xs whitespace-nowrap bg-emerald-500/20 px-1.5 sm:px-2 py-0.5 rounded-full">New</span>
+                            </div>
+                            <p class="text-[10px] sm:text-xs text-slate-400 mt-1 flex items-center gap-1 sm:gap-2">
+                                <span class="text-red-400">High</span> • 4m ago
+                            </p>
+                        </div>
+                        <div class="p-2.5 sm:p-3 rounded-lg sm:rounded-xl bg-white/5 border border-white/10 group hover:border-primary-500/50 transition">
+                            <div class="flex items-start justify-between gap-2">
+                                <span class="text-white text-xs sm:text-sm font-medium line-clamp-1">SSO redirect loop</span>
+                                <span class="text-primary-400 text-[10px] sm:text-xs whitespace-nowrap bg-primary-500/20 px-1.5 sm:px-2 py-0.5 rounded-full">Investigating</span>
+                            </div>
+                            <p class="text-[10px] sm:text-xs text-slate-400 mt-1">
+                                <span class="text-amber-400">Medium</span> • 22m ago
+                            </p>
+                        </div>
+                        <div class="p-2.5 sm:p-3 rounded-lg sm:rounded-xl bg-white/5 border border-white/10 group hover:border-white/20 transition">
+                            <div class="flex items-start justify-between gap-2">
+                                <span class="text-white text-xs sm:text-sm font-medium line-clamp-1">Webhook retries spiking</span>
+                                <span class="text-slate-300 text-[10px] sm:text-xs whitespace-nowrap bg-white/10 px-1.5 sm:px-2 py-0.5 rounded-full">Open</span>
+                            </div>
+                            <p class="text-[10px] sm:text-xs text-slate-400 mt-1">
+                                <span class="text-slate-500">Low</span> • 1h ago
+                            </p>
+                        </div>
+                        <div class="hidden sm:block p-2.5 sm:p-3 rounded-lg sm:rounded-xl bg-white/5 border border-white/10 group hover:border-white/20 transition">
+                            <div class="flex items-start justify-between gap-2">
+                                <span class="text-white text-xs sm:text-sm font-medium line-clamp-1">Org invite limits</span>
+                                <span class="text-slate-300 text-[10px] sm:text-xs whitespace-nowrap bg-white/10 px-1.5 sm:px-2 py-0.5 rounded-full">Open</span>
+                            </div>
+                            <p class="text-[10px] sm:text-xs text-slate-400 mt-1">
+                                <span class="text-slate-500">Low</span> • 2h ago
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Users Table -->
+            <section class="glass-card border border-white/10 rounded-xl sm:rounded-xl lg:rounded-2xl p-4 sm:p-5 lg:p-6">
+                <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-4 sm:mb-5">
+                    <div>
+                        <h3 class="font-semibold text-white text-sm sm:text-base">Recent Signups</h3>
+                        <p class="text-xs sm:text-sm text-slate-400">User management table</p>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <div class="relative flex-1 sm:flex-none min-w-[200px]">
+                            <i class="ph ph-magnifying-glass text-slate-400 absolute left-3 top-1/2 -translate-y-1/2 text-sm"></i>
+                            <input type="search" placeholder="Search..." class="w-full sm:w-auto bg-white/5 border border-white/10 rounded-xl text-sm pl-10 pr-4 py-2.5 text-white placeholder:text-slate-500 focus:outline-none focus:border-primary-500/50" />
+                        </div>
+                        <button class="px-4 py-2.5 rounded-xl bg-primary-600/20 text-primary-400 border border-primary-500/30 text-sm font-medium hover:bg-primary-600/30 transition">
+                            <i class="ph ph-download-simple mr-1.5"></i><span class="hidden sm:inline">Export</span>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Mobile Cards View -->
+                <div class="sm:hidden space-y-3">
+                    <div class="p-4 rounded-xl bg-white/5 border border-white/10">
+                        <div class="flex items-center justify-between mb-3">
+                            <div class="flex items-center gap-2.5">
+                                <div class="w-10 h-10 rounded-full bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center text-white text-sm font-bold">AS</div>
+                                <div>
+                                    <p class="font-medium text-white text-sm">Amelia Stone</p>
+                                    <p class="text-xs text-slate-400">amelia@north.io</p>
+                                </div>
+                            </div>
+                            <span class="text-emerald-400 text-xs">Active</span>
+                        </div>
+                        <div class="flex items-center justify-between text-xs">
+                            <span class="px-1.5 py-0.5 rounded-full bg-primary-500/20 text-primary-400 border border-primary-500/30">Pro</span>
+                            <span class="text-slate-400">Jan 3, 2026</span>
+                        </div>
+                    </div>
+                    <div class="p-4 rounded-xl bg-white/5 border border-white/10">
+                        <div class="flex items-center justify-between mb-3">
+                            <div class="flex items-center gap-2.5">
+                                <div class="w-10 h-10 rounded-full bg-gradient-to-br from-emerald-500 to-teal-500 flex items-center justify-center text-white text-sm font-bold">KR</div>
+                                <div>
+                                    <p class="font-medium text-white text-sm">Khalid Rahman</p>
+                                    <p class="text-xs text-slate-400">k.rahman@aurora.dev</p>
+                                </div>
+                            </div>
+                            <span class="text-amber-400 text-xs">Trial</span>
+                        </div>
+                        <div class="flex items-center justify-between text-[10px]">
+                            <span class="px-1.5 py-0.5 rounded-full bg-white/10 text-slate-300 border border-white/10">Free</span>
+                            <span class="text-slate-400">Jan 2, 2026</span>
+                        </div>
+                    </div>
+                    <div class="p-4 rounded-xl bg-white/5 border border-white/10">
+                        <div class="flex items-center justify-between mb-3">
+                            <div class="flex items-center gap-2.5">
+                                <div class="w-10 h-10 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center text-white text-sm font-bold">SL</div>
+                                <div>
+                                    <p class="font-medium text-white text-sm">Sofia Lima</p>
+                                    <p class="text-xs text-slate-400">sofia.l@mercury.io</p>
+                                </div>
+                            </div>
+                            <span class="text-emerald-400 text-xs">Active</span>
+                        </div>
+                        <div class="flex items-center justify-between text-xs">
+                            <span class="px-1.5 py-0.5 rounded-full bg-primary-500/20 text-primary-400 border border-primary-500/30">Pro</span>
+                            <span class="text-slate-400">Dec 31, 2025</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Desktop Table View -->
+                <div class="hidden sm:block overflow-x-auto dashboard-table">
+                    <table class="min-w-full text-sm text-slate-200">
+                        <thead class="text-xs uppercase text-slate-400 border-b border-white/10">
+                            <tr class="text-left">
+                                <th class="py-3 pr-4">User</th>
+                                <th class="py-3 px-4">Email</th>
+                                <th class="py-3 px-4">Plan</th>
+                                <th class="py-3 px-4">Signup</th>
+                                <th class="py-3 px-4">Status</th>
+                                <th class="py-3 pl-4 pr-2 text-right">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-white/5">
+                            <tr class="hover:bg-white/5 transition">
+                                <td class="py-3 pr-4">
+                                    <div class="flex items-center gap-3">
+                                        <div class="w-8 h-8 rounded-full bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center text-white text-xs font-bold">AS</div>
+                                        <span>Amelia Stone</span>
+                                    </div>
+                                </td>
+                                <td class="py-3 px-4 text-slate-400">amelia@north.io</td>
+                                <td class="py-3 px-4"><span class="px-2.5 py-1 rounded-full text-xs bg-primary-500/20 text-primary-400 border border-primary-500/30">Pro</span></td>
+                                <td class="py-3 px-4 text-slate-400">Jan 3, 2026</td>
+                                <td class="py-3 px-4"><span class="text-emerald-400 flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>Active</span></td>
+                                <td class="py-3 pl-4 pr-2 text-right">
+                                    <div class="inline-flex items-center gap-2 text-xs">
+                                        <button class="px-3 py-1.5 rounded-lg border border-white/10 hover:bg-white/10 transition">Edit</button>
+                                        <button class="px-3 py-1.5 rounded-lg border border-red-500/30 text-red-400 hover:bg-red-500/10 transition">Suspend</button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="hover:bg-white/5 transition">
+                                <td class="py-3 pr-4">
+                                    <div class="flex items-center gap-3">
+                                        <div class="w-8 h-8 rounded-full bg-gradient-to-br from-emerald-500 to-teal-500 flex items-center justify-center text-white text-xs font-bold">KR</div>
+                                        <span>Khalid Rahman</span>
+                                    </div>
+                                </td>
+                                <td class="py-3 px-4 text-slate-400">k.rahman@aurora.dev</td>
+                                <td class="py-3 px-4"><span class="px-2.5 py-1 rounded-full text-xs bg-white/10 text-slate-300 border border-white/10">Free</span></td>
+                                <td class="py-3 px-4 text-slate-400">Jan 2, 2026</td>
+                                <td class="py-3 px-4"><span class="text-amber-400 flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-amber-400"></span>Trial</span></td>
+                                <td class="py-3 pl-4 pr-2 text-right">
+                                    <div class="inline-flex items-center gap-2 text-xs">
+                                        <button class="px-3 py-1.5 rounded-lg border border-white/10 hover:bg-white/10 transition">Edit</button>
+                                        <button class="px-3 py-1.5 rounded-lg border border-red-500/30 text-red-400 hover:bg-red-500/10 transition">Suspend</button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="hover:bg-white/5 transition">
+                                <td class="py-3 pr-4">
+                                    <div class="flex items-center gap-3">
+                                        <div class="w-8 h-8 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center text-white text-xs font-bold">SL</div>
+                                        <span>Sofia Lima</span>
+                                    </div>
+                                </td>
+                                <td class="py-3 px-4 text-slate-400">sofia.l@mercury.io</td>
+                                <td class="py-3 px-4"><span class="px-2.5 py-1 rounded-full text-xs bg-primary-500/20 text-primary-400 border border-primary-500/30">Pro</span></td>
+                                <td class="py-3 px-4 text-slate-400">Dec 31, 2025</td>
+                                <td class="py-3 px-4"><span class="text-emerald-400 flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>Active</span></td>
+                                <td class="py-3 pl-4 pr-2 text-right">
+                                    <div class="inline-flex items-center gap-2 text-xs">
+                                        <button class="px-3 py-1.5 rounded-lg border border-white/10 hover:bg-white/10 transition">Edit</button>
+                                        <button class="px-3 py-1.5 rounded-lg border border-red-500/30 text-red-400 hover:bg-red-500/10 transition">Suspend</button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="hover:bg-white/5 transition">
+                                <td class="py-3 pr-4">
+                                    <div class="flex items-center gap-3">
+                                        <div class="w-8 h-8 rounded-full bg-gradient-to-br from-orange-500 to-amber-500 flex items-center justify-center text-white text-xs font-bold">DM</div>
+                                        <span>Diego Martins</span>
+                                    </div>
+                                </td>
+                                <td class="py-3 px-4 text-slate-400">d.martins@echo.app</td>
+                                <td class="py-3 px-4"><span class="px-2.5 py-1 rounded-full text-xs bg-white/10 text-slate-300 border border-white/10">Free</span></td>
+                                <td class="py-3 px-4 text-slate-400">Dec 30, 2025</td>
+                                <td class="py-3 px-4"><span class="text-amber-400 flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-amber-400"></span>Trial</span></td>
+                                <td class="py-3 pl-4 pr-2 text-right">
+                                    <div class="inline-flex items-center gap-2 text-xs">
+                                        <button class="px-3 py-1.5 rounded-lg border border-white/10 hover:bg-white/10 transition">Edit</button>
+                                        <button class="px-3 py-1.5 rounded-lg border border-red-500/30 text-red-400 hover:bg-red-500/10 transition">Suspend</button>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Pagination -->
+                <div class="flex flex-col sm:flex-row items-center justify-between mt-4 pt-4 border-t border-white/10 gap-3">
+                    <p class="text-xs sm:text-sm text-slate-400">Showing 1-4 of 48 users</p>
+                    <div class="flex items-center gap-2">
+                        <button class="px-3 py-2 rounded-lg border border-white/10 text-slate-400 hover:bg-white/10 text-sm disabled:opacity-50" disabled>Prev</button>
+                        <button class="px-3 py-2 rounded-lg bg-primary-600/20 border border-primary-500/30 text-primary-400 text-sm">1</button>
+                        <button class="px-3 py-2 rounded-lg border border-white/10 text-slate-400 hover:bg-white/10 text-sm">2</button>
+                        <button class="px-3 py-2 rounded-lg border border-white/10 text-slate-400 hover:bg-white/10 text-sm">3</button>
+                        <button class="px-3 py-2 rounded-lg border border-white/10 text-slate-400 hover:bg-white/10 text-sm">Next</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- System Status -->
+            <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-4 lg:gap-6">
+                <div class="glass-card border border-white/10 rounded-xl sm:rounded-xl lg:rounded-2xl p-5 sm:p-5 lg:p-6">
+                    <div class="flex items-center justify-between mb-4 flex-wrap gap-2">
+                        <h3 class="font-semibold text-white text-base">System Status</h3>
+                        <span class="px-2.5 py-1 rounded-full bg-emerald-500/20 text-emerald-400 text-xs font-medium">All Operational</span>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm text-slate-300 flex items-center gap-2">
+                                <span class="w-2 h-2 rounded-full bg-emerald-400"></span>API Gateway
+                            </span>
+                            <span class="text-xs text-slate-400">99.99%</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm text-slate-300 flex items-center gap-2">
+                                <span class="w-2 h-2 rounded-full bg-emerald-400"></span>Database
+                            </span>
+                            <span class="text-xs text-slate-400">99.97%</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm text-slate-300 flex items-center gap-2">
+                                <span class="w-2 h-2 rounded-full bg-emerald-400"></span>CDN Network
+                            </span>
+                            <span class="text-xs text-slate-400">100%</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm text-slate-300 flex items-center gap-2">
+                                <span class="w-2 h-2 rounded-full bg-amber-400"></span>Background Jobs
+                            </span>
+                            <span class="text-xs text-amber-400">Degraded</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-card border border-white/10 rounded-xl sm:rounded-xl lg:rounded-2xl p-5 sm:p-5 lg:p-6">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="font-semibold text-white text-base">Quick Actions</h3>
+                    </div>
+                    <div class="grid grid-cols-2 gap-3">
+                        <button class="p-3 rounded-xl bg-white/5 border border-white/10 hover:border-primary-500/50 hover:bg-primary-500/10 transition text-center group">
+                            <i class="ph ph-user-plus text-xl text-slate-400 group-hover:text-primary-400 mb-1.5"></i>
+                            <p class="text-xs text-slate-300">Add User</p>
+                        </button>
+                        <button class="p-3 rounded-xl bg-white/5 border border-white/10 hover:border-emerald-500/50 hover:bg-emerald-500/10 transition text-center group">
+                            <i class="ph ph-chart-line-up text-xl text-slate-400 group-hover:text-emerald-400 mb-1.5"></i>
+                            <p class="text-xs text-slate-300">Reports</p>
+                        </button>
+                        <button class="p-3 rounded-xl bg-white/5 border border-white/10 hover:border-amber-500/50 hover:bg-amber-500/10 transition text-center group">
+                            <i class="ph ph-gear-six text-xl text-slate-400 group-hover:text-amber-400 mb-1.5"></i>
+                            <p class="text-xs text-slate-300">Settings</p>
+                        </button>
+                        <button class="p-3 rounded-xl bg-white/5 border border-white/10 hover:border-red-500/50 hover:bg-red-500/10 transition text-center group">
+                            <i class="ph ph-lifebuoy text-xl text-slate-400 group-hover:text-red-400 mb-1.5"></i>
+                            <p class="text-xs text-slate-300">Support</p>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="sm:col-span-2 lg:col-span-1 glass-card border border-white/10 rounded-xl sm:rounded-xl lg:rounded-2xl p-5 sm:p-5 lg:p-6">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="font-semibold text-white text-base">Activity Log</h3>
+                        <button class="text-primary-400 hover:text-primary-300 text-xs">View all</button>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="flex items-start gap-3">
+                            <div class="w-9 h-9 rounded-full bg-emerald-500/20 flex items-center justify-center text-emerald-400 flex-shrink-0">
+                                <i class="ph ph-user-plus text-sm"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm text-white">New user signup</p>
+                                <p class="text-xs text-slate-400">Amelia Stone • 4m ago</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <div class="w-9 h-9 rounded-full bg-primary-500/20 flex items-center justify-center text-primary-400 flex-shrink-0">
+                                <i class="ph ph-credit-card text-sm"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm text-white">Plan upgraded to Pro</p>
+                                <p class="text-xs text-slate-400">Sofia Lima • 22m ago</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <div class="w-9 h-9 rounded-full bg-amber-500/20 flex items-center justify-center text-amber-400 flex-shrink-0">
+                                <i class="ph ph-warning text-sm"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm text-white">Server alert triggered</p>
+                                <p class="text-xs text-slate-400">System • 1h ago</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <script>
+        // RTL persistence - load immediately
+        (function() {
+            const savedDir = localStorage.getItem('orbit-dir');
+            if (savedDir) document.documentElement.dir = savedDir;
+        })();
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile menu elements
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileMenuClose = document.getElementById('mobile-menu-close');
+            const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
+
+            function isRTL() {
+                return document.documentElement.dir === 'rtl';
+            }
+
+            // Set menu position based on RTL
+            function setMenuPosition(open) {
+                if (!mobileMenu) return;
+                if (isRTL()) {
+                    mobileMenu.style.right = 'auto';
+                    mobileMenu.style.left = '0';
+                    mobileMenu.style.transform = open ? 'translateX(0)' : 'translateX(-100%)';
+                } else {
+                    mobileMenu.style.left = 'auto';
+                    mobileMenu.style.right = '0';
+                    mobileMenu.style.transform = open ? 'translateX(0)' : 'translateX(100%)';
+                }
+            }
+
+            function openMobileMenu() {
+                if (!mobileMenu || !mobileMenuOverlay) return;
+                setMenuPosition(true);
+                mobileMenuOverlay.style.opacity = '1';
+                mobileMenuOverlay.style.pointerEvents = 'auto';
+                document.body.style.overflow = 'hidden';
+            }
+
+            function closeMobileMenu() {
+                if (!mobileMenu || !mobileMenuOverlay) return;
+                setMenuPosition(false);
+                mobileMenuOverlay.style.opacity = '0';
+                mobileMenuOverlay.style.pointerEvents = 'none';
+                document.body.style.overflow = '';
+            }
+
+            // Initialize menu as closed
+            setMenuPosition(false);
+            if (mobileMenuOverlay) {
+                mobileMenuOverlay.style.opacity = '0';
+                mobileMenuOverlay.style.pointerEvents = 'none';
+            }
+
+            // Event listeners
+            mobileMenuBtn?.addEventListener('click', function(e) {
+                e.stopPropagation();
+                openMobileMenu();
+            });
+            
+            mobileMenuClose?.addEventListener('click', function(e) {
+                e.stopPropagation();
+                closeMobileMenu();
+            });
+            
+            mobileMenuOverlay?.addEventListener('click', closeMobileMenu);
+
+            // Sidebar RTL positioning
+            function updateSidebarPosition() {
+                const sidebar = document.getElementById('desktop-sidebar');
+                const mainContent = document.getElementById('main-content');
+                if (!sidebar || !mainContent) return;
+                
+                if (isRTL()) {
+                    sidebar.style.left = 'auto';
+                    sidebar.style.right = '0';
+                    sidebar.style.borderLeft = '1px solid rgba(255,255,255,0.1)';
+                    sidebar.style.borderRight = 'none';
+                    mainContent.style.marginLeft = '0';
+                    mainContent.style.marginRight = '16rem'; // w-64 = 16rem
+                } else {
+                    sidebar.style.left = '0';
+                    sidebar.style.right = 'auto';
+                    sidebar.style.borderRight = '1px solid rgba(255,255,255,0.1)';
+                    sidebar.style.borderLeft = 'none';
+                    mainContent.style.marginLeft = '16rem';
+                    mainContent.style.marginRight = '0';
+                }
+            }
+            
+            // Initial sidebar position
+            updateSidebarPosition();
+
+            // RTL toggle buttons
+            document.querySelectorAll('.rtl-toggle-btn').forEach(function(btn) {
+                btn.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    const html = document.documentElement;
+                    const newDir = html.dir === 'rtl' ? 'ltr' : 'rtl';
+                    html.dir = newDir;
+                    localStorage.setItem('orbit-dir', newDir);
+                    
+                    // Update menu position without closing
+                    const isOpen = mobileMenu && mobileMenu.style.transform === 'translateX(0)';
+                    setMenuPosition(isOpen);
+                    
+                    // Update sidebar position
+                    updateSidebarPosition();
+                });
+            });
+
+            // Close on Escape key
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') closeMobileMenu();
+            });
+
+        // Sparklines
+        const sparkBase = {
+            chart: { type: 'area', height: 50, sparkline: { enabled: true }, animations: { enabled: true } },
+            stroke: { width: 2, curve: 'smooth' },
+            fill: { opacity: 0.15 },
+            tooltip: { enabled: false },
+        };
+
+        if (document.querySelector('#spark-rev')) {
+            new ApexCharts(document.querySelector('#spark-rev'), {
+                ...sparkBase,
+                colors: ['#10b981'],
+                series: [{ data: [32, 45, 41, 60, 58, 72, 80] }]
+            }).render();
+        }
+        
+        if (document.querySelector('#spark-users')) {
+            new ApexCharts(document.querySelector('#spark-users'), {
+                ...sparkBase,
+                colors: ['#8b5cf6'],
+                series: [{ data: [12, 18, 16, 22, 27, 30, 34] }]
+            }).render();
+        }
+        
+        if (document.querySelector('#spark-churn')) {
+            new ApexCharts(document.querySelector('#spark-churn'), {
+                ...sparkBase,
+                colors: ['#10b981'],
+                series: [{ data: [4.1, 3.9, 3.5, 3.2, 2.9, 2.6, 2.4] }]
+            }).render();
+        }
+        
+        if (document.querySelector('#spark-load')) {
+            new ApexCharts(document.querySelector('#spark-load'), {
+                ...sparkBase,
+                colors: ['#f97316'],
+                series: [{ data: [40, 55, 52, 70, 68, 72, 60] }]
+            }).render();
+        }
+
+        // Area chart
+        if (document.querySelector('#area-revenue')) {
+            new ApexCharts(document.querySelector('#area-revenue'), {
+                chart: { 
+                    type: 'area', 
+                    height: '100%', 
+                    toolbar: { show: false }, 
+                    foreColor: '#cbd5e1', 
+                    animations: { enabled: true },
+                    fontFamily: 'Inter, sans-serif'
+                },
+                colors: ['#3b82f6', '#10b981'],
+                dataLabels: { enabled: false },
+                stroke: { curve: 'smooth', width: 2 },
+                fill: { type: 'gradient', gradient: { opacityFrom: 0.25, opacityTo: 0, stops: [0, 90, 100] } },
+                grid: { borderColor: 'rgba(255,255,255,0.05)', padding: { left: 10, right: 10 } },
+                series: [
+                    { name: 'ARR', data: [420, 510, 560, 640, 710, 820, 910, 980, 1050, 1140, 1220, 1310] },
+                    { name: 'MRR', data: [35, 42, 46, 54, 60, 69, 75, 81, 88, 94, 101, 110] },
+                ],
+                xaxis: { 
+                    categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+                    axisBorder: { show: false },
+                    axisTicks: { show: false }
+                },
+                yaxis: { labels: { formatter: (v) => `$${v}k` } },
+                tooltip: { theme: 'dark' },
+                legend: { show: false },
+            }).render();
+        }
+        });
+    </script>
 </body>
 
 </html>

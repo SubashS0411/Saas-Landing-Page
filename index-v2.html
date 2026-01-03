@@ -129,20 +129,6 @@
                 </div>
             </div>
 
-            <!-- Floating Images -->
-            <div class="absolute top-20 left-8 w-20 h-20 lg:w-32 lg:h-32 opacity-40 animate-float hidden md:block">
-                <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=200&fit=crop" alt="" class="w-full h-full object-cover rounded-2xl shadow-2xl shadow-purple-500/20 border border-white/10">
-            </div>
-            <div class="absolute top-40 right-12 w-24 h-24 lg:w-36 lg:h-36 opacity-50 animate-float-delayed hidden md:block">
-                <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=200&fit=crop" alt="" class="w-full h-full object-cover rounded-2xl shadow-2xl shadow-cyan-500/20 border border-white/10">
-            </div>
-            <div class="absolute bottom-32 left-16 w-16 h-16 lg:w-28 lg:h-28 opacity-40 animate-float hidden md:block">
-                <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=200&fit=crop" alt="" class="w-full h-full object-cover rounded-2xl shadow-2xl shadow-pink-500/20 border border-white/10">
-            </div>
-            <div class="absolute bottom-20 right-20 w-20 h-20 lg:w-32 lg:h-32 opacity-50 animate-float-delayed hidden md:block">
-                <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=200&fit=crop" alt="" class="w-full h-full object-cover rounded-2xl shadow-2xl shadow-indigo-500/20 border border-white/10">
-            </div>
-
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
                 <div
                     class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-purple-900/50 to-cyan-900/50 border border-purple-500/30 text-cyan-300 text-sm font-semibold mb-8 animate-fade-in-up shadow-lg shadow-cyan-500/20">
@@ -502,9 +488,66 @@
                         <p class="text-slate-400 mb-8 max-w-sm">Deploy instantly to 300+ PoPs worldwide with a single
                             command.</p>
                         <div
-                            class="h-48 bg-slate-900/80 rounded-xl border border-slate-700 w-full flex items-center justify-center">
-                            <!-- Map Graphic Placeholder -->
-                            <span class="text-slate-600 font-mono text-sm">[ Global Map Visualization ]</span>
+                            class="relative h-56 bg-slate-900/80 rounded-xl border border-slate-700 w-full overflow-hidden">
+                            <div class="absolute inset-0 bg-gradient-to-tr from-cyan-500/15 via-purple-500/10 to-pink-500/15 blur-3xl opacity-70"></div>
+                            <div class="absolute inset-0 pattern-grid opacity-10"></div>
+                            <div class="absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,rgba(34,211,238,0.18),transparent_35%),_radial-gradient(circle_at_80%_20%,rgba(168,85,247,0.18),transparent_30%),_radial-gradient(circle_at_50%_70%,rgba(236,72,153,0.12),transparent_35%)]"></div>
+
+                            <svg viewBox="0 0 600 260" class="relative w-full h-full text-slate-500" aria-hidden="true">
+                                <defs>
+                                    <linearGradient id="edgeGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                        <stop offset="0%" stop-color="#22d3ee" />
+                                        <stop offset="50%" stop-color="#a855f7" />
+                                        <stop offset="100%" stop-color="#ec4899" />
+                                    </linearGradient>
+                                    <linearGradient id="edgeGradientAlt" x1="0%" y1="100%" x2="100%" y2="0%">
+                                        <stop offset="0%" stop-color="#22c55e" />
+                                        <stop offset="100%" stop-color="#22d3ee" />
+                                    </linearGradient>
+                                </defs>
+
+                                <path class="network-path" stroke="url(#edgeGradient)"
+                                    d="M70 170 C 170 120, 300 80, 520 120" />
+                                <path class="network-path network-path--fast" stroke="url(#edgeGradientAlt)"
+                                    d="M110 205 C 220 180, 320 130, 500 160" />
+                                <path class="network-path network-path--ghost" stroke="url(#edgeGradient)"
+                                    d="M180 210 C 260 150, 360 130, 470 95" />
+
+                                <circle class="network-node-ring" cx="80" cy="170" r="15"></circle>
+                                <circle class="network-node network-node--primary" cx="80" cy="170" r="6"></circle>
+
+                                <circle class="network-node-ring" cx="220" cy="120" r="14"></circle>
+                                <circle class="network-node network-node--primary" cx="220" cy="120" r="6"></circle>
+
+                                <circle class="network-node-ring network-node-ring--secondary" cx="360" cy="90" r="14"></circle>
+                                <circle class="network-node network-node--secondary" cx="360" cy="90" r="6"></circle>
+
+                                <circle class="network-node-ring" cx="520" cy="140" r="15"></circle>
+                                <circle class="network-node network-node--primary" cx="520" cy="140" r="6"></circle>
+
+                                <circle class="network-node-ring network-node-ring--secondary" cx="300" cy="180" r="12"></circle>
+                                <circle class="network-node network-node--secondary" cx="300" cy="180" r="5"></circle>
+                            </svg>
+
+                            <div class="absolute top-4 right-4 px-4 py-3 rounded-2xl bg-white/5 border border-white/10 backdrop-blur text-xs text-slate-100 shadow-lg">
+                                <div class="flex items-center gap-2 mb-1">
+                                    <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                                    Live traffic
+                                </div>
+                                <div class="text-lg font-semibold text-white">42.6M req/min</div>
+                                <div class="text-[11px] text-emerald-200">Latency &lt; 50ms</div>
+                            </div>
+
+                            <div class="absolute bottom-4 left-4 flex flex-wrap gap-3">
+                                <div class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-100 text-sm shadow-sm">
+                                    <i class="ph ph-globe-hemisphere-west text-lg"></i>
+                                    <span>320 PoPs online</span>
+                                </div>
+                                <div class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-100 text-sm shadow-sm">
+                                    <i class="ph ph-lightning text-lg"></i>
+                                    <span>Edge warmed in &lt;30s</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
 

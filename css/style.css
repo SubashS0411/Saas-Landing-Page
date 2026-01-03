@@ -660,6 +660,79 @@ html[dir="rtl"] .hero-tilt {
     background-size: 30px 30px;
 }
 
+/* Edge network graph styling */
+.network-path {
+    fill: none;
+    stroke-width: 3;
+    stroke-linecap: round;
+    stroke-dasharray: 10 12;
+    opacity: 0.9;
+    animation: networkFlow 12s linear infinite;
+}
+
+.network-path--fast {
+    animation-duration: 10s;
+    stroke-dasharray: 8 10;
+    opacity: 0.75;
+}
+
+.network-path--ghost {
+    animation-duration: 14s;
+    stroke-dasharray: 6 12;
+    opacity: 0.55;
+}
+
+.network-node {
+    filter: drop-shadow(0 0 10px rgba(34, 211, 238, 0.6));
+}
+
+.network-node--primary {
+    fill: #22d3ee;
+}
+
+.network-node--secondary {
+    fill: #a855f7;
+    filter: drop-shadow(0 0 10px rgba(168, 85, 247, 0.6));
+}
+
+.network-node-ring {
+    fill: none;
+    stroke: rgba(34, 211, 238, 0.38);
+    stroke-width: 8;
+    animation: networkPulse 2.6s ease-out infinite;
+    transform-origin: center;
+    transform-box: fill-box;
+}
+
+.network-node-ring--secondary {
+    stroke: rgba(168, 85, 247, 0.35);
+    animation-delay: 0.6s;
+}
+
+@keyframes networkFlow {
+    from {
+        stroke-dashoffset: 160;
+    }
+    to {
+        stroke-dashoffset: -720;
+    }
+}
+
+@keyframes networkPulse {
+    0% {
+        transform: scale(0.65);
+        opacity: 0.75;
+    }
+    70% {
+        transform: scale(1.35);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1.45);
+        opacity: 0;
+    }
+}
+
 /* Enhanced Mobile Responsiveness */
 @media (max-width: 640px) {
     .animate-fade-in-up,

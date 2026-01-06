@@ -164,6 +164,10 @@ function initDashboardSwitcher() {
         const dashLink = menu.querySelector('a[href="user-dashboard.html"]');
         if (!dashLink) return;
 
+        // Check if admin dashboard link already exists to prevent duplicates
+        const existingAdminLink = menu.querySelector('a[href="admin-dashboard.html"]');
+        if (existingAdminLink) return;
+
         const adminLink = dashLink.cloneNode(true);
         adminLink.href = 'admin-dashboard.html';
         adminLink.textContent = 'Admin Dashboard';

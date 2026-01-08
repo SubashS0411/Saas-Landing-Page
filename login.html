@@ -24,21 +24,26 @@
                 }
             }
         }
-        // Persist RTL preference
-        (function() {
-            const dir = localStorage.getItem('orbit-dir') || 'ltr';
-            document.documentElement.dir = dir;
-        })();
+            // Persist RTL preference
+            (function () {
+                const dir = localStorage.getItem('orbit-dir') || 'ltr';
+                document.documentElement.dir = dir;
+            })();
     </script>
     <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body class="bg-slate-950 min-h-screen flex flex-col selection:bg-primary selection:text-white overflow-x-hidden relative">
+<body
+    class="bg-slate-950 min-h-screen flex flex-col selection:bg-primary selection:text-white overflow-x-hidden relative">
 
     <!-- Ambient Background -->
     <div class="absolute inset-0 z-0 overflow-hidden">
-        <div class="absolute top-1/4 left-1/4 w-64 sm:w-96 h-64 sm:h-96 bg-primary-600/30 rounded-full blur-3xl animate-pulse"></div>
-        <div class="absolute bottom-1/4 right-1/4 w-64 sm:w-96 h-64 sm:h-96 bg-teal-600/20 rounded-full blur-3xl animate-pulse delay-700"></div>
+        <div
+            class="absolute top-1/4 left-1/4 w-64 sm:w-96 h-64 sm:h-96 bg-primary-600/30 rounded-full blur-3xl animate-pulse">
+        </div>
+        <div
+            class="absolute bottom-1/4 right-1/4 w-64 sm:w-96 h-64 sm:h-96 bg-teal-600/20 rounded-full blur-3xl animate-pulse delay-700">
+        </div>
     </div>
 
     <!-- Navbar -->
@@ -48,41 +53,64 @@
             <div class="flex justify-between items-center h-16 sm:h-20">
                 <!-- Logo -->
                 <a href="index.html" class="flex items-center gap-2 group">
-                    <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-br from-violet-500 to-pink-500 flex items-center justify-center text-white shadow-lg shadow-violet-500/30 group-hover:scale-110 transition-transform duration-300">
+                    <div
+                        class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-br from-violet-500 to-pink-500 flex items-center justify-center text-white shadow-lg shadow-violet-500/30 group-hover:scale-110 transition-transform duration-300">
                         <i class="ph-bold ph-planet text-lg sm:text-xl"></i>
                     </div>
-                    <span class="font-display font-bold text-xl sm:text-2xl tracking-tight text-white">Orbit<span class="text-primary-500">Scale</span></span>
+                    <span class="font-display font-bold text-xl sm:text-2xl tracking-tight text-white">Orbit<span
+                            class="text-primary-500">Scale</span></span>
                 </a>
 
                 <!-- Desktop Menu -->
                 <div class="hidden md:flex items-center space-x-1">
                     <div class="relative group px-3 py-2">
-                        <button class="flex items-center gap-1 text-slate-300 font-medium hover:text-primary-400 transition">
+                        <button
+                            class="flex items-center gap-1 text-slate-300 font-medium hover:text-primary-400 transition">
                             Product <i class="ph-bold ph-caret-down text-xs mt-0.5"></i>
                         </button>
-                        <div class="absolute top-full left-1/2 -translate-x-1/2 pt-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-2 group-hover:translate-y-0">
-                            <div class="w-64 bg-slate-800 rounded-2xl shadow-xl border border-slate-700 p-2 overflow-hidden">
-                                <a href="index.html" class="flex items-center gap-3 p-3 rounded-xl hover:bg-slate-700 transition">
-                                    <div class="w-8 h-8 rounded-lg bg-primary-900/30 text-primary-400 flex items-center justify-center"><i class="ph-fill ph-rocket-launch"></i></div>
-                                    <div><div class="font-bold text-sm text-white">Platform</div><div class="text-xs text-slate-400">For scaling teams</div></div>
+                        <div
+                            class="absolute top-full left-1/2 -translate-x-1/2 pt-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-2 group-hover:translate-y-0">
+                            <div
+                                class="w-64 bg-slate-800 rounded-2xl shadow-xl border border-slate-700 p-2 overflow-hidden">
+                                <a href="index.html"
+                                    class="flex items-center gap-3 p-3 rounded-xl hover:bg-slate-700 transition">
+                                    <div
+                                        class="w-8 h-8 rounded-lg bg-primary-900/30 text-primary-400 flex items-center justify-center">
+                                        <i class="ph-fill ph-rocket-launch"></i></div>
+                                    <div>
+                                        <div class="font-bold text-sm text-white">Platform</div>
+                                        <div class="text-xs text-slate-400">For scaling teams</div>
+                                    </div>
                                 </a>
-                                <a href="index-v2.html" class="flex items-center gap-3 p-3 rounded-xl hover:bg-slate-700 transition">
-                                    <div class="w-8 h-8 rounded-lg bg-slate-700 text-white flex items-center justify-center"><i class="ph-fill ph-code"></i></div>
-                                    <div><div class="font-bold text-sm text-white">Developer API</div><div class="text-xs text-slate-400">Documentation</div></div>
+                                <a href="index-v2.html"
+                                    class="flex items-center gap-3 p-3 rounded-xl hover:bg-slate-700 transition">
+                                    <div
+                                        class="w-8 h-8 rounded-lg bg-slate-700 text-white flex items-center justify-center">
+                                        <i class="ph-fill ph-code"></i></div>
+                                    <div>
+                                        <div class="font-bold text-sm text-white">Developer API</div>
+                                        <div class="text-xs text-slate-400">Documentation</div>
+                                    </div>
                                 </a>
                             </div>
                         </div>
                     </div>
-                    <a href="services.html" class="px-4 py-2 text-slate-300 font-medium hover:text-primary-400 transition rounded-full hover:bg-slate-800/50">Solutions</a>
-                    <a href="pricing.html" class="px-4 py-2 text-slate-300 font-medium hover:text-primary-400 transition rounded-full hover:bg-slate-800/50">Pricing</a>
-                    <a href="about.html" class="px-4 py-2 text-slate-300 font-medium hover:text-primary-400 transition rounded-full hover:bg-slate-800/50">Company</a>
+                    <a href="services.html"
+                        class="px-4 py-2 text-slate-300 font-medium hover:text-primary-400 transition rounded-full hover:bg-slate-800/50">Solutions</a>
+                    <a href="pricing.html"
+                        class="px-4 py-2 text-slate-300 font-medium hover:text-primary-400 transition rounded-full hover:bg-slate-800/50">Pricing</a>
+                    <a href="about.html"
+                        class="px-4 py-2 text-slate-300 font-medium hover:text-primary-400 transition rounded-full hover:bg-slate-800/50">Company</a>
                 </div>
 
                 <!-- Actions -->
                 <div class="hidden md:flex items-center gap-4">
                     <a href="login.html" class="text-slate-300 font-medium hover:text-primary-400 transition">Log in</a>
-                    <a href="register.html" class="px-6 py-2.5 rounded-full bg-white text-slate-900 font-medium hover:bg-slate-100 transition shadow-lg shadow-white/20 hover:-translate-y-0.5">Get Started</a>
-                    <button class="rtl-toggle-btn w-10 h-10 rounded-full border border-slate-700 flex items-center justify-center text-slate-400 hover:bg-slate-800 hover:text-primary-400 transition">
+                    <a href="register.html"
+                        class="px-6 py-2.5 rounded-full bg-white text-slate-900 font-medium hover:bg-slate-100 transition shadow-lg shadow-white/20 hover:-translate-y-0.5">Get
+                        Started</a>
+                    <button
+                        class="rtl-toggle-btn w-10 h-10 rounded-full border border-slate-700 flex items-center justify-center text-slate-400 hover:bg-slate-800 hover:text-primary-400 transition">
                         <i class="ph ph-globe text-lg"></i>
                     </button>
                 </div>
@@ -101,39 +129,54 @@
     </nav>
 
     <!-- Mobile Menu Overlay -->
-    <div id="mobile-menu-overlay" class="fixed inset-0 bg-slate-950/60 backdrop-blur-sm z-[60] transition-opacity duration-300" style="opacity: 0; pointer-events: none;"></div>
-    
+    <div id="mobile-menu-overlay"
+        class="fixed inset-0 bg-slate-950/60 backdrop-blur-sm z-[60] transition-opacity duration-300"
+        style="opacity: 0; pointer-events: none;"></div>
+
     <!-- Mobile Menu Drawer -->
-    <div id="mobile-menu" class="fixed top-0 w-[300px] h-full bg-slate-900/95 backdrop-blur-xl shadow-2xl z-[70] flex flex-col border-l border-white/10" style="transition: transform 0.3s ease-in-out;">
+    <div id="mobile-menu"
+        class="fixed top-0 w-[300px] h-full bg-slate-900/95 backdrop-blur-xl shadow-2xl z-[70] flex flex-col border-l border-white/10"
+        style="transition: transform 0.3s ease-in-out;">
         <div class="p-5 border-b border-white/10 flex justify-between items-center">
             <div class="flex items-center gap-2">
-                <button class="rtl-toggle-btn p-2 text-slate-400 hover:text-white hover:bg-white/10 rounded-lg transition">
+                <button
+                    class="rtl-toggle-btn p-2 text-slate-400 hover:text-white hover:bg-white/10 rounded-lg transition">
                     <i class="ph ph-globe text-lg"></i>
                 </button>
                 <span class="font-display font-bold text-lg text-white">Menu</span>
             </div>
-            <button id="mobile-menu-close" class="p-2 text-slate-400 hover:text-white hover:bg-white/10 rounded-lg transition">
+            <button id="mobile-menu-close"
+                class="p-2 text-slate-400 hover:text-white hover:bg-white/10 rounded-lg transition">
                 <i class="ph ph-x text-xl"></i>
             </button>
         </div>
         <div class="flex-1 overflow-y-auto p-5 space-y-2">
-            <a href="index.html" class="block px-4 py-3 rounded-xl text-slate-300 hover:bg-white/10 font-medium transition">
+            <a href="index.html"
+                class="block px-4 py-3 rounded-xl text-slate-300 hover:bg-white/10 font-medium transition">
                 <i class="ph ph-house mr-2"></i>Home
             </a>
-            <a href="services.html" class="block px-4 py-3 rounded-xl text-slate-300 hover:bg-white/10 font-medium transition">
+            <a href="index-v2.html"
+                class="block px-4 py-3 rounded-xl text-slate-300 hover:bg-white/10 font-medium transition">
+                <i class="ph ph-house mr-2"></i>Home 2
+            </a>
+            <a href="services.html"
+                class="block px-4 py-3 rounded-xl text-slate-300 hover:bg-white/10 font-medium transition">
                 <i class="ph ph-briefcase mr-2"></i>Solutions
             </a>
-            <a href="pricing.html" class="block px-4 py-3 rounded-xl text-slate-300 hover:bg-white/10 font-medium transition">
+            <a href="pricing.html"
+                class="block px-4 py-3 rounded-xl text-slate-300 hover:bg-white/10 font-medium transition">
                 <i class="ph ph-credit-card mr-2"></i>Pricing
             </a>
-            <a href="about.html" class="block px-4 py-3 rounded-xl text-slate-300 hover:bg-white/10 font-medium transition">
+            <a href="about.html"
+                class="block px-4 py-3 rounded-xl text-slate-300 hover:bg-white/10 font-medium transition">
                 <i class="ph ph-buildings mr-2"></i>Company
             </a>
             <div class="my-4 border-t border-white/10"></div>
             <a href="login.html" class="block px-4 py-3 rounded-xl bg-white/10 text-white font-medium">
                 <i class="ph ph-sign-in mr-2"></i>Log in
             </a>
-            <a href="register.html" class="block w-full py-3 rounded-xl bg-primary-600 text-white text-center font-bold shadow-lg shadow-primary-500/30 mt-4 hover:bg-primary-700 transition">
+            <a href="register.html"
+                class="block w-full py-3 rounded-xl bg-primary-600 text-white text-center font-bold shadow-lg shadow-primary-500/30 mt-4 hover:bg-primary-700 transition">
                 Get Started Free
             </a>
         </div>
@@ -143,11 +186,14 @@
     <main class="flex-grow flex items-center justify-center px-4 py-6 relative z-10 pt-20 sm:pt-24">
         <div class="w-full max-w-5xl grid lg:grid-cols-5 gap-6 lg:gap-8 items-stretch">
             <!-- Login Card -->
-            <div class="lg:col-span-3 bg-slate-900/60 backdrop-blur-xl w-full p-6 sm:p-8 lg:p-10 rounded-2xl sm:rounded-3xl relative z-10 shadow-2xl border border-white/10">
+            <div
+                class="lg:col-span-3 bg-slate-900/60 backdrop-blur-xl w-full p-6 sm:p-8 lg:p-10 rounded-2xl sm:rounded-3xl relative z-10 shadow-2xl border border-white/10">
 
                 <div class="text-center mb-6 sm:mb-10">
-                    <a href="index.html" class="inline-flex items-center gap-2 mb-4 sm:mb-6 hover:opacity-80 transition">
-                        <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-gradient-to-br from-primary-500 to-indigo-700 flex items-center justify-center text-white font-bold text-lg sm:text-xl">
+                    <a href="index.html"
+                        class="inline-flex items-center gap-2 mb-4 sm:mb-6 hover:opacity-80 transition">
+                        <div
+                            class="w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-gradient-to-br from-primary-500 to-indigo-700 flex items-center justify-center text-white font-bold text-lg sm:text-xl">
                             O</div>
                         <span class="font-display font-bold text-xl sm:text-2xl text-white">OrbitScale</span>
                     </a>
@@ -171,7 +217,9 @@
                             placeholder="Password" required>
                         <label for="password"
                             class="absolute left-4 -top-2.5 bg-slate-900 px-1 text-slate-400 text-sm transition-all peer-placeholder-shown:text-base peer-placeholder-shown:text-slate-500 peer-placeholder-shown:top-3 sm:peer-placeholder-shown:top-3.5 peer-placeholder-shown:bg-transparent peer-focus:-top-2.5 peer-focus:text-primary-400 peer-focus:text-sm peer-focus:bg-slate-900">Password</label>
-                        <button type="button" class="absolute inset-y-0 right-3 my-1 px-3 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 focus:outline-none" aria-label="Toggle password visibility" data-toggle-password="password">
+                        <button type="button"
+                            class="absolute inset-y-0 right-3 my-1 px-3 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 focus:outline-none"
+                            aria-label="Toggle password visibility" data-toggle-password="password">
                             <i class="ph ph-eye-slash text-lg"></i>
                         </button>
                     </div>
@@ -185,11 +233,13 @@
                         <a href="#" class="text-primary-400 hover:text-primary-300 font-medium">Forgot password?</a>
                     </div>
 
-                    <div class="flex items-start gap-3 rounded-xl sm:rounded-2xl bg-slate-800/40 border border-slate-700 p-3 sm:p-4 text-sm text-slate-300">
+                    <div
+                        class="flex items-start gap-3 rounded-xl sm:rounded-2xl bg-slate-800/40 border border-slate-700 p-3 sm:p-4 text-sm text-slate-300">
                         <i class="ph ph-lock-simple text-primary-300 text-lg sm:text-xl flex-shrink-0 mt-0.5"></i>
                         <div>
                             <p class="font-semibold text-white text-sm">SAML/SSO ready</p>
-                            <p class="text-slate-400 text-xs sm:text-sm">Enterprise logins and MFA are enforced for protected routes.</p>
+                            <p class="text-slate-400 text-xs sm:text-sm">Enterprise logins and MFA are enforced for
+                                protected routes.</p>
                         </div>
                     </div>
 
@@ -211,7 +261,8 @@
                 <div class="grid grid-cols-2 gap-3 sm:gap-4">
                     <button
                         class="flex items-center justify-center gap-2 py-2.5 sm:py-3 px-4 rounded-xl bg-slate-800 border border-slate-700 text-white hover:bg-slate-700 transition text-sm sm:text-base">
-                        <i class="ph ph-github-logo text-lg sm:text-xl"></i> <span class="hidden xs:inline">GitHub</span><span class="xs:hidden">Git</span>
+                        <i class="ph ph-github-logo text-lg sm:text-xl"></i> <span
+                            class="hidden xs:inline">GitHub</span><span class="xs:hidden">Git</span>
                     </button>
                     <button
                         class="flex items-center justify-center gap-2 py-2.5 sm:py-3 px-4 rounded-xl bg-slate-800 border border-slate-700 text-white hover:bg-slate-700 transition text-sm sm:text-base">
@@ -227,37 +278,45 @@
             </div>
 
             <!-- Sidebar CTA - Hidden on mobile, shown on lg -->
-            <aside class="lg:col-span-2 hidden lg:block bg-slate-900/70 border border-slate-800 rounded-3xl p-8 shadow-2xl relative overflow-hidden">
-                <div class="absolute inset-0 bg-gradient-to-br from-primary-600/20 via-fuchsia-500/10 to-indigo-500/10 pointer-events-none"></div>
+            <aside
+                class="lg:col-span-2 hidden lg:block bg-slate-900/70 border border-slate-800 rounded-3xl p-8 shadow-2xl relative overflow-hidden">
+                <div
+                    class="absolute inset-0 bg-gradient-to-br from-primary-600/20 via-fuchsia-500/10 to-indigo-500/10 pointer-events-none">
+                </div>
                 <div class="relative space-y-6">
                     <p class="text-sm uppercase tracking-[0.2em] text-white font-semibold">What you get</p>
-                    <h2 class="text-3xl font-display font-bold text-white leading-tight">Stay in flow with secure, reliable access.</h2>
+                    <h2 class="text-3xl font-display font-bold text-white leading-tight">Stay in flow with secure,
+                        reliable access.</h2>
                     <ul class="space-y-4 text-slate-200">
                         <li class="flex gap-3">
                             <i class="ph ph-shield-check text-primary-200 text-xl flex-shrink-0"></i>
                             <div>
                                 <p class="font-semibold">Zero-trust by default</p>
-                                <p class="text-slate-400 text-sm">Device checks, IP allowlists, and session anomaly alerts baked in.</p>
+                                <p class="text-slate-400 text-sm">Device checks, IP allowlists, and session anomaly
+                                    alerts baked in.</p>
                             </div>
                         </li>
                         <li class="flex gap-3">
                             <i class="ph ph-clock-afternoon text-primary-200 text-xl flex-shrink-0"></i>
                             <div>
                                 <p class="font-semibold">Fast-track support</p>
-                                <p class="text-slate-400 text-sm">Under 15 minute response from our on-call success team.</p>
+                                <p class="text-slate-400 text-sm">Under 15 minute response from our on-call success
+                                    team.</p>
                             </div>
                         </li>
                         <li class="flex gap-3">
                             <i class="ph ph-chart-line-up text-primary-200 text-xl flex-shrink-0"></i>
                             <div>
                                 <p class="font-semibold">Real-time insights</p>
-                                <p class="text-slate-400 text-sm">Track usage, billing, and rollout status from a single console.</p>
+                                <p class="text-slate-400 text-sm">Track usage, billing, and rollout status from a single
+                                    console.</p>
                             </div>
                         </li>
                     </ul>
                     <div class="rounded-2xl bg-slate-800/60 border border-slate-700 p-4 text-sm text-slate-200">
                         <p class="font-semibold mb-1">Security status</p>
-                        <p class="text-slate-400">Last security review: <span class="text-white">Feb 2025</span>. SOC2 Type II & ISO 27001 aligned.</p>
+                        <p class="text-slate-400">Last security review: <span class="text-white">Feb 2025</span>. SOC2
+                            Type II & ISO 27001 aligned.</p>
                     </div>
                 </div>
             </aside>
@@ -270,14 +329,23 @@
             <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-6 sm:gap-8 mb-8 sm:mb-12">
                 <div class="col-span-2 sm:col-span-2 lg:col-span-2">
                     <a href="index.html" class="flex items-center gap-2 mb-4">
-                        <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-violet-500 to-pink-500 flex items-center justify-center text-white shadow-lg shadow-violet-500/30"><i class="ph-bold ph-planet"></i></div>
+                        <div
+                            class="w-8 h-8 rounded-lg bg-gradient-to-br from-violet-500 to-pink-500 flex items-center justify-center text-white shadow-lg shadow-violet-500/30">
+                            <i class="ph-bold ph-planet"></i></div>
                         <span class="font-display font-bold text-xl text-white">OrbitScale</span>
                     </a>
-                    <p class="text-slate-400 text-sm max-w-xs mb-6">Making cloud infrastructure accessible, scalable, and secure for everyone.</p>
+                    <p class="text-slate-400 text-sm max-w-xs mb-6">Making cloud infrastructure accessible, scalable,
+                        and secure for everyone.</p>
                     <div class="flex gap-3">
-                        <a href="#" class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-primary-900/30 hover:text-primary-400 transition"><i class="ph-fill ph-twitter-logo text-lg sm:text-xl"></i></a>
-                        <a href="#" class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-primary-900/30 hover:text-primary-400 transition"><i class="ph-fill ph-github-logo text-lg sm:text-xl"></i></a>
-                        <a href="#" class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-primary-900/30 hover:text-primary-400 transition"><i class="ph-fill ph-linkedin-logo text-lg sm:text-xl"></i></a>
+                        <a href="#"
+                            class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-primary-900/30 hover:text-primary-400 transition"><i
+                                class="ph-fill ph-twitter-logo text-lg sm:text-xl"></i></a>
+                        <a href="#"
+                            class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-primary-900/30 hover:text-primary-400 transition"><i
+                                class="ph-fill ph-github-logo text-lg sm:text-xl"></i></a>
+                        <a href="#"
+                            class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-primary-900/30 hover:text-primary-400 transition"><i
+                                class="ph-fill ph-linkedin-logo text-lg sm:text-xl"></i></a>
                     </div>
                 </div>
                 <div>
@@ -308,8 +376,10 @@
                     </ul>
                 </div>
             </div>
-            <div class="pt-6 sm:pt-8 border-t border-white/10 flex flex-col sm:flex-row justify-between items-center gap-4">
-                <p class="text-slate-500 text-xs sm:text-sm text-center sm:text-left">© 2025 OrbitScale Inc. All rights reserved.</p>
+            <div
+                class="pt-6 sm:pt-8 border-t border-white/10 flex flex-col sm:flex-row justify-between items-center gap-4">
+                <p class="text-slate-500 text-xs sm:text-sm text-center sm:text-left">© 2025 OrbitScale Inc. All rights
+                    reserved.</p>
                 <div class="flex gap-4 sm:gap-6 text-xs sm:text-sm text-slate-500">
                     <a href="#" class="hover:text-white transition">Privacy Policy</a>
                     <a href="#" class="hover:text-white transition">Terms of Service</a>
@@ -320,19 +390,19 @@
 
     <!-- Self-contained Mobile Menu & RTL Script -->
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             const mobileMenuBtn = document.getElementById('mobile-menu-btn');
             const mobileMenuClose = document.getElementById('mobile-menu-close');
             const mobileMenu = document.getElementById('mobile-menu');
             const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
-            
+
             function isRTL() {
                 return document.documentElement.dir === 'rtl';
             }
-            
+
             function setMenuPosition(open) {
                 if (!mobileMenu) return;
-                
+
                 if (isRTL()) {
                     mobileMenu.style.right = 'auto';
                     mobileMenu.style.left = '0';
@@ -347,7 +417,7 @@
                     mobileMenu.style.transform = open ? 'translateX(0)' : 'translateX(100%)';
                 }
             }
-            
+
             function openMobileMenu() {
                 if (!mobileMenu || !mobileMenuOverlay) return;
                 setMenuPosition(true);
@@ -355,7 +425,7 @@
                 mobileMenuOverlay.style.pointerEvents = 'auto';
                 document.body.style.overflow = 'hidden';
             }
-            
+
             function closeMobileMenu() {
                 if (!mobileMenu || !mobileMenuOverlay) return;
                 setMenuPosition(false);
@@ -363,54 +433,54 @@
                 mobileMenuOverlay.style.pointerEvents = 'none';
                 document.body.style.overflow = '';
             }
-            
+
             // Initialize menu as closed
             setMenuPosition(false);
             if (mobileMenuOverlay) {
                 mobileMenuOverlay.style.opacity = '0';
                 mobileMenuOverlay.style.pointerEvents = 'none';
             }
-            
+
             // Event listeners
-            mobileMenuBtn?.addEventListener('click', function(e) {
+            mobileMenuBtn?.addEventListener('click', function (e) {
                 e.stopPropagation();
                 openMobileMenu();
             });
-            
-            mobileMenuClose?.addEventListener('click', function(e) {
+
+            mobileMenuClose?.addEventListener('click', function (e) {
                 e.stopPropagation();
                 closeMobileMenu();
             });
-            
+
             mobileMenuOverlay?.addEventListener('click', closeMobileMenu);
-            
+
             // RTL toggle buttons
-            document.querySelectorAll('.rtl-toggle-btn').forEach(function(btn) {
-                btn.addEventListener('click', function(e) {
+            document.querySelectorAll('.rtl-toggle-btn').forEach(function (btn) {
+                btn.addEventListener('click', function (e) {
                     e.stopPropagation();
                     const html = document.documentElement;
                     const newDir = html.dir === 'rtl' ? 'ltr' : 'rtl';
                     html.dir = newDir;
                     localStorage.setItem('orbit-dir', newDir);
-                    
+
                     // Update menu position without closing
                     const isOpen = mobileMenu && mobileMenu.style.transform === 'translateX(0)';
                     setMenuPosition(isOpen);
                 });
             });
-            
+
             // Close on Escape key
-            document.addEventListener('keydown', function(e) {
+            document.addEventListener('keydown', function (e) {
                 if (e.key === 'Escape') closeMobileMenu();
             });
-            
+
             // Password toggle functionality
-            document.querySelectorAll('[data-toggle-password]').forEach(function(btn) {
-                btn.addEventListener('click', function() {
+            document.querySelectorAll('[data-toggle-password]').forEach(function (btn) {
+                btn.addEventListener('click', function () {
                     const inputId = this.getAttribute('data-toggle-password');
                     const input = document.getElementById(inputId);
                     const icon = this.querySelector('i');
-                    
+
                     if (input.type === 'password') {
                         input.type = 'text';
                         icon.classList.remove('ph-eye-slash');

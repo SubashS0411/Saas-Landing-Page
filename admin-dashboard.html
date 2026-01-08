@@ -8,7 +8,9 @@
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;700;800&display=swap"
+        rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -30,12 +32,19 @@
     </script>
     <link rel="stylesheet" href="css/style.css">
     <style>
-        .glass-card { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(12px); }
-        .sparkline-container { height: 50px; }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+        }
+
+        .sparkline-container {
+            height: 50px;
+        }
     </style>
 </head>
 
-<body class="font-sans antialiased bg-slate-950 text-slate-100 min-h-screen selection:bg-primary-500 selection:text-white dashboard-page">
+<body
+    class="font-sans antialiased bg-slate-950 text-slate-100 min-h-screen selection:bg-primary-500 selection:text-white dashboard-page">
 
     <!-- Navbar (Same as marketing pages) -->
     <nav class="fixed top-0 w-full z-50 transition-all duration-300" id="navbar">
@@ -44,45 +53,70 @@
             <div class="flex justify-between items-center h-16 sm:h-20">
                 <!-- Logo -->
                 <a href="index.html" class="flex items-center gap-2 group">
-                    <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-br from-violet-500 to-pink-500 flex items-center justify-center text-white shadow-lg shadow-violet-500/30 group-hover:scale-110 transition-transform duration-300">
+                    <div
+                        class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-br from-violet-500 to-pink-500 flex items-center justify-center text-white shadow-lg shadow-violet-500/30 group-hover:scale-110 transition-transform duration-300">
                         <i class="ph-bold ph-planet text-lg sm:text-xl"></i>
                     </div>
-                    <span class="font-display font-bold text-xl sm:text-2xl tracking-tight text-white">Orbit<span class="text-primary-500">Scale</span></span>
+                    <span class="font-display font-bold text-xl sm:text-2xl tracking-tight text-white">Orbit<span
+                            class="text-primary-500">Scale</span></span>
                 </a>
 
                 <!-- Desktop Menu -->
                 <div class="hidden md:flex items-center space-x-1">
                     <div class="relative group px-3 py-2">
-                        <button class="flex items-center gap-1 text-slate-300 font-medium hover:text-primary-400 transition">
+                        <button
+                            class="flex items-center gap-1 text-slate-300 font-medium hover:text-primary-400 transition">
                             Product <i class="ph-bold ph-caret-down text-xs mt-0.5"></i>
                         </button>
-                        <div class="absolute top-full left-1/2 -translate-x-1/2 pt-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-2 group-hover:translate-y-0">
-                            <div class="w-64 bg-slate-800 rounded-2xl shadow-xl border border-slate-700 p-2 overflow-hidden">
-                                <a href="index.html" class="flex items-center gap-3 p-3 rounded-xl hover:bg-slate-700 transition">
-                                    <div class="w-8 h-8 rounded-lg bg-primary-900/30 text-primary-400 flex items-center justify-center"><i class="ph-fill ph-rocket-launch"></i></div>
-                                    <div><div class="font-bold text-sm text-white">Platform</div><div class="text-xs text-slate-400">For scaling teams</div></div>
+                        <div
+                            class="absolute top-full left-1/2 -translate-x-1/2 pt-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-2 group-hover:translate-y-0">
+                            <div
+                                class="w-64 bg-slate-800 rounded-2xl shadow-xl border border-slate-700 p-2 overflow-hidden">
+                                <a href="index.html"
+                                    class="flex items-center gap-3 p-3 rounded-xl hover:bg-slate-700 transition">
+                                    <div
+                                        class="w-8 h-8 rounded-lg bg-primary-900/30 text-primary-400 flex items-center justify-center">
+                                        <i class="ph-fill ph-rocket-launch"></i></div>
+                                    <div>
+                                        <div class="font-bold text-sm text-white">Platform</div>
+                                        <div class="text-xs text-slate-400">For scaling teams</div>
+                                    </div>
                                 </a>
-                                <a href="index-v2.html" class="flex items-center gap-3 p-3 rounded-xl hover:bg-slate-700 transition">
-                                    <div class="w-8 h-8 rounded-lg bg-slate-700 text-white flex items-center justify-center"><i class="ph-fill ph-code"></i></div>
-                                    <div><div class="font-bold text-sm text-white">Developer API</div><div class="text-xs text-slate-400">Documentation</div></div>
+                                <a href="index-v2.html"
+                                    class="flex items-center gap-3 p-3 rounded-xl hover:bg-slate-700 transition">
+                                    <div
+                                        class="w-8 h-8 rounded-lg bg-slate-700 text-white flex items-center justify-center">
+                                        <i class="ph-fill ph-code"></i></div>
+                                    <div>
+                                        <div class="font-bold text-sm text-white">Developer API</div>
+                                        <div class="text-xs text-slate-400">Documentation</div>
+                                    </div>
                                 </a>
                             </div>
                         </div>
                     </div>
-                    <a href="services.html" class="px-4 py-2 text-slate-300 font-medium hover:text-primary-400 transition rounded-full hover:bg-white/5">Solutions</a>
-                    <a href="pricing.html" class="px-4 py-2 text-slate-300 font-medium hover:text-primary-400 transition rounded-full hover:bg-white/5">Pricing</a>
-                    <a href="about.html" class="px-4 py-2 text-slate-300 font-medium hover:text-primary-400 transition rounded-full hover:bg-white/5">Company</a>
+                    <a href="services.html"
+                        class="px-4 py-2 text-slate-300 font-medium hover:text-primary-400 transition rounded-full hover:bg-white/5">Solutions</a>
+                    <a href="pricing.html"
+                        class="px-4 py-2 text-slate-300 font-medium hover:text-primary-400 transition rounded-full hover:bg-white/5">Pricing</a>
+                    <a href="about.html"
+                        class="px-4 py-2 text-slate-300 font-medium hover:text-primary-400 transition rounded-full hover:bg-white/5">Company</a>
                     <!-- Dashboard Dropdown -->
                     <div class="relative group px-3 py-2">
-                        <button class="flex items-center gap-1 text-white font-medium bg-white/10 px-3 py-1.5 rounded-lg">
+                        <button
+                            class="flex items-center gap-1 text-white font-medium bg-white/10 px-3 py-1.5 rounded-lg">
                             Dashboards <i class="ph-bold ph-caret-down text-xs mt-0.5"></i>
                         </button>
-                        <div class="absolute top-full left-1/2 -translate-x-1/2 pt-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-2 group-hover:translate-y-0">
-                            <div class="w-48 bg-slate-800 rounded-2xl shadow-xl border border-slate-700 py-2 overflow-hidden">
-                                <a href="user-dashboard.html" class="block px-4 py-2.5 text-slate-300 hover:bg-slate-700 text-sm">
+                        <div
+                            class="absolute top-full left-1/2 -translate-x-1/2 pt-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-2 group-hover:translate-y-0">
+                            <div
+                                class="w-48 bg-slate-800 rounded-2xl shadow-xl border border-slate-700 py-2 overflow-hidden">
+                                <a href="user-dashboard.html"
+                                    class="block px-4 py-2.5 text-slate-300 hover:bg-slate-700 text-sm">
                                     <i class="ph ph-user mr-2"></i>User Dashboard
                                 </a>
-                                <a href="admin-dashboard.html" class="block px-4 py-2.5 text-white bg-primary-600/20 text-sm font-medium">
+                                <a href="admin-dashboard.html"
+                                    class="block px-4 py-2.5 text-white bg-primary-600/20 text-sm font-medium">
                                     <i class="ph ph-shield-check mr-2"></i>Admin Dashboard
                                 </a>
                             </div>
@@ -92,20 +126,27 @@
 
                 <!-- Actions -->
                 <div class="hidden md:flex items-center gap-3">
-                    <button class="rtl-toggle-btn w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-slate-400 hover:bg-white/10 hover:text-primary-400 transition">
+                    <button
+                        class="rtl-toggle-btn w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-slate-400 hover:bg-white/10 hover:text-primary-400 transition">
                         <i class="ph ph-globe text-lg"></i>
                     </button>
-                    <button class="p-2.5 rounded-full border border-white/20 text-slate-400 hover:bg-white/10 hover:text-primary-400 transition relative">
+                    <button
+                        class="p-2.5 rounded-full border border-white/20 text-slate-400 hover:bg-white/10 hover:text-primary-400 transition relative">
                         <i class="ph ph-bell text-lg"></i>
                         <span class="absolute top-1 right-1 w-2 h-2 bg-red-500 rounded-full"></span>
                     </button>
-                    <a href="login.html" class="px-5 py-2 rounded-full bg-white/10 border border-white/20 text-white font-medium hover:bg-white/20 transition text-sm">Logout</a>
-                    <div class="w-9 h-9 rounded-full bg-gradient-to-br from-red-500 to-orange-500 flex items-center justify-center text-white text-xs font-bold shadow-lg shadow-red-500/30">AD</div>
+                    <a href="login.html"
+                        class="px-5 py-2 rounded-full bg-white/10 border border-white/20 text-white font-medium hover:bg-white/20 transition text-sm">Logout</a>
+                    <div
+                        class="w-9 h-9 rounded-full bg-gradient-to-br from-red-500 to-orange-500 flex items-center justify-center text-white text-xs font-bold shadow-lg shadow-red-500/30">
+                        AD</div>
                 </div>
 
                 <!-- Mobile Toggle -->
                 <div class="md:hidden flex items-center gap-2">
-                    <button class="rtl-toggle-btn p-2 text-slate-400 hover:text-primary-400 hover:bg-white/10 rounded-lg transition" title="Toggle RTL/LTR">
+                    <button
+                        class="rtl-toggle-btn p-2 text-slate-400 hover:text-primary-400 hover:bg-white/10 rounded-lg transition"
+                        title="Toggle RTL/LTR">
                         <i class="ph ph-globe text-xl"></i>
                     </button>
                     <button id="mobile-menu-btn" class="p-2 text-slate-300">
@@ -117,32 +158,46 @@
     </nav>
 
     <!-- Mobile Menu Overlay -->
-    <div id="mobile-menu-overlay" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-[60] opacity-0 pointer-events-none transition-opacity duration-300"></div>
-    
+    <div id="mobile-menu-overlay"
+        class="fixed inset-0 bg-black/60 backdrop-blur-sm z-[60] opacity-0 pointer-events-none transition-opacity duration-300">
+    </div>
+
     <!-- Mobile Menu Drawer -->
-    <div id="mobile-menu" class="fixed top-0 w-[300px] h-full bg-slate-900 shadow-2xl z-[70] transition-transform duration-300 ease-in-out flex flex-col">
+    <div id="mobile-menu"
+        class="fixed top-0 w-[300px] h-full bg-slate-900 shadow-2xl z-[70] transition-transform duration-300 ease-in-out flex flex-col">
         <div class="p-6 border-b border-white/10 flex justify-between items-center">
             <span class="font-display font-bold text-xl text-white">Menu</span>
             <div class="flex items-center gap-2">
-                <button class="rtl-toggle-btn p-2 text-slate-400 hover:text-primary-400 hover:bg-white/10 rounded-lg transition" title="Toggle RTL/LTR">
+                <button
+                    class="rtl-toggle-btn p-2 text-slate-400 hover:text-primary-400 hover:bg-white/10 rounded-lg transition"
+                    title="Toggle RTL/LTR">
                     <i class="ph ph-globe text-xl"></i>
                 </button>
-                <button id="mobile-menu-close" class="p-2 text-slate-400 hover:text-white hover:bg-white/10 rounded-lg transition">
+                <button id="mobile-menu-close"
+                    class="p-2 text-slate-400 hover:text-white hover:bg-white/10 rounded-lg transition">
                     <i class="ph ph-x text-xl"></i>
                 </button>
             </div>
         </div>
         <div class="flex-1 overflow-y-auto p-6 space-y-2">
-            <a href="index.html" class="block px-4 py-3 rounded-xl text-slate-300 hover:bg-white/10 font-medium">Home</a>
-            <a href="services.html" class="block px-4 py-3 rounded-xl text-slate-300 hover:bg-white/10 font-medium">Solutions</a>
-            <a href="pricing.html" class="block px-4 py-3 rounded-xl text-slate-300 hover:bg-white/10 font-medium">Pricing</a>
-            <a href="about.html" class="block px-4 py-3 rounded-xl text-slate-300 hover:bg-white/10 font-medium">Company</a>
+            <a href="index.html"
+                class="block px-4 py-3 rounded-xl text-slate-300 hover:bg-white/10 font-medium">Home</a>
+            <a href="index-v2.html" class="block px-4 py-3 rounded-xl text-slate-300 hover:bg-white/10 font-medium">Home
+                2</a>
+            <a href="services.html"
+                class="block px-4 py-3 rounded-xl text-slate-300 hover:bg-white/10 font-medium">Solutions</a>
+            <a href="pricing.html"
+                class="block px-4 py-3 rounded-xl text-slate-300 hover:bg-white/10 font-medium">Pricing</a>
+            <a href="about.html"
+                class="block px-4 py-3 rounded-xl text-slate-300 hover:bg-white/10 font-medium">Company</a>
             <div class="my-4 border-t border-white/10"></div>
             <p class="px-4 text-xs uppercase tracking-wider text-slate-500 mb-2">Dashboards</p>
-            <a href="user-dashboard.html" class="block px-4 py-3 rounded-xl text-slate-300 hover:bg-white/10 font-medium">
+            <a href="user-dashboard.html"
+                class="block px-4 py-3 rounded-xl text-slate-300 hover:bg-white/10 font-medium">
                 <i class="ph ph-user mr-2"></i>User Dashboard
             </a>
-            <a href="admin-dashboard.html" class="block px-4 py-3 rounded-xl bg-primary-600/20 text-primary-400 font-medium">
+            <a href="admin-dashboard.html"
+                class="block px-4 py-3 rounded-xl bg-primary-600/20 text-primary-400 font-medium">
                 <i class="ph ph-shield-check mr-2"></i>Admin Dashboard
             </a>
             <div class="my-4 border-t border-white/10"></div>
@@ -163,12 +218,14 @@
                 <i class="ph ph-gear-six mr-2"></i>Settings
             </a>
             <div class="my-4 border-t border-white/10"></div>
-            <a href="login.html" class="block w-full py-3 rounded-xl bg-white/10 border border-white/20 text-white text-center font-medium mt-4">Logout</a>
+            <a href="login.html"
+                class="block w-full py-3 rounded-xl bg-white/10 border border-white/20 text-white text-center font-medium mt-4">Logout</a>
         </div>
     </div>
 
     <!-- Desktop Left Sidebar -->
-    <aside id="desktop-sidebar" class="hidden md:flex fixed top-16 sm:top-20 left-0 h-[calc(100vh-4rem)] sm:h-[calc(100vh-5rem)] w-64 bg-slate-900/80 border-r border-white/10 backdrop-blur-xl z-40 flex-col">
+    <aside id="desktop-sidebar"
+        class="hidden md:flex fixed top-16 sm:top-20 left-0 h-[calc(100vh-4rem)] sm:h-[calc(100vh-5rem)] w-64 bg-slate-900/80 border-r border-white/10 backdrop-blur-xl z-40 flex-col">
         <div class="p-4 flex-1">
             <div class="mb-6">
                 <h3 class="text-xs uppercase tracking-wider text-slate-500 font-semibold px-3 mb-2">Navigation</h3>
@@ -177,29 +234,36 @@
                 <a href="#" class="flex items-center gap-3 px-3 py-2.5 rounded-xl bg-white/10 text-white font-medium">
                     <i class="ph ph-compass text-lg"></i>Overview
                 </a>
-                <a href="#" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-400 hover:text-white hover:bg-white/5 font-medium transition">
+                <a href="#"
+                    class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-400 hover:text-white hover:bg-white/5 font-medium transition">
                     <i class="ph ph-users text-lg"></i>Users
                 </a>
-                <a href="#" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-400 hover:text-white hover:bg-white/5 font-medium transition">
+                <a href="#"
+                    class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-400 hover:text-white hover:bg-white/5 font-medium transition">
                     <i class="ph ph-currency-circle-dollar text-lg"></i>Revenue
                 </a>
-                <a href="#" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-400 hover:text-white hover:bg-white/5 font-medium transition">
+                <a href="#"
+                    class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-400 hover:text-white hover:bg-white/5 font-medium transition">
                     <i class="ph ph-activity text-lg"></i>System Health
                 </a>
-                <a href="#" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-400 hover:text-white hover:bg-white/5 font-medium transition">
+                <a href="#"
+                    class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-400 hover:text-white hover:bg-white/5 font-medium transition">
                     <i class="ph ph-gear-six text-lg"></i>Settings
                 </a>
             </nav>
             <div class="my-6 border-t border-white/10"></div>
             <div class="space-y-1">
                 <h3 class="text-xs uppercase tracking-wider text-slate-500 font-semibold px-3 mb-2">Quick Actions</h3>
-                <a href="#" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-400 hover:text-white hover:bg-white/5 font-medium transition">
+                <a href="#"
+                    class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-400 hover:text-white hover:bg-white/5 font-medium transition">
                     <i class="ph ph-plus-circle text-lg"></i>Add User
                 </a>
-                <a href="#" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-400 hover:text-white hover:bg-white/5 font-medium transition">
+                <a href="#"
+                    class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-400 hover:text-white hover:bg-white/5 font-medium transition">
                     <i class="ph ph-download text-lg"></i>Export Data
                 </a>
-                <a href="#" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-400 hover:text-white hover:bg-white/5 font-medium transition">
+                <a href="#"
+                    class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-400 hover:text-white hover:bg-white/5 font-medium transition">
                     <i class="ph ph-clipboard-text text-lg"></i>View Logs
                 </a>
             </div>
@@ -211,11 +275,16 @@
 
     <main id="main-content" class="pt-16 sm:pt-20 pb-12 md:ml-64">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-5 sm:space-y-6 lg:space-y-8 pt-5 sm:pt-6">
-            
+
             <!-- Admin Hero -->
-            <section class="relative overflow-hidden bg-gradient-to-br from-red-600/20 via-slate-900 to-orange-600/20 border border-white/10 rounded-2xl sm:rounded-2xl lg:rounded-3xl p-5 sm:p-6 lg:p-8 dashboard-hero">
-                <div class="absolute top-0 right-0 w-32 sm:w-64 h-32 sm:h-64 bg-red-500/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
-                <div class="absolute bottom-0 left-0 w-24 sm:w-48 h-24 sm:h-48 bg-orange-500/20 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2"></div>
+            <section
+                class="relative overflow-hidden bg-gradient-to-br from-red-600/20 via-slate-900 to-orange-600/20 border border-white/10 rounded-2xl sm:rounded-2xl lg:rounded-3xl p-5 sm:p-6 lg:p-8 dashboard-hero">
+                <div
+                    class="absolute top-0 right-0 w-32 sm:w-64 h-32 sm:h-64 bg-red-500/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2">
+                </div>
+                <div
+                    class="absolute bottom-0 left-0 w-24 sm:w-48 h-24 sm:h-48 bg-orange-500/20 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2">
+                </div>
                 <div class="relative">
                     <div class="flex items-center gap-2 mb-2 sm:mb-3 flex-wrap">
                         <span class="px-2.5 sm:px-3 py-1 rounded-full bg-red-500/20 text-red-400 text-xs font-medium">
@@ -223,13 +292,17 @@
                         </span>
                         <span class="text-slate-400 text-xs sm:text-sm hidden sm:inline">Orbital Command</span>
                     </div>
-                    <h1 class="text-xl sm:text-2xl lg:text-3xl font-display font-bold text-white mb-2 sm:mb-2">Welcome, Administrator 🛡️</h1>
-                    <p class="text-slate-400 text-sm sm:text-sm lg:text-base max-w-lg mb-4">Monitor platform health, manage users, and track revenue from your command center.</p>
+                    <h1 class="text-xl sm:text-2xl lg:text-3xl font-display font-bold text-white mb-2 sm:mb-2">Welcome,
+                        Administrator 🛡️</h1>
+                    <p class="text-slate-400 text-sm sm:text-sm lg:text-base max-w-lg mb-4">Monitor platform health,
+                        manage users, and track revenue from your command center.</p>
                     <div class="flex flex-wrap gap-2 sm:gap-3 dashboard-header-actions">
-                        <button class="flex-1 sm:flex-none px-4 sm:px-5 py-2.5 sm:py-2.5 rounded-xl bg-red-600 text-white font-medium hover:bg-red-700 transition shadow-lg shadow-red-600/30 text-sm">
+                        <button
+                            class="flex-1 sm:flex-none px-4 sm:px-5 py-2.5 sm:py-2.5 rounded-xl bg-red-600 text-white font-medium hover:bg-red-700 transition shadow-lg shadow-red-600/30 text-sm">
                             <i class="ph ph-plus-circle mr-2"></i>Add User
                         </button>
-                        <button class="flex-1 sm:flex-none px-4 sm:px-5 py-2.5 sm:py-2.5 rounded-xl bg-white/10 border border-white/20 text-white font-medium hover:bg-white/20 transition text-sm">
+                        <button
+                            class="flex-1 sm:flex-none px-4 sm:px-5 py-2.5 sm:py-2.5 rounded-xl bg-white/10 border border-white/20 text-white font-medium hover:bg-white/20 transition text-sm">
                             <i class="ph ph-download-simple mr-2"></i>Export Data
                         </button>
                     </div>
@@ -238,9 +311,11 @@
 
             <!-- KPIs Grid -->
             <section class="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-4 dashboard-grid-4">
-                <div class="glass-card border border-white/10 rounded-xl sm:rounded-xl lg:rounded-2xl p-4 sm:p-4 lg:p-5 group hover:border-emerald-500/50 transition-all duration-300">
+                <div
+                    class="glass-card border border-white/10 rounded-xl sm:rounded-xl lg:rounded-2xl p-4 sm:p-4 lg:p-5 group hover:border-emerald-500/50 transition-all duration-300">
                     <div class="flex items-center justify-between mb-3">
-                        <div class="w-10 h-10 sm:w-10 sm:h-10 rounded-xl bg-emerald-500/20 flex items-center justify-center text-emerald-400">
+                        <div
+                            class="w-10 h-10 sm:w-10 sm:h-10 rounded-xl bg-emerald-500/20 flex items-center justify-center text-emerald-400">
                             <i class="ph ph-currency-dollar text-lg sm:text-xl"></i>
                         </div>
                         <span class="text-emerald-400 text-xs font-medium">+8.2%</span>
@@ -249,9 +324,11 @@
                     <p class="text-xs sm:text-xs lg:text-sm text-slate-400">Total Revenue</p>
                     <div id="spark-rev" class="sparkline-container mt-1 sm:mt-2 hidden sm:block"></div>
                 </div>
-                <div class="glass-card border border-white/10 rounded-xl sm:rounded-xl lg:rounded-2xl p-4 sm:p-4 lg:p-5 group hover:border-purple-500/50 transition-all duration-300">
+                <div
+                    class="glass-card border border-white/10 rounded-xl sm:rounded-xl lg:rounded-2xl p-4 sm:p-4 lg:p-5 group hover:border-purple-500/50 transition-all duration-300">
                     <div class="flex items-center justify-between mb-3">
-                        <div class="w-10 h-10 sm:w-10 sm:h-10 rounded-xl bg-purple-500/20 flex items-center justify-center text-purple-400">
+                        <div
+                            class="w-10 h-10 sm:w-10 sm:h-10 rounded-xl bg-purple-500/20 flex items-center justify-center text-purple-400">
                             <i class="ph ph-users text-lg sm:text-xl"></i>
                         </div>
                         <span class="text-blue-400 text-xs font-medium">1,204 live</span>
@@ -260,9 +337,11 @@
                     <p class="text-xs sm:text-xs lg:text-sm text-slate-400">Active Users</p>
                     <div id="spark-users" class="sparkline-container mt-1 sm:mt-2 hidden sm:block"></div>
                 </div>
-                <div class="glass-card border border-white/10 rounded-xl sm:rounded-xl lg:rounded-2xl p-4 sm:p-4 lg:p-5 group hover:border-emerald-500/50 transition-all duration-300">
+                <div
+                    class="glass-card border border-white/10 rounded-xl sm:rounded-xl lg:rounded-2xl p-4 sm:p-4 lg:p-5 group hover:border-emerald-500/50 transition-all duration-300">
                     <div class="flex items-center justify-between mb-3">
-                        <div class="w-10 h-10 sm:w-10 sm:h-10 rounded-xl bg-emerald-500/20 flex items-center justify-center text-emerald-400">
+                        <div
+                            class="w-10 h-10 sm:w-10 sm:h-10 rounded-xl bg-emerald-500/20 flex items-center justify-center text-emerald-400">
                             <i class="ph ph-trend-down text-lg sm:text-xl"></i>
                         </div>
                         <span class="text-emerald-400 text-xs font-medium">-0.6%</span>
@@ -271,9 +350,11 @@
                     <p class="text-xs sm:text-xs lg:text-sm text-slate-400">Churn Rate</p>
                     <div id="spark-churn" class="sparkline-container mt-1 sm:mt-2 hidden sm:block"></div>
                 </div>
-                <div class="glass-card border border-white/10 rounded-xl sm:rounded-xl lg:rounded-2xl p-4 sm:p-4 lg:p-5 group hover:border-orange-500/50 transition-all duration-300">
+                <div
+                    class="glass-card border border-white/10 rounded-xl sm:rounded-xl lg:rounded-2xl p-4 sm:p-4 lg:p-5 group hover:border-orange-500/50 transition-all duration-300">
                     <div class="flex items-center justify-between mb-3">
-                        <div class="w-10 h-10 sm:w-10 sm:h-10 rounded-xl bg-orange-500/20 flex items-center justify-center text-orange-400">
+                        <div
+                            class="w-10 h-10 sm:w-10 sm:h-10 rounded-xl bg-orange-500/20 flex items-center justify-center text-orange-400">
                             <i class="ph ph-hard-drives text-lg sm:text-xl"></i>
                         </div>
                         <span class="text-orange-400 text-xs font-medium">54% avg</span>
@@ -287,61 +368,78 @@
             <!-- Revenue Chart + Support Tickets -->
             <section class="grid lg:grid-cols-3 gap-4 sm:gap-4 lg:gap-6">
                 <!-- Revenue Chart -->
-                <div class="lg:col-span-2 glass-card border border-white/10 rounded-xl sm:rounded-xl lg:rounded-2xl p-5 sm:p-5 lg:p-6">
+                <div
+                    class="lg:col-span-2 glass-card border border-white/10 rounded-xl sm:rounded-xl lg:rounded-2xl p-5 sm:p-5 lg:p-6">
                     <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-5">
                         <div>
                             <h3 class="font-semibold text-white text-sm sm:text-base">Revenue Growth</h3>
                             <p class="text-xs sm:text-sm text-slate-400">ARR & MRR trajectory</p>
                         </div>
                         <div class="flex items-center gap-3 text-[10px] sm:text-xs">
-                            <span class="inline-flex items-center gap-1.5"><span class="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-blue-500"></span>ARR</span>
-                            <span class="inline-flex items-center gap-1.5"><span class="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-emerald-500"></span>MRR</span>
+                            <span class="inline-flex items-center gap-1.5"><span
+                                    class="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-blue-500"></span>ARR</span>
+                            <span class="inline-flex items-center gap-1.5"><span
+                                    class="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-emerald-500"></span>MRR</span>
                         </div>
                     </div>
                     <div id="area-revenue" class="h-48 sm:h-64 lg:h-72 dashboard-chart"></div>
                 </div>
 
                 <!-- Support Tickets -->
-                <div class="glass-card border border-white/10 rounded-xl sm:rounded-xl lg:rounded-2xl p-5 sm:p-5 lg:p-6 flex flex-col">
+                <div
+                    class="glass-card border border-white/10 rounded-xl sm:rounded-xl lg:rounded-2xl p-5 sm:p-5 lg:p-6 flex flex-col">
                     <div class="flex items-center justify-between mb-4">
                         <div>
                             <h3 class="font-semibold text-white text-sm sm:text-base">Support Queue</h3>
                             <p class="text-xs sm:text-sm text-slate-400">Recent tickets</p>
                         </div>
-                        <button class="text-primary-400 hover:text-primary-300 text-xs sm:text-sm font-medium">View all</button>
+                        <button class="text-primary-400 hover:text-primary-300 text-xs sm:text-sm font-medium">View
+                            all</button>
                     </div>
                     <div class="space-y-2 sm:space-y-3 flex-1 overflow-y-auto">
-                        <div class="p-2.5 sm:p-3 rounded-lg sm:rounded-xl bg-red-500/10 border border-red-500/30 group hover:border-red-500/50 transition">
+                        <div
+                            class="p-2.5 sm:p-3 rounded-lg sm:rounded-xl bg-red-500/10 border border-red-500/30 group hover:border-red-500/50 transition">
                             <div class="flex items-start justify-between gap-2">
-                                <span class="text-white text-xs sm:text-sm font-medium line-clamp-1">Payments failing on EU region</span>
-                                <span class="text-emerald-400 text-[10px] sm:text-xs whitespace-nowrap bg-emerald-500/20 px-1.5 sm:px-2 py-0.5 rounded-full">New</span>
+                                <span class="text-white text-xs sm:text-sm font-medium line-clamp-1">Payments failing on
+                                    EU region</span>
+                                <span
+                                    class="text-emerald-400 text-[10px] sm:text-xs whitespace-nowrap bg-emerald-500/20 px-1.5 sm:px-2 py-0.5 rounded-full">New</span>
                             </div>
                             <p class="text-[10px] sm:text-xs text-slate-400 mt-1 flex items-center gap-1 sm:gap-2">
                                 <span class="text-red-400">High</span> • 4m ago
                             </p>
                         </div>
-                        <div class="p-2.5 sm:p-3 rounded-lg sm:rounded-xl bg-white/5 border border-white/10 group hover:border-primary-500/50 transition">
+                        <div
+                            class="p-2.5 sm:p-3 rounded-lg sm:rounded-xl bg-white/5 border border-white/10 group hover:border-primary-500/50 transition">
                             <div class="flex items-start justify-between gap-2">
-                                <span class="text-white text-xs sm:text-sm font-medium line-clamp-1">SSO redirect loop</span>
-                                <span class="text-primary-400 text-[10px] sm:text-xs whitespace-nowrap bg-primary-500/20 px-1.5 sm:px-2 py-0.5 rounded-full">Investigating</span>
+                                <span class="text-white text-xs sm:text-sm font-medium line-clamp-1">SSO redirect
+                                    loop</span>
+                                <span
+                                    class="text-primary-400 text-[10px] sm:text-xs whitespace-nowrap bg-primary-500/20 px-1.5 sm:px-2 py-0.5 rounded-full">Investigating</span>
                             </div>
                             <p class="text-[10px] sm:text-xs text-slate-400 mt-1">
                                 <span class="text-amber-400">Medium</span> • 22m ago
                             </p>
                         </div>
-                        <div class="p-2.5 sm:p-3 rounded-lg sm:rounded-xl bg-white/5 border border-white/10 group hover:border-white/20 transition">
+                        <div
+                            class="p-2.5 sm:p-3 rounded-lg sm:rounded-xl bg-white/5 border border-white/10 group hover:border-white/20 transition">
                             <div class="flex items-start justify-between gap-2">
-                                <span class="text-white text-xs sm:text-sm font-medium line-clamp-1">Webhook retries spiking</span>
-                                <span class="text-slate-300 text-[10px] sm:text-xs whitespace-nowrap bg-white/10 px-1.5 sm:px-2 py-0.5 rounded-full">Open</span>
+                                <span class="text-white text-xs sm:text-sm font-medium line-clamp-1">Webhook retries
+                                    spiking</span>
+                                <span
+                                    class="text-slate-300 text-[10px] sm:text-xs whitespace-nowrap bg-white/10 px-1.5 sm:px-2 py-0.5 rounded-full">Open</span>
                             </div>
                             <p class="text-[10px] sm:text-xs text-slate-400 mt-1">
                                 <span class="text-slate-500">Low</span> • 1h ago
                             </p>
                         </div>
-                        <div class="hidden sm:block p-2.5 sm:p-3 rounded-lg sm:rounded-xl bg-white/5 border border-white/10 group hover:border-white/20 transition">
+                        <div
+                            class="hidden sm:block p-2.5 sm:p-3 rounded-lg sm:rounded-xl bg-white/5 border border-white/10 group hover:border-white/20 transition">
                             <div class="flex items-start justify-between gap-2">
-                                <span class="text-white text-xs sm:text-sm font-medium line-clamp-1">Org invite limits</span>
-                                <span class="text-slate-300 text-[10px] sm:text-xs whitespace-nowrap bg-white/10 px-1.5 sm:px-2 py-0.5 rounded-full">Open</span>
+                                <span class="text-white text-xs sm:text-sm font-medium line-clamp-1">Org invite
+                                    limits</span>
+                                <span
+                                    class="text-slate-300 text-[10px] sm:text-xs whitespace-nowrap bg-white/10 px-1.5 sm:px-2 py-0.5 rounded-full">Open</span>
                             </div>
                             <p class="text-[10px] sm:text-xs text-slate-400 mt-1">
                                 <span class="text-slate-500">Low</span> • 2h ago
@@ -352,7 +450,8 @@
             </section>
 
             <!-- Users Table -->
-            <section class="glass-card border border-white/10 rounded-xl sm:rounded-xl lg:rounded-2xl p-4 sm:p-5 lg:p-6">
+            <section
+                class="glass-card border border-white/10 rounded-xl sm:rounded-xl lg:rounded-2xl p-4 sm:p-5 lg:p-6">
                 <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-4 sm:mb-5">
                     <div>
                         <h3 class="font-semibold text-white text-sm sm:text-base">Recent Signups</h3>
@@ -360,21 +459,26 @@
                     </div>
                     <div class="flex flex-wrap gap-2">
                         <div class="relative flex-1 sm:flex-none min-w-[200px]">
-                            <i class="ph ph-magnifying-glass text-slate-400 absolute left-3 top-1/2 -translate-y-1/2 text-sm"></i>
-                            <input type="search" placeholder="Search..." class="w-full sm:w-auto bg-white/5 border border-white/10 rounded-xl text-sm pl-10 pr-4 py-2.5 text-white placeholder:text-slate-500 focus:outline-none focus:border-primary-500/50" />
+                            <i
+                                class="ph ph-magnifying-glass text-slate-400 absolute left-3 top-1/2 -translate-y-1/2 text-sm"></i>
+                            <input type="search" placeholder="Search..."
+                                class="w-full sm:w-auto bg-white/5 border border-white/10 rounded-xl text-sm pl-10 pr-4 py-2.5 text-white placeholder:text-slate-500 focus:outline-none focus:border-primary-500/50" />
                         </div>
-                        <button class="px-4 py-2.5 rounded-xl bg-primary-600/20 text-primary-400 border border-primary-500/30 text-sm font-medium hover:bg-primary-600/30 transition">
+                        <button
+                            class="px-4 py-2.5 rounded-xl bg-primary-600/20 text-primary-400 border border-primary-500/30 text-sm font-medium hover:bg-primary-600/30 transition">
                             <i class="ph ph-download-simple mr-1.5"></i><span class="hidden sm:inline">Export</span>
                         </button>
                     </div>
                 </div>
-                
+
                 <!-- Mobile Cards View -->
                 <div class="sm:hidden space-y-3">
                     <div class="p-4 rounded-xl bg-white/5 border border-white/10">
                         <div class="flex items-center justify-between mb-3">
                             <div class="flex items-center gap-2.5">
-                                <div class="w-10 h-10 rounded-full bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center text-white text-sm font-bold">AS</div>
+                                <div
+                                    class="w-10 h-10 rounded-full bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center text-white text-sm font-bold">
+                                    AS</div>
                                 <div>
                                     <p class="font-medium text-white text-sm">Amelia Stone</p>
                                     <p class="text-xs text-slate-400">amelia@north.io</p>
@@ -383,14 +487,17 @@
                             <span class="text-emerald-400 text-xs">Active</span>
                         </div>
                         <div class="flex items-center justify-between text-xs">
-                            <span class="px-1.5 py-0.5 rounded-full bg-primary-500/20 text-primary-400 border border-primary-500/30">Pro</span>
+                            <span
+                                class="px-1.5 py-0.5 rounded-full bg-primary-500/20 text-primary-400 border border-primary-500/30">Pro</span>
                             <span class="text-slate-400">Jan 3, 2026</span>
                         </div>
                     </div>
                     <div class="p-4 rounded-xl bg-white/5 border border-white/10">
                         <div class="flex items-center justify-between mb-3">
                             <div class="flex items-center gap-2.5">
-                                <div class="w-10 h-10 rounded-full bg-gradient-to-br from-emerald-500 to-teal-500 flex items-center justify-center text-white text-sm font-bold">KR</div>
+                                <div
+                                    class="w-10 h-10 rounded-full bg-gradient-to-br from-emerald-500 to-teal-500 flex items-center justify-center text-white text-sm font-bold">
+                                    KR</div>
                                 <div>
                                     <p class="font-medium text-white text-sm">Khalid Rahman</p>
                                     <p class="text-xs text-slate-400">k.rahman@aurora.dev</p>
@@ -399,14 +506,17 @@
                             <span class="text-amber-400 text-xs">Trial</span>
                         </div>
                         <div class="flex items-center justify-between text-[10px]">
-                            <span class="px-1.5 py-0.5 rounded-full bg-white/10 text-slate-300 border border-white/10">Free</span>
+                            <span
+                                class="px-1.5 py-0.5 rounded-full bg-white/10 text-slate-300 border border-white/10">Free</span>
                             <span class="text-slate-400">Jan 2, 2026</span>
                         </div>
                     </div>
                     <div class="p-4 rounded-xl bg-white/5 border border-white/10">
                         <div class="flex items-center justify-between mb-3">
                             <div class="flex items-center gap-2.5">
-                                <div class="w-10 h-10 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center text-white text-sm font-bold">SL</div>
+                                <div
+                                    class="w-10 h-10 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center text-white text-sm font-bold">
+                                    SL</div>
                                 <div>
                                     <p class="font-medium text-white text-sm">Sofia Lima</p>
                                     <p class="text-xs text-slate-400">sofia.l@mercury.io</p>
@@ -415,7 +525,8 @@
                             <span class="text-emerald-400 text-xs">Active</span>
                         </div>
                         <div class="flex items-center justify-between text-xs">
-                            <span class="px-1.5 py-0.5 rounded-full bg-primary-500/20 text-primary-400 border border-primary-500/30">Pro</span>
+                            <span
+                                class="px-1.5 py-0.5 rounded-full bg-primary-500/20 text-primary-400 border border-primary-500/30">Pro</span>
                             <span class="text-slate-400">Dec 31, 2025</span>
                         </div>
                     </div>
@@ -438,72 +549,100 @@
                             <tr class="hover:bg-white/5 transition">
                                 <td class="py-3 pr-4">
                                     <div class="flex items-center gap-3">
-                                        <div class="w-8 h-8 rounded-full bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center text-white text-xs font-bold">AS</div>
+                                        <div
+                                            class="w-8 h-8 rounded-full bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center text-white text-xs font-bold">
+                                            AS</div>
                                         <span>Amelia Stone</span>
                                     </div>
                                 </td>
                                 <td class="py-3 px-4 text-slate-400">amelia@north.io</td>
-                                <td class="py-3 px-4"><span class="px-2.5 py-1 rounded-full text-xs bg-primary-500/20 text-primary-400 border border-primary-500/30">Pro</span></td>
+                                <td class="py-3 px-4"><span
+                                        class="px-2.5 py-1 rounded-full text-xs bg-primary-500/20 text-primary-400 border border-primary-500/30">Pro</span>
+                                </td>
                                 <td class="py-3 px-4 text-slate-400">Jan 3, 2026</td>
-                                <td class="py-3 px-4"><span class="text-emerald-400 flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>Active</span></td>
+                                <td class="py-3 px-4"><span class="text-emerald-400 flex items-center gap-1"><span
+                                            class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>Active</span></td>
                                 <td class="py-3 pl-4 pr-2 text-right">
                                     <div class="inline-flex items-center gap-2 text-xs">
-                                        <button class="px-3 py-1.5 rounded-lg border border-white/10 hover:bg-white/10 transition">Edit</button>
-                                        <button class="px-3 py-1.5 rounded-lg border border-red-500/30 text-red-400 hover:bg-red-500/10 transition">Suspend</button>
+                                        <button
+                                            class="px-3 py-1.5 rounded-lg border border-white/10 hover:bg-white/10 transition">Edit</button>
+                                        <button
+                                            class="px-3 py-1.5 rounded-lg border border-red-500/30 text-red-400 hover:bg-red-500/10 transition">Suspend</button>
                                     </div>
                                 </td>
                             </tr>
                             <tr class="hover:bg-white/5 transition">
                                 <td class="py-3 pr-4">
                                     <div class="flex items-center gap-3">
-                                        <div class="w-8 h-8 rounded-full bg-gradient-to-br from-emerald-500 to-teal-500 flex items-center justify-center text-white text-xs font-bold">KR</div>
+                                        <div
+                                            class="w-8 h-8 rounded-full bg-gradient-to-br from-emerald-500 to-teal-500 flex items-center justify-center text-white text-xs font-bold">
+                                            KR</div>
                                         <span>Khalid Rahman</span>
                                     </div>
                                 </td>
                                 <td class="py-3 px-4 text-slate-400">k.rahman@aurora.dev</td>
-                                <td class="py-3 px-4"><span class="px-2.5 py-1 rounded-full text-xs bg-white/10 text-slate-300 border border-white/10">Free</span></td>
+                                <td class="py-3 px-4"><span
+                                        class="px-2.5 py-1 rounded-full text-xs bg-white/10 text-slate-300 border border-white/10">Free</span>
+                                </td>
                                 <td class="py-3 px-4 text-slate-400">Jan 2, 2026</td>
-                                <td class="py-3 px-4"><span class="text-amber-400 flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-amber-400"></span>Trial</span></td>
+                                <td class="py-3 px-4"><span class="text-amber-400 flex items-center gap-1"><span
+                                            class="w-1.5 h-1.5 rounded-full bg-amber-400"></span>Trial</span></td>
                                 <td class="py-3 pl-4 pr-2 text-right">
                                     <div class="inline-flex items-center gap-2 text-xs">
-                                        <button class="px-3 py-1.5 rounded-lg border border-white/10 hover:bg-white/10 transition">Edit</button>
-                                        <button class="px-3 py-1.5 rounded-lg border border-red-500/30 text-red-400 hover:bg-red-500/10 transition">Suspend</button>
+                                        <button
+                                            class="px-3 py-1.5 rounded-lg border border-white/10 hover:bg-white/10 transition">Edit</button>
+                                        <button
+                                            class="px-3 py-1.5 rounded-lg border border-red-500/30 text-red-400 hover:bg-red-500/10 transition">Suspend</button>
                                     </div>
                                 </td>
                             </tr>
                             <tr class="hover:bg-white/5 transition">
                                 <td class="py-3 pr-4">
                                     <div class="flex items-center gap-3">
-                                        <div class="w-8 h-8 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center text-white text-xs font-bold">SL</div>
+                                        <div
+                                            class="w-8 h-8 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center text-white text-xs font-bold">
+                                            SL</div>
                                         <span>Sofia Lima</span>
                                     </div>
                                 </td>
                                 <td class="py-3 px-4 text-slate-400">sofia.l@mercury.io</td>
-                                <td class="py-3 px-4"><span class="px-2.5 py-1 rounded-full text-xs bg-primary-500/20 text-primary-400 border border-primary-500/30">Pro</span></td>
+                                <td class="py-3 px-4"><span
+                                        class="px-2.5 py-1 rounded-full text-xs bg-primary-500/20 text-primary-400 border border-primary-500/30">Pro</span>
+                                </td>
                                 <td class="py-3 px-4 text-slate-400">Dec 31, 2025</td>
-                                <td class="py-3 px-4"><span class="text-emerald-400 flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>Active</span></td>
+                                <td class="py-3 px-4"><span class="text-emerald-400 flex items-center gap-1"><span
+                                            class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>Active</span></td>
                                 <td class="py-3 pl-4 pr-2 text-right">
                                     <div class="inline-flex items-center gap-2 text-xs">
-                                        <button class="px-3 py-1.5 rounded-lg border border-white/10 hover:bg-white/10 transition">Edit</button>
-                                        <button class="px-3 py-1.5 rounded-lg border border-red-500/30 text-red-400 hover:bg-red-500/10 transition">Suspend</button>
+                                        <button
+                                            class="px-3 py-1.5 rounded-lg border border-white/10 hover:bg-white/10 transition">Edit</button>
+                                        <button
+                                            class="px-3 py-1.5 rounded-lg border border-red-500/30 text-red-400 hover:bg-red-500/10 transition">Suspend</button>
                                     </div>
                                 </td>
                             </tr>
                             <tr class="hover:bg-white/5 transition">
                                 <td class="py-3 pr-4">
                                     <div class="flex items-center gap-3">
-                                        <div class="w-8 h-8 rounded-full bg-gradient-to-br from-orange-500 to-amber-500 flex items-center justify-center text-white text-xs font-bold">DM</div>
+                                        <div
+                                            class="w-8 h-8 rounded-full bg-gradient-to-br from-orange-500 to-amber-500 flex items-center justify-center text-white text-xs font-bold">
+                                            DM</div>
                                         <span>Diego Martins</span>
                                     </div>
                                 </td>
                                 <td class="py-3 px-4 text-slate-400">d.martins@echo.app</td>
-                                <td class="py-3 px-4"><span class="px-2.5 py-1 rounded-full text-xs bg-white/10 text-slate-300 border border-white/10">Free</span></td>
+                                <td class="py-3 px-4"><span
+                                        class="px-2.5 py-1 rounded-full text-xs bg-white/10 text-slate-300 border border-white/10">Free</span>
+                                </td>
                                 <td class="py-3 px-4 text-slate-400">Dec 30, 2025</td>
-                                <td class="py-3 px-4"><span class="text-amber-400 flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-amber-400"></span>Trial</span></td>
+                                <td class="py-3 px-4"><span class="text-amber-400 flex items-center gap-1"><span
+                                            class="w-1.5 h-1.5 rounded-full bg-amber-400"></span>Trial</span></td>
                                 <td class="py-3 pl-4 pr-2 text-right">
                                     <div class="inline-flex items-center gap-2 text-xs">
-                                        <button class="px-3 py-1.5 rounded-lg border border-white/10 hover:bg-white/10 transition">Edit</button>
-                                        <button class="px-3 py-1.5 rounded-lg border border-red-500/30 text-red-400 hover:bg-red-500/10 transition">Suspend</button>
+                                        <button
+                                            class="px-3 py-1.5 rounded-lg border border-white/10 hover:bg-white/10 transition">Edit</button>
+                                        <button
+                                            class="px-3 py-1.5 rounded-lg border border-red-500/30 text-red-400 hover:bg-red-500/10 transition">Suspend</button>
                                     </div>
                                 </td>
                             </tr>
@@ -512,24 +651,34 @@
                 </div>
 
                 <!-- Pagination -->
-                <div class="flex flex-col sm:flex-row items-center justify-between mt-4 pt-4 border-t border-white/10 gap-3">
+                <div
+                    class="flex flex-col sm:flex-row items-center justify-between mt-4 pt-4 border-t border-white/10 gap-3">
                     <p class="text-xs sm:text-sm text-slate-400">Showing 1-4 of 48 users</p>
                     <div class="flex items-center gap-2">
-                        <button class="px-3 py-2 rounded-lg border border-white/10 text-slate-400 hover:bg-white/10 text-sm disabled:opacity-50" disabled>Prev</button>
-                        <button class="px-3 py-2 rounded-lg bg-primary-600/20 border border-primary-500/30 text-primary-400 text-sm">1</button>
-                        <button class="px-3 py-2 rounded-lg border border-white/10 text-slate-400 hover:bg-white/10 text-sm">2</button>
-                        <button class="px-3 py-2 rounded-lg border border-white/10 text-slate-400 hover:bg-white/10 text-sm">3</button>
-                        <button class="px-3 py-2 rounded-lg border border-white/10 text-slate-400 hover:bg-white/10 text-sm">Next</button>
+                        <button
+                            class="px-3 py-2 rounded-lg border border-white/10 text-slate-400 hover:bg-white/10 text-sm disabled:opacity-50"
+                            disabled>Prev</button>
+                        <button
+                            class="px-3 py-2 rounded-lg bg-primary-600/20 border border-primary-500/30 text-primary-400 text-sm">1</button>
+                        <button
+                            class="px-3 py-2 rounded-lg border border-white/10 text-slate-400 hover:bg-white/10 text-sm">2</button>
+                        <button
+                            class="px-3 py-2 rounded-lg border border-white/10 text-slate-400 hover:bg-white/10 text-sm">3</button>
+                        <button
+                            class="px-3 py-2 rounded-lg border border-white/10 text-slate-400 hover:bg-white/10 text-sm">Next</button>
                     </div>
                 </div>
             </section>
 
             <!-- System Status -->
             <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-4 lg:gap-6">
-                <div class="glass-card border border-white/10 rounded-xl sm:rounded-xl lg:rounded-2xl p-5 sm:p-5 lg:p-6">
+                <div
+                    class="glass-card border border-white/10 rounded-xl sm:rounded-xl lg:rounded-2xl p-5 sm:p-5 lg:p-6">
                     <div class="flex items-center justify-between mb-4 flex-wrap gap-2">
                         <h3 class="font-semibold text-white text-base">System Status</h3>
-                        <span class="px-2.5 py-1 rounded-full bg-emerald-500/20 text-emerald-400 text-xs font-medium">All Operational</span>
+                        <span
+                            class="px-2.5 py-1 rounded-full bg-emerald-500/20 text-emerald-400 text-xs font-medium">All
+                            Operational</span>
                     </div>
                     <div class="space-y-3">
                         <div class="flex items-center justify-between">
@@ -559,38 +708,46 @@
                     </div>
                 </div>
 
-                <div class="glass-card border border-white/10 rounded-xl sm:rounded-xl lg:rounded-2xl p-5 sm:p-5 lg:p-6">
+                <div
+                    class="glass-card border border-white/10 rounded-xl sm:rounded-xl lg:rounded-2xl p-5 sm:p-5 lg:p-6">
                     <div class="flex items-center justify-between mb-4">
                         <h3 class="font-semibold text-white text-base">Quick Actions</h3>
                     </div>
                     <div class="grid grid-cols-2 gap-3">
-                        <button class="p-3 rounded-xl bg-white/5 border border-white/10 hover:border-primary-500/50 hover:bg-primary-500/10 transition text-center group">
+                        <button
+                            class="p-3 rounded-xl bg-white/5 border border-white/10 hover:border-primary-500/50 hover:bg-primary-500/10 transition text-center group">
                             <i class="ph ph-user-plus text-xl text-slate-400 group-hover:text-primary-400 mb-1.5"></i>
                             <p class="text-xs text-slate-300">Add User</p>
                         </button>
-                        <button class="p-3 rounded-xl bg-white/5 border border-white/10 hover:border-emerald-500/50 hover:bg-emerald-500/10 transition text-center group">
-                            <i class="ph ph-chart-line-up text-xl text-slate-400 group-hover:text-emerald-400 mb-1.5"></i>
+                        <button
+                            class="p-3 rounded-xl bg-white/5 border border-white/10 hover:border-emerald-500/50 hover:bg-emerald-500/10 transition text-center group">
+                            <i
+                                class="ph ph-chart-line-up text-xl text-slate-400 group-hover:text-emerald-400 mb-1.5"></i>
                             <p class="text-xs text-slate-300">Reports</p>
                         </button>
-                        <button class="p-3 rounded-xl bg-white/5 border border-white/10 hover:border-amber-500/50 hover:bg-amber-500/10 transition text-center group">
+                        <button
+                            class="p-3 rounded-xl bg-white/5 border border-white/10 hover:border-amber-500/50 hover:bg-amber-500/10 transition text-center group">
                             <i class="ph ph-gear-six text-xl text-slate-400 group-hover:text-amber-400 mb-1.5"></i>
                             <p class="text-xs text-slate-300">Settings</p>
                         </button>
-                        <button class="p-3 rounded-xl bg-white/5 border border-white/10 hover:border-red-500/50 hover:bg-red-500/10 transition text-center group">
+                        <button
+                            class="p-3 rounded-xl bg-white/5 border border-white/10 hover:border-red-500/50 hover:bg-red-500/10 transition text-center group">
                             <i class="ph ph-lifebuoy text-xl text-slate-400 group-hover:text-red-400 mb-1.5"></i>
                             <p class="text-xs text-slate-300">Support</p>
                         </button>
                     </div>
                 </div>
 
-                <div class="sm:col-span-2 lg:col-span-1 glass-card border border-white/10 rounded-xl sm:rounded-xl lg:rounded-2xl p-5 sm:p-5 lg:p-6">
+                <div
+                    class="sm:col-span-2 lg:col-span-1 glass-card border border-white/10 rounded-xl sm:rounded-xl lg:rounded-2xl p-5 sm:p-5 lg:p-6">
                     <div class="flex items-center justify-between mb-4">
                         <h3 class="font-semibold text-white text-base">Activity Log</h3>
                         <button class="text-primary-400 hover:text-primary-300 text-xs">View all</button>
                     </div>
                     <div class="space-y-3">
                         <div class="flex items-start gap-3">
-                            <div class="w-9 h-9 rounded-full bg-emerald-500/20 flex items-center justify-center text-emerald-400 flex-shrink-0">
+                            <div
+                                class="w-9 h-9 rounded-full bg-emerald-500/20 flex items-center justify-center text-emerald-400 flex-shrink-0">
                                 <i class="ph ph-user-plus text-sm"></i>
                             </div>
                             <div>
@@ -599,7 +756,8 @@
                             </div>
                         </div>
                         <div class="flex items-start gap-3">
-                            <div class="w-9 h-9 rounded-full bg-primary-500/20 flex items-center justify-center text-primary-400 flex-shrink-0">
+                            <div
+                                class="w-9 h-9 rounded-full bg-primary-500/20 flex items-center justify-center text-primary-400 flex-shrink-0">
                                 <i class="ph ph-credit-card text-sm"></i>
                             </div>
                             <div>
@@ -608,7 +766,8 @@
                             </div>
                         </div>
                         <div class="flex items-start gap-3">
-                            <div class="w-9 h-9 rounded-full bg-amber-500/20 flex items-center justify-center text-amber-400 flex-shrink-0">
+                            <div
+                                class="w-9 h-9 rounded-full bg-amber-500/20 flex items-center justify-center text-amber-400 flex-shrink-0">
                                 <i class="ph ph-warning text-sm"></i>
                             </div>
                             <div>
@@ -625,14 +784,14 @@
 
     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
     <script>
-        // RTL persistence - load immediately
-        (function() {
-            const savedDir = localStorage.getItem('orbit-dir');
-            if (savedDir) document.documentElement.dir = savedDir;
-        })();
+            // RTL persistence - load immediately
+            (function () {
+                const savedDir = localStorage.getItem('orbit-dir');
+                if (savedDir) document.documentElement.dir = savedDir;
+            })();
     </script>
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             // Mobile menu elements
             const mobileMenuBtn = document.getElementById('mobile-menu-btn');
             const mobileMenu = document.getElementById('mobile-menu');
@@ -681,16 +840,16 @@
             }
 
             // Event listeners
-            mobileMenuBtn?.addEventListener('click', function(e) {
+            mobileMenuBtn?.addEventListener('click', function (e) {
                 e.stopPropagation();
                 openMobileMenu();
             });
-            
-            mobileMenuClose?.addEventListener('click', function(e) {
+
+            mobileMenuClose?.addEventListener('click', function (e) {
                 e.stopPropagation();
                 closeMobileMenu();
             });
-            
+
             mobileMenuOverlay?.addEventListener('click', closeMobileMenu);
 
             // Sidebar RTL positioning
@@ -698,7 +857,7 @@
                 const sidebar = document.getElementById('desktop-sidebar');
                 const mainContent = document.getElementById('main-content');
                 if (!sidebar || !mainContent) return;
-                
+
                 if (isRTL()) {
                     sidebar.style.left = 'auto';
                     sidebar.style.right = '0';
@@ -715,103 +874,103 @@
                     mainContent.style.marginRight = '0';
                 }
             }
-            
+
             // Initial sidebar position
             updateSidebarPosition();
 
             // RTL toggle buttons
-            document.querySelectorAll('.rtl-toggle-btn').forEach(function(btn) {
-                btn.addEventListener('click', function(e) {
+            document.querySelectorAll('.rtl-toggle-btn').forEach(function (btn) {
+                btn.addEventListener('click', function (e) {
                     e.stopPropagation();
                     const html = document.documentElement;
                     const newDir = html.dir === 'rtl' ? 'ltr' : 'rtl';
                     html.dir = newDir;
                     localStorage.setItem('orbit-dir', newDir);
-                    
+
                     // Update menu position without closing
                     const isOpen = mobileMenu && mobileMenu.style.transform === 'translateX(0)';
                     setMenuPosition(isOpen);
-                    
+
                     // Update sidebar position
                     updateSidebarPosition();
                 });
             });
 
             // Close on Escape key
-            document.addEventListener('keydown', function(e) {
+            document.addEventListener('keydown', function (e) {
                 if (e.key === 'Escape') closeMobileMenu();
             });
 
-        // Sparklines
-        const sparkBase = {
-            chart: { type: 'area', height: 50, sparkline: { enabled: true }, animations: { enabled: true } },
-            stroke: { width: 2, curve: 'smooth' },
-            fill: { opacity: 0.15 },
-            tooltip: { enabled: false },
-        };
+            // Sparklines
+            const sparkBase = {
+                chart: { type: 'area', height: 50, sparkline: { enabled: true }, animations: { enabled: true } },
+                stroke: { width: 2, curve: 'smooth' },
+                fill: { opacity: 0.15 },
+                tooltip: { enabled: false },
+            };
 
-        if (document.querySelector('#spark-rev')) {
-            new ApexCharts(document.querySelector('#spark-rev'), {
-                ...sparkBase,
-                colors: ['#10b981'],
-                series: [{ data: [32, 45, 41, 60, 58, 72, 80] }]
-            }).render();
-        }
-        
-        if (document.querySelector('#spark-users')) {
-            new ApexCharts(document.querySelector('#spark-users'), {
-                ...sparkBase,
-                colors: ['#8b5cf6'],
-                series: [{ data: [12, 18, 16, 22, 27, 30, 34] }]
-            }).render();
-        }
-        
-        if (document.querySelector('#spark-churn')) {
-            new ApexCharts(document.querySelector('#spark-churn'), {
-                ...sparkBase,
-                colors: ['#10b981'],
-                series: [{ data: [4.1, 3.9, 3.5, 3.2, 2.9, 2.6, 2.4] }]
-            }).render();
-        }
-        
-        if (document.querySelector('#spark-load')) {
-            new ApexCharts(document.querySelector('#spark-load'), {
-                ...sparkBase,
-                colors: ['#f97316'],
-                series: [{ data: [40, 55, 52, 70, 68, 72, 60] }]
-            }).render();
-        }
+            if (document.querySelector('#spark-rev')) {
+                new ApexCharts(document.querySelector('#spark-rev'), {
+                    ...sparkBase,
+                    colors: ['#10b981'],
+                    series: [{ data: [32, 45, 41, 60, 58, 72, 80] }]
+                }).render();
+            }
 
-        // Area chart
-        if (document.querySelector('#area-revenue')) {
-            new ApexCharts(document.querySelector('#area-revenue'), {
-                chart: { 
-                    type: 'area', 
-                    height: '100%', 
-                    toolbar: { show: false }, 
-                    foreColor: '#cbd5e1', 
-                    animations: { enabled: true },
-                    fontFamily: 'Inter, sans-serif'
-                },
-                colors: ['#3b82f6', '#10b981'],
-                dataLabels: { enabled: false },
-                stroke: { curve: 'smooth', width: 2 },
-                fill: { type: 'gradient', gradient: { opacityFrom: 0.25, opacityTo: 0, stops: [0, 90, 100] } },
-                grid: { borderColor: 'rgba(255,255,255,0.05)', padding: { left: 10, right: 10 } },
-                series: [
-                    { name: 'ARR', data: [420, 510, 560, 640, 710, 820, 910, 980, 1050, 1140, 1220, 1310] },
-                    { name: 'MRR', data: [35, 42, 46, 54, 60, 69, 75, 81, 88, 94, 101, 110] },
-                ],
-                xaxis: { 
-                    categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
-                    axisBorder: { show: false },
-                    axisTicks: { show: false }
-                },
-                yaxis: { labels: { formatter: (v) => `$${v}k` } },
-                tooltip: { theme: 'dark' },
-                legend: { show: false },
-            }).render();
-        }
+            if (document.querySelector('#spark-users')) {
+                new ApexCharts(document.querySelector('#spark-users'), {
+                    ...sparkBase,
+                    colors: ['#8b5cf6'],
+                    series: [{ data: [12, 18, 16, 22, 27, 30, 34] }]
+                }).render();
+            }
+
+            if (document.querySelector('#spark-churn')) {
+                new ApexCharts(document.querySelector('#spark-churn'), {
+                    ...sparkBase,
+                    colors: ['#10b981'],
+                    series: [{ data: [4.1, 3.9, 3.5, 3.2, 2.9, 2.6, 2.4] }]
+                }).render();
+            }
+
+            if (document.querySelector('#spark-load')) {
+                new ApexCharts(document.querySelector('#spark-load'), {
+                    ...sparkBase,
+                    colors: ['#f97316'],
+                    series: [{ data: [40, 55, 52, 70, 68, 72, 60] }]
+                }).render();
+            }
+
+            // Area chart
+            if (document.querySelector('#area-revenue')) {
+                new ApexCharts(document.querySelector('#area-revenue'), {
+                    chart: {
+                        type: 'area',
+                        height: '100%',
+                        toolbar: { show: false },
+                        foreColor: '#cbd5e1',
+                        animations: { enabled: true },
+                        fontFamily: 'Inter, sans-serif'
+                    },
+                    colors: ['#3b82f6', '#10b981'],
+                    dataLabels: { enabled: false },
+                    stroke: { curve: 'smooth', width: 2 },
+                    fill: { type: 'gradient', gradient: { opacityFrom: 0.25, opacityTo: 0, stops: [0, 90, 100] } },
+                    grid: { borderColor: 'rgba(255,255,255,0.05)', padding: { left: 10, right: 10 } },
+                    series: [
+                        { name: 'ARR', data: [420, 510, 560, 640, 710, 820, 910, 980, 1050, 1140, 1220, 1310] },
+                        { name: 'MRR', data: [35, 42, 46, 54, 60, 69, 75, 81, 88, 94, 101, 110] },
+                    ],
+                    xaxis: {
+                        categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+                        axisBorder: { show: false },
+                        axisTicks: { show: false }
+                    },
+                    yaxis: { labels: { formatter: (v) => `$${v}k` } },
+                    tooltip: { theme: 'dark' },
+                    legend: { show: false },
+                }).render();
+            }
         });
     </script>
 </body>

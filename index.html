@@ -102,7 +102,7 @@
                     <div class="relative group px-3 py-2">
                         <button
                             class="flex items-center gap-1 text-slate-600 dark:text-slate-300 font-medium hover:text-primary-600 dark:hover:text-primary-400 transition">
-                            Product <i class="ph-bold ph-caret-down text-xs mt-0.5"></i>
+                            Home <i class="ph-bold ph-caret-down text-xs mt-0.5"></i>
                         </button>
                         <div
                             class="absolute top-full left-1/2 -translate-x-1/2 pt-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-2 group-hover:translate-y-0">
@@ -112,21 +112,20 @@
                                     class="flex items-center gap-3 p-3 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-700 transition">
                                     <div
                                         class="w-8 h-8 rounded-lg bg-primary-50 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400 flex items-center justify-center">
-                                        <i class="ph-fill ph-rocket-launch"></i></div>
+                                        <i class="ph-fill ph-rocket-launch"></i>
+                                    </div>
                                     <div>
-                                        <div class="font-bold text-sm text-slate-900 dark:text-white">Platform</div>
-                                        <div class="text-xs text-slate-500 dark:text-slate-400">For scaling teams</div>
+                                        <div class="font-bold text-sm text-slate-900 dark:text-white">Home 1</div>
                                     </div>
                                 </a>
                                 <a href="index-v2.html"
                                     class="flex items-center gap-3 p-3 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-700 transition">
                                     <div
                                         class="w-8 h-8 rounded-lg bg-slate-900 dark:bg-slate-700 text-white flex items-center justify-center">
-                                        <i class="ph-fill ph-code"></i></div>
+                                        <i class="ph-fill ph-code"></i>
+                                    </div>
                                     <div>
-                                        <div class="font-bold text-sm text-slate-900 dark:text-white">Developer API
-                                        </div>
-                                        <div class="text-xs text-slate-500 dark:text-slate-400">Documentation</div>
+                                        <div class="font-bold text-sm text-slate-900 dark:text-white">Home 2</div>
                                     </div>
                                 </a>
                             </div>
@@ -157,9 +156,17 @@
                 </div>
 
                 <!-- Mobile Toggle -->
-                <button id="mobile-menu-btn" class="md:hidden p-2 text-slate-600 dark:text-slate-300">
-                    <i class="ph ph-list text-2xl"></i>
-                </button>
+                <!-- Mobile Actions -->
+                <div class="flex md:hidden items-center gap-2">
+                    <button
+                        class="rtl-toggle-btn p-2 text-slate-900 dark:text-white hover:text-primary-600 dark:hover:text-primary-400 transition"
+                        title="Toggle RTL/LTR">
+                        <i class="ph ph-globe text-xl"></i>
+                    </button>
+                    <button id="mobile-menu-btn" class="p-2 text-slate-600 dark:text-slate-300">
+                        <i class="ph ph-list text-2xl"></i>
+                    </button>
+                </div>
             </div>
         </div>
     </nav>
@@ -200,6 +207,12 @@
             <a href="register.html"
                 class="block w-full py-3 rounded-xl bg-primary-600 text-white text-center font-bold shadow-lg shadow-primary-500/30 mt-4">Get
                 Started Free</a>
+            <div class="mt-4 flex justify-center">
+                <button
+                    class="rtl-toggle-btn w-10 h-10 rounded-full border border-slate-200 dark:border-slate-800 flex items-center justify-center text-slate-500 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-primary-600 dark:hover:text-primary-400 transition">
+                    <i class="ph ph-globe text-lg"></i>
+                </button>
+            </div>
         </div>
     </div>
 
@@ -282,7 +295,8 @@
                             <div class="flex items-center gap-3">
                                 <div
                                     class="w-10 h-10 rounded-full bg-green-100 text-green-600 flex items-center justify-center">
-                                    <i class="ph-fill ph-check-circle text-xl"></i></div>
+                                    <i class="ph-fill ph-check-circle text-xl"></i>
+                                </div>
                                 <div>
                                     <div class="text-xs text-slate-500 font-medium">Deployment Status</div>
                                     <div class="text-sm font-bold text-slate-900">Successful</div>
@@ -294,7 +308,8 @@
                             <div class="flex items-center gap-3">
                                 <div
                                     class="w-10 h-10 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center">
-                                    <i class="ph-fill ph-users text-xl"></i></div>
+                                    <i class="ph-fill ph-users text-xl"></i>
+                                </div>
                                 <div>
                                     <div class="text-xs text-slate-500 font-medium">Active Users</div>
                                     <div class="text-sm font-bold text-slate-900">+1,240 today</div>
@@ -314,15 +329,15 @@
                 <div
                     class="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
                     <!-- Using text as placeholders for logos to keep it clean -->
-                    <div class="text-2xl font-bold font-display text-slate-800 flex items-center gap-2"><i
+                    <div class="text-xl md:text-2xl font-bold font-display text-slate-800 flex items-center gap-2"><i
                             class="ph-fill ph-apple-logo"></i> Acme Inc.</div>
-                    <div class="text-2xl font-bold font-display text-slate-800 flex items-center gap-2"><i
+                    <div class="text-xl md:text-2xl font-bold font-display text-slate-800 flex items-center gap-2"><i
                             class="ph-fill ph-google-logo"></i> GlobalTech</div>
-                    <div class="text-2xl font-bold font-display text-slate-800 flex items-center gap-2"><i
+                    <div class="text-xl md:text-2xl font-bold font-display text-slate-800 flex items-center gap-2"><i
                             class="ph-fill ph-microsoft-logo"></i> Nebula</div>
-                    <div class="text-2xl font-bold font-display text-slate-800 flex items-center gap-2"><i
+                    <div class="text-xl md:text-2xl font-bold font-display text-slate-800 flex items-center gap-2"><i
                             class="ph-fill ph-amazon-logo"></i> CloudFlow</div>
-                    <div class="text-2xl font-bold font-display text-slate-800 flex items-center gap-2"><i
+                    <div class="text-xl md:text-2xl font-bold font-display text-slate-800 flex items-center gap-2"><i
                             class="ph-fill ph-spotify-logo"></i> StreamLine</div>
                 </div>
             </div>
@@ -345,7 +360,8 @@
                         <div class="relative z-10">
                             <div
                                 class="w-12 h-12 rounded-xl bg-primary-100 text-primary-600 flex items-center justify-center mb-6 text-2xl">
-                                <i class="ph-fill ph-chart-line-up"></i></div>
+                                <i class="ph-fill ph-chart-line-up"></i>
+                            </div>
                             <h3 class="text-2xl font-bold text-slate-900 mb-3">Real-time Analytics</h3>
                             <p class="text-slate-600 max-w-md">Monitor your application performance, user growth, and
                                 revenue metrics in real-time with our advanced dashboard.</p>
@@ -354,7 +370,7 @@
                             class="absolute right-0 bottom-0 w-1/2 h-full bg-gradient-to-l from-primary-50 to-transparent opacity-50">
                         </div>
                         <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                            class="absolute -bottom-10 -right-10 w-64 rounded-xl shadow-lg border border-slate-200 transform rotate-6 group-hover:rotate-3 transition-transform duration-500"
+                            class="absolute -bottom-10 -right-10 w-64 rounded-xl shadow-lg border border-slate-200 transform rotate-6 group-hover:rotate-3 transition-transform duration-500 hidden md:block"
                             alt="Analytics">
                     </div>
 
@@ -365,7 +381,8 @@
                         <div class="relative z-10 h-full flex flex-col">
                             <div
                                 class="w-12 h-12 rounded-xl bg-white/10 text-white flex items-center justify-center mb-6 text-2xl backdrop-blur-sm">
-                                <i class="ph-fill ph-shield-check"></i></div>
+                                <i class="ph-fill ph-shield-check"></i>
+                            </div>
                             <h3 class="text-2xl font-bold mb-3">Enterprise Security</h3>
                             <p class="text-slate-400 mb-8">Bank-grade encryption and SOC2 compliance out of the box.</p>
 
@@ -391,7 +408,8 @@
                         class="bg-white rounded-3xl p-8 border border-slate-200 shadow-sm hover:shadow-md transition group">
                         <div
                             class="w-12 h-12 rounded-xl bg-secondary-100 text-secondary-600 flex items-center justify-center mb-6 text-2xl">
-                            <i class="ph-fill ph-lightning"></i></div>
+                            <i class="ph-fill ph-lightning"></i>
+                        </div>
                         <h3 class="text-xl font-bold text-slate-900 mb-2">Instant Deploy</h3>
                         <p class="text-slate-600 text-sm">Push to git and we handle the rest. Live in seconds.</p>
                     </div>
@@ -401,7 +419,8 @@
                         class="bg-white rounded-3xl p-8 border border-slate-200 shadow-sm hover:shadow-md transition group">
                         <div
                             class="w-12 h-12 rounded-xl bg-accent-100 text-accent-600 flex items-center justify-center mb-6 text-2xl">
-                            <i class="ph-fill ph-users-three"></i></div>
+                            <i class="ph-fill ph-users-three"></i>
+                        </div>
                         <h3 class="text-xl font-bold text-slate-900 mb-2">Team Collaboration</h3>
                         <p class="text-slate-600 text-sm">Built-in comments, reviews, and approval workflows.</p>
                     </div>
@@ -567,7 +586,8 @@
                     <a href="index.html" class="flex items-center gap-2 mb-4">
                         <div
                             class="w-8 h-8 rounded-lg bg-gradient-to-br from-violet-500 to-pink-500 flex items-center justify-center text-white shadow-lg shadow-violet-500/30 group-hover:scale-110 transition-transform duration-300">
-                            <i class="ph-bold ph-planet"></i></div>
+                            <i class="ph-bold ph-planet"></i>
+                        </div>
                         <span class="font-display font-bold text-xl text-slate-900 dark:text-white">OrbitScale</span>
                     </a>
                     <p class="text-slate-500 dark:text-slate-400 text-sm max-w-xs mb-6">Making cloud infrastructure

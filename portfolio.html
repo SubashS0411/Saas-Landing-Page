@@ -19,135 +19,164 @@
                     },
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
-                        <!-- Navbar -->
-                        <nav class="fixed top-0 w-full z-50 transition-all duration-300" id="navbar">
-                            <div class="absolute inset-0 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-b border-slate-200/50 dark:border-slate-800/50"></div>
-                            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-                                <div class="flex justify-between items-center h-20">
-                                    <!-- Logo -->
-                                    <a href="index.html" class="flex items-center gap-2 group">
-                                        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-violet-500 to-pink-500 flex items-center justify-center text-white shadow-lg shadow-violet-500/30 group-hover:scale-110 transition-transform duration-300">
-                                            <i class="ph-bold ph-planet text-xl"></i>
-                                        </div>
-                                        <span class="font-display font-bold text-2xl tracking-tight text-slate-900 dark:text-white">Orbit<span class="text-primary-600 dark:text-primary-500">Scale</span></span>
-                                    </a>
+                        display: ['Outfit', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
 
-                                    <!-- Desktop Menu -->
-                                    <div class="hidden md:flex items-center space-x-1">
-                                        <div class="relative group px-3 py-2">
-                                            <button class="flex items-center gap-1 text-slate-600 dark:text-slate-300 font-medium hover:text-primary-600 dark:hover:text-primary-400 transition">
-                                                Product <i class="ph-bold ph-caret-down text-xs mt-0.5"></i>
-                                            </button>
-                                            <div class="absolute top-full left-1/2 -translate-x-1/2 pt-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-2 group-hover:translate-y-0">
-                                                <div class="w-64 bg-white dark:bg-slate-800 rounded-2xl shadow-xl border border-slate-100 dark:border-slate-700 p-2 overflow-hidden">
-                                                    <a href="index.html" class="flex items-center gap-3 p-3 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-700 transition">
-                                                        <div class="w-8 h-8 rounded-lg bg-primary-50 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400 flex items-center justify-center"><i class="ph-fill ph-rocket-launch"></i></div>
-                                                        <div><div class="font-bold text-sm text-slate-900 dark:text-white">Platform</div><div class="text-xs text-slate-500 dark:text-slate-400">For scaling teams</div></div>
-                                                    </a>
-                                                    <a href="index-v2.html" class="flex items-center gap-3 p-3 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-700 transition">
-                                                        <div class="w-8 h-8 rounded-lg bg-slate-900 dark:bg-slate-700 text-white flex items-center justify-center"><i class="ph-fill ph-code"></i></div>
-                                                        <div><div class="font-bold text-sm text-slate-900 dark:text-white">Developer API</div><div class="text-xs text-slate-500 dark:text-slate-400">Documentation</div></div>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <a href="services.html" class="px-4 py-2 text-slate-600 dark:text-slate-300 font-medium hover:text-primary-600 dark:hover:text-primary-400 transition rounded-full hover:bg-slate-100/50 dark:hover:bg-slate-800/50">Solutions</a>
-                                        <a href="pricing.html" class="px-4 py-2 text-slate-600 dark:text-slate-300 font-medium hover:text-primary-600 dark:hover:text-primary-400 transition rounded-full hover:bg-slate-100/50 dark:hover:bg-slate-800/50">Pricing</a>
-                                        <a href="about.html" class="px-4 py-2 text-slate-600 dark:text-slate-300 font-medium hover:text-primary-600 dark:hover:text-primary-400 transition rounded-full hover:bg-slate-100/50 dark:hover:bg-slate-800/50">Company</a>
-                                        <a href="user-dashboard.html" class="px-4 py-2 text-slate-600 dark:text-slate-300 font-medium hover:text-primary-600 dark:hover:text-primary-400 transition rounded-full hover:bg-slate-100/50 dark:hover:bg-slate-800/50">Dashboard</a>
+<body
+    class="font-sans antialiased text-slate-800 bg-slate-50 dark:bg-slate-900 dark:text-slate-200 flex flex-col min-h-screen">
+
+    <!-- Navbar -->
+    <nav class="fixed top-0 w-full z-50 transition-all duration-300" id="navbar">
+        <div
+            class="absolute inset-0 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-b border-slate-200/50 dark:border-slate-800/50">
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <a href="index.html" class="flex items-center gap-2 group">
+                    <div
+                        class="w-10 h-10 rounded-xl bg-gradient-to-br from-violet-500 to-pink-500 flex items-center justify-center text-white shadow-lg shadow-violet-500/30 group-hover:scale-110 transition-transform duration-300">
+                        <i class="ph-bold ph-planet text-xl"></i>
+                    </div>
+                    <span
+                        class="font-display font-bold text-2xl tracking-tight text-slate-900 dark:text-white">Orbit<span
+                            class="text-primary-600 dark:text-primary-500">Scale</span></span>
+                </a>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-1">
+                    <div class="relative group px-3 py-2">
+                        <button
+                            class="flex items-center gap-1 text-slate-600 dark:text-slate-300 font-medium hover:text-primary-600 dark:hover:text-primary-400 transition">
+                            Home <i class="ph-bold ph-caret-down text-xs mt-0.5"></i>
+                        </button>
+                        <div
+                            class="absolute top-full left-1/2 -translate-x-1/2 pt-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-2 group-hover:translate-y-0">
+                            <div
+                                class="w-64 bg-white dark:bg-slate-800 rounded-2xl shadow-xl border border-slate-100 dark:border-slate-700 p-2 overflow-hidden">
+                                <a href="index.html"
+                                    class="flex items-center gap-3 p-3 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-700 transition">
+                                    <div
+                                        class="w-8 h-8 rounded-lg bg-primary-50 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400 flex items-center justify-center">
+                                        <i class="ph-fill ph-rocket-launch"></i>
                                     </div>
-
-                                    <!-- Actions -->
-                                    <div class="hidden md:flex items-center gap-4">
-                                        <a href="login.html" class="text-slate-600 dark:text-slate-300 font-medium hover:text-primary-600 dark:hover:text-primary-400 transition">Log in</a>
-                                        <a href="register.html" class="px-6 py-2.5 rounded-full bg-slate-900 dark:bg-white text-white dark:text-slate-900 font-medium hover:bg-slate-800 dark:hover:bg-slate-100 transition shadow-lg shadow-slate-900/20 hover:-translate-y-0.5">Get Started</a>
-                                        <button class="rtl-toggle-btn w-10 h-10 rounded-full border border-slate-200 dark:border-slate-700 flex items-center justify-center text-slate-500 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-primary-600 dark:hover:text-primary-400 transition">
-                                            <i class="ph ph-globe text-lg"></i>
-                                        </button>
+                                    <div>
+                                        <div class="font-bold text-sm text-slate-900 dark:text-white">Home 1</div>
                                     </div>
-
-                                    <!-- Mobile Toggle -->
-                                    <button id="mobile-menu-btn" class="md:hidden p-2 text-slate-600 dark:text-slate-300">
-                                        <i class="ph ph-list text-2xl"></i>
-                                    </button>
-                                </div>
-                            </div>
-                        </nav>
-
-                        <!-- Mobile Menu Overlay -->
-                        <div id="mobile-menu-overlay" class="fixed inset-0 bg-slate-900/20 backdrop-blur-sm z-[60] hidden opacity-0 transition-opacity duration-300"></div>
-    
-                        <!-- Mobile Menu Drawer -->
-                        <div id="mobile-menu" class="fixed top-0 right-0 rtl:right-auto rtl:left-0 w-[300px] h-full bg-white dark:bg-slate-900 shadow-2xl z-[70] transform translate-x-full rtl:-translate-x-full transition-transform duration-300 flex flex-col">
-                            <div class="p-6 border-b border-slate-100 dark:border-slate-800 flex justify-between items-center">
-                                <span class="font-display font-bold text-xl text-slate-900 dark:text-white">Menu</span>
-                                <button id="mobile-menu-close" class="p-2 text-slate-400 hover:text-slate-600 dark:hover:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg transition">
-                                    <i class="ph ph-x text-xl"></i>
-                                </button>
-                            </div>
-                            <div class="flex-1 overflow-y-auto p-6 space-y-2">
-                                <a href="index.html" class="block px-4 py-3 rounded-xl bg-primary-50 dark:bg-primary-900/20 text-primary-700 dark:text-primary-400 font-medium">Home</a>
-                                <a href="services.html" class="block px-4 py-3 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 font-medium">Solutions</a>
-                                <a href="pricing.html" class="block px-4 py-3 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 font-medium">Pricing</a>
-                                <a href="about.html" class="block px-4 py-3 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 font-medium">Company</a>
-                                <a href="user-dashboard.html" class="block px-4 py-3 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 font-medium">Dashboard</a>
-                                <div class="my-4 border-t border-slate-100 dark:border-slate-800"></div>
-                                <a href="login.html" class="block px-4 py-3 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 font-medium">Log in</a>
-                                <a href="register.html" class="block w-full py-3 rounded-xl bg-primary-600 text-white text-center font-bold shadow-lg shadow-primary-500/30 mt-4">Get Started Free</a>
+                                </a>
+                                <a href="index-v2.html"
+                                    class="flex items-center gap-3 p-3 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-700 transition">
+                                    <div
+                                        class="w-8 h-8 rounded-lg bg-slate-900 dark:bg-slate-700 text-white flex items-center justify-center">
+                                        <i class="ph-fill ph-code"></i>
+                                    </div>
+                                    <div>
+                                        <div class="font-bold text-sm text-slate-900 dark:text-white">Home 2</div>
+                                    </div>
+                                </a>
                             </div>
                         </div>
-                    <button id="theme-toggle-mobile" class="p-2 text-slate-600 dark:text-slate-300 mr-2"><i class="ph ph-moon text-xl dark:hidden"></i><i class="ph ph-sun text-xl hidden dark:block"></i></button>
-                    <button class="rtl-toggle-btn p-2 text-slate-600 dark:text-slate-300 mr-2"><i class="ph ph-globe text-xl"></i></button>
-                    <button id="mobile-menu-btn" class="p-2 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 focus:outline-none" aria-expanded="false"><i class="ph ph-list text-2xl"></i></button>
+                    </div>
+                    <a href="services.html"
+                        class="px-4 py-2 text-slate-600 dark:text-slate-300 font-medium hover:text-primary-600 dark:hover:text-primary-400 transition rounded-full hover:bg-slate-100/50 dark:hover:bg-slate-800/50">Solutions</a>
+                    <a href="pricing.html"
+                        class="px-4 py-2 text-slate-600 dark:text-slate-300 font-medium hover:text-primary-600 dark:hover:text-primary-400 transition rounded-full hover:bg-slate-100/50 dark:hover:bg-slate-800/50">Pricing</a>
+                    <a href="about.html"
+                        class="px-4 py-2 text-slate-600 dark:text-slate-300 font-medium hover:text-primary-600 dark:hover:text-primary-400 transition rounded-full hover:bg-slate-100/50 dark:hover:bg-slate-800/50">Company</a>
+                    <a href="user-dashboard.html"
+                        class="px-4 py-2 text-slate-600 dark:text-slate-300 font-medium hover:text-primary-600 dark:hover:text-primary-400 transition rounded-full hover:bg-slate-100/50 dark:hover:bg-slate-800/50">Dashboard</a>
+                </div>
+
+                <!-- Actions -->
+                <div class="hidden md:flex items-center gap-4">
+                    <a href="login.html"
+                        class="text-slate-600 dark:text-slate-300 font-medium hover:text-primary-600 dark:hover:text-primary-400 transition">Log
+                        in</a>
+                    <a href="register.html"
+                        class="px-6 py-2.5 rounded-full bg-slate-900 dark:bg-white text-white dark:text-slate-900 font-medium hover:bg-slate-800 dark:hover:bg-slate-100 transition shadow-lg shadow-slate-900/20 hover:-translate-y-0.5">Get
+                        Started</a>
+                    <button
+                        class="rtl-toggle-btn w-10 h-10 rounded-full border border-slate-200 dark:border-slate-700 flex items-center justify-center text-slate-500 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-primary-600 dark:hover:text-primary-400 transition">
+                        <i class="ph ph-globe text-lg"></i>
+                    </button>
+                </div>
+
+                <!-- Mobile Toggle -->
+                <!-- Mobile Actions -->
+                <div class="flex md:hidden items-center gap-2">
+                    <button
+                        class="rtl-toggle-btn p-2 text-slate-600 dark:text-slate-300 hover:text-primary-600 dark:hover:text-primary-400 transition"
+                        title="Toggle RTL/LTR">
+                        <i class="ph ph-globe text-xl"></i>
+                    </button>
+                    <button id="mobile-menu-btn" class="p-2 text-slate-600 dark:text-slate-300">
+                        <i class="ph ph-list text-2xl"></i>
+                    </button>
                 </div>
             </div>
         </div>
     </nav>
 
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu-overlay"
+        class="fixed inset-0 bg-slate-900/20 backdrop-blur-sm z-[60] hidden opacity-0 transition-opacity duration-300">
+    </div>
+
     <!-- Mobile Menu Drawer -->
-    <div id="mobile-menu-overlay" class="fixed inset-0 bg-slate-900/50 backdrop-blur-sm z-[60] hidden transition-opacity"></div>
-    <div id="mobile-menu" class="fixed top-0 left-0 w-full h-auto min-h-[50vh] bg-white dark:bg-slate-800 shadow-2xl z-[70] transform -translate-y-full transition-transform duration-300 ease-in-out flex flex-col rounded-b-3xl">
-        <div class="p-6 border-b border-slate-100 dark:border-slate-700 flex justify-between items-center">
+    <div id="mobile-menu"
+        class="fixed top-0 right-0 rtl:right-auto rtl:left-0 w-[300px] h-full bg-white dark:bg-slate-900 shadow-2xl z-[70] transform translate-x-full rtl:-translate-x-full transition-transform duration-300 flex flex-col">
+        <div class="p-6 border-b border-slate-100 dark:border-slate-800 flex justify-between items-center">
             <span class="font-display font-bold text-xl text-slate-900 dark:text-white">Menu</span>
-            <button id="mobile-menu-close" class="p-2 text-slate-500 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-700 rounded-lg"><i class="ph ph-x text-xl"></i></button>
+            <button id="mobile-menu-close"
+                class="p-2 text-slate-400 hover:text-slate-600 dark:hover:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg transition">
+                <i class="ph ph-x text-xl"></i>
+            </button>
         </div>
-        <div class="p-6 space-y-4 flex-1 overflow-y-auto">
-            <a href="index.html" class="block text-lg font-bold text-slate-800 dark:text-white hover:text-primary-600 dark:hover:text-primary-400 px-3 py-2">Home Ver. 1 <span class="text-xs font-normal text-slate-500 dark:text-slate-400 ml-2">(Light)</span></a>
-            <a href="index-v2.html" class="block text-lg font-bold text-slate-800 dark:text-white hover:text-primary-600 dark:hover:text-primary-400 px-3 py-2">Home Ver. 2 <span class="text-xs font-normal text-slate-500 dark:text-slate-400 ml-2">(Dark)</span></a>
-            <div class="pl-4 border-l-2 border-slate-100 dark:border-slate-700 space-y-3 my-2">
-                <a href="user-dashboard.html" class="block text-base font-medium text-slate-600 dark:text-slate-300 hover:text-primary-600 dark:hover:text-primary-400">User Dashboard</a>
-                <a href="admin-dashboard.html" class="block text-base font-medium text-slate-600 dark:text-slate-300 hover:text-primary-600 dark:hover:text-primary-400">Admin Dashboard</a>
-            </div>
-            <a href="about.html" class="block text-lg font-medium text-slate-700 dark:text-slate-300 hover:text-primary-600 dark:hover:text-primary-400 mt-4">About</a>
-            <a href="services.html" class="block text-lg font-medium text-slate-700 dark:text-slate-300 hover:text-primary-600 dark:hover:text-primary-400">Services</a>
-            <a href="pricing.html" class="block text-lg font-medium text-slate-700 dark:text-slate-300 hover:text-primary-600 dark:hover:text-primary-400">Pricing</a>
-            <a href="contact.html" class="block text-lg font-medium text-slate-700 dark:text-slate-300 hover:text-primary-600 dark:hover:text-primary-400">Contact</a>
-            <a href="blog.html" class="block text-lg font-medium text-slate-700 dark:text-slate-300 hover:text-primary-600 dark:hover:text-primary-400">Blog</a>
-            <a href="portfolio.html" class="block text-lg font-medium text-primary-600 dark:text-primary-400">Portfolio</a>
-            <hr class="border-slate-100 dark:border-slate-700 my-4">
-            <a href="login.html" class="block text-lg font-medium text-slate-700 dark:text-slate-300 hover:text-primary-600 dark:hover:text-primary-400">Login</a>
-            <a href="register.html" class="block w-full text-center bg-primary-600 text-white px-5 py-3 rounded-xl font-bold shadow-lg shadow-primary-500/20 mt-4">Get Started</a>
-        </div>
-    </div>
-
-            <a href="about.html" class="block text-lg font-medium text-slate-700 hover:text-primary-600 mt-4">About</a>
-            <a href="services.html" class="block text-lg font-medium text-slate-700 hover:text-primary-600">Services</a>
-            <a href="pricing.html" class="block text-lg font-medium text-slate-700 hover:text-primary-600">Pricing</a>
-            <a href="blog.html" class="block text-lg font-medium text-slate-700 hover:text-primary-600">Blog</a>
-            <hr class="border-slate-100 my-4">
-            <a href="login.html" class="block text-lg font-medium text-slate-700 hover:text-primary-600">Login</a>
+        <div class="flex-1 overflow-y-auto p-6 space-y-2">
+            <a href="index.html"
+                class="block px-4 py-3 rounded-xl bg-primary-50 dark:bg-primary-900/20 text-primary-700 dark:text-primary-400 font-medium">Home</a>
+            <a href="index-v2.html"
+                class="block px-4 py-3 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 font-medium">Home
+                2</a>
+            <a href="services.html"
+                class="block px-4 py-3 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 font-medium">Solutions</a>
+            <a href="pricing.html"
+                class="block px-4 py-3 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 font-medium">Pricing</a>
+            <a href="about.html"
+                class="block px-4 py-3 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 font-medium">Company</a>
+            <a href="user-dashboard.html"
+                class="block px-4 py-3 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 font-medium">Dashboard</a>
+            <div class="my-4 border-t border-slate-100 dark:border-slate-800"></div>
+            <a href="login.html"
+                class="block px-4 py-3 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 font-medium">Log
+                in</a>
             <a href="register.html"
-                class="block w-full text-center bg-primary-600 text-white px-5 py-3 rounded-xl font-bold shadow-lg shadow-primary-500/20 mt-4">
-                Get Started
-            </a>
+                class="block w-full py-3 rounded-xl bg-primary-600 text-white text-center font-bold shadow-lg shadow-primary-500/30 mt-4">Get
+                Started Free</a>
+            <div class="mt-4 flex justify-center">
+                <button
+                    class="rtl-toggle-btn w-10 h-10 rounded-full border border-slate-200 dark:border-slate-800 flex items-center justify-center text-slate-500 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-primary-600 dark:hover:text-primary-400 transition">
+                    <i class="ph ph-globe text-lg"></i>
+                </button>
+            </div>
         </div>
     </div>
 
-    <main class=\"flex-grow pt-32 pb-24\">
+    <main class="flex-grow pt-32 pb-24">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16 scroll-reveal">
-                <span class="text-primary-600 font-bold uppercase tracking-wider text-sm mb-4 block animate-fade-in-down">Success Stories</span>
-                <h1 class="text-4xl lg:text-6xl font-display font-bold text-slate-900 mb-6 animate-fade-in-up delay-200">Built with OrbitScale.</h1>
+                <span
+                    class="text-primary-600 font-bold uppercase tracking-wider text-sm mb-4 block animate-fade-in-down">Success
+                    Stories</span>
+                <h1
+                    class="text-4xl lg:text-6xl font-display font-bold text-slate-900 mb-6 animate-fade-in-up delay-200">
+                    Built with OrbitScale.</h1>
                 <p class="text-xl text-slate-600 max-w-2xl mx-auto animate-fade-in-up delay-400">
                     See how leading companies are using our platform to scale their infrastructure.
                 </p>
@@ -157,7 +186,8 @@
             <div class="masonry-grid gap-6">
 
                 <!-- Item 1 -->
-                <div class="masonry-item relative group rounded-2xl overflow-hidden shadow-lg cursor-pointer hover-lift scroll-reveal animate-fade-in-up delay-100">
+                <div
+                    class="masonry-item relative group rounded-2xl overflow-hidden shadow-lg cursor-pointer hover-lift scroll-reveal animate-fade-in-up delay-100">
                     <img src="https://images.unsplash.com/photo-1481487163816-ce437dc6b5b5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
                         alt="Case Study 1"
                         class="w-full object-cover transform transition duration-500 group-hover:scale-110">
@@ -226,13 +256,15 @@
             <!-- Client Testimonials -->
             <section class="mt-32">
                 <div class="text-center mb-16 scroll-reveal">
-                    <h2 class="text-3xl lg:text-5xl font-display font-bold text-slate-900 mb-4 animate-fade-in-up">What our clients say</h2>
+                    <h2 class="text-3xl lg:text-5xl font-display font-bold text-slate-900 mb-4 animate-fade-in-up">What
+                        our clients say</h2>
                     <p class="text-xl text-slate-600 animate-fade-in-up delay-200">Real results from real companies</p>
                 </div>
 
                 <div class="grid md:grid-cols-3 gap-8">
                     <!-- Testimonial 1 -->
-                    <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-lg scroll-reveal hover-lift animate-fade-in-up delay-300">
+                    <div
+                        class="bg-white p-8 rounded-2xl border border-slate-200 shadow-lg scroll-reveal hover-lift animate-fade-in-up delay-300">
                         <div class="flex items-center gap-2 text-yellow-400 mb-4">
                             <i class="ph-fill ph-star"></i>
                             <i class="ph-fill ph-star"></i>
@@ -240,9 +272,11 @@
                             <i class="ph-fill ph-star"></i>
                             <i class="ph-fill ph-star"></i>
                         </div>
-                        <p class="text-slate-600 mb-6 leading-relaxed">"OrbitScale reduced our deployment time from hours to minutes. The ROI was immediate and measurable."</p>
+                        <p class="text-slate-600 mb-6 leading-relaxed">"OrbitScale reduced our deployment time from
+                            hours to minutes. The ROI was immediate and measurable."</p>
                         <div class="flex items-center gap-3">
-                            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?fit=crop&w=100&h=100" class="w-12 h-12 rounded-full object-cover">
+                            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?fit=crop&w=100&h=100"
+                                class="w-12 h-12 rounded-full object-cover">
                             <div>
                                 <p class="font-bold text-slate-900">Michael Chen</p>
                                 <p class="text-sm text-slate-500">CTO, FinTech Corp</p>
@@ -251,7 +285,8 @@
                     </div>
 
                     <!-- Testimonial 2 -->
-                    <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-lg scroll-reveal hover-lift animate-fade-in-up delay-500">
+                    <div
+                        class="bg-white p-8 rounded-2xl border border-slate-200 shadow-lg scroll-reveal hover-lift animate-fade-in-up delay-500">
                         <div class="flex items-center gap-2 text-yellow-400 mb-4">
                             <i class="ph-fill ph-star"></i>
                             <i class="ph-fill ph-star"></i>
@@ -259,9 +294,11 @@
                             <i class="ph-fill ph-star"></i>
                             <i class="ph-fill ph-star"></i>
                         </div>
-                        <p class="text-slate-600 mb-6 leading-relaxed">"The best decision we made this year. Support is incredible and the platform just works."</p>
+                        <p class="text-slate-600 mb-6 leading-relaxed">"The best decision we made this year. Support is
+                            incredible and the platform just works."</p>
                         <div class="flex items-center gap-3">
-                            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?fit=crop&w=100&h=100" class="w-12 h-12 rounded-full object-cover">
+                            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?fit=crop&w=100&h=100"
+                                class="w-12 h-12 rounded-full object-cover">
                             <div>
                                 <p class="font-bold text-slate-900">Sarah Martinez</p>
                                 <p class="text-sm text-slate-500">VP Engineering, HealthFlow</p>
@@ -270,7 +307,8 @@
                     </div>
 
                     <!-- Testimonial 3 -->
-                    <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-lg scroll-reveal hover-lift animate-fade-in-up delay-700">
+                    <div
+                        class="bg-white p-8 rounded-2xl border border-slate-200 shadow-lg scroll-reveal hover-lift animate-fade-in-up delay-700">
                         <div class="flex items-center gap-2 text-yellow-400 mb-4">
                             <i class="ph-fill ph-star"></i>
                             <i class="ph-fill ph-star"></i>
@@ -278,9 +316,11 @@
                             <i class="ph-fill ph-star"></i>
                             <i class="ph-fill ph-star"></i>
                         </div>
-                        <p class="text-slate-600 mb-6 leading-relaxed">"We scaled from 10K to 1M users without changing a single line of infrastructure code."</p>
+                        <p class="text-slate-600 mb-6 leading-relaxed">"We scaled from 10K to 1M users without changing
+                            a single line of infrastructure code."</p>
                         <div class="flex items-center gap-3">
-                            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?fit=crop&w=100&h=100" class="w-12 h-12 rounded-full object-cover">
+                            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?fit=crop&w=100&h=100"
+                                class="w-12 h-12 rounded-full object-cover">
                             <div>
                                 <p class="font-bold text-slate-900">David Park</p>
                                 <p class="text-sm text-slate-500">Founder, EduLearn</p>
@@ -348,45 +388,70 @@
             <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 mb-12">
                 <div class="col-span-2 lg:col-span-2">
                     <a href="index.html" class="flex items-center gap-2 mb-4">
-                        <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-violet-500 to-pink-500 flex items-center justify-center text-white shadow-lg shadow-violet-500/30 group-hover:scale-110 transition-transform duration-300"><i class="ph-bold ph-planet"></i></div>
+                        <div
+                            class="w-8 h-8 rounded-lg bg-gradient-to-br from-violet-500 to-pink-500 flex items-center justify-center text-white shadow-lg shadow-violet-500/30 group-hover:scale-110 transition-transform duration-300">
+                            <i class="ph-bold ph-planet"></i>
+                        </div>
                         <span class="font-display font-bold text-xl text-slate-900 dark:text-white">OrbitScale</span>
                     </a>
-                    <p class="text-slate-500 dark:text-slate-400 text-sm max-w-xs mb-6">Making cloud infrastructure accessible, scalable, and secure for everyone.</p>
+                    <p class="text-slate-500 dark:text-slate-400 text-sm max-w-xs mb-6">Making cloud infrastructure
+                        accessible, scalable, and secure for everyone.</p>
                     <div class="flex gap-4">
-                        <a href="#" class="w-10 h-10 rounded-full bg-slate-50 dark:bg-slate-800 flex items-center justify-center text-slate-500 dark:text-slate-400 hover:bg-primary-50 dark:hover:bg-primary-900/30 hover:text-primary-600 dark:hover:text-primary-400 transition"><i class="ph-fill ph-twitter-logo text-xl"></i></a>
-                        <a href="#" class="w-10 h-10 rounded-full bg-slate-50 dark:bg-slate-800 flex items-center justify-center text-slate-500 dark:text-slate-400 hover:bg-primary-50 dark:hover:bg-primary-900/30 hover:text-primary-600 dark:hover:text-primary-400 transition"><i class="ph-fill ph-github-logo text-xl"></i></a>
-                        <a href="#" class="w-10 h-10 rounded-full bg-slate-50 dark:bg-slate-800 flex items-center justify-center text-slate-500 dark:text-slate-400 hover:bg-primary-50 dark:hover:bg-primary-900/30 hover:text-primary-600 dark:hover:text-primary-400 transition"><i class="ph-fill ph-linkedin-logo text-xl"></i></a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-slate-50 dark:bg-slate-800 flex items-center justify-center text-slate-500 dark:text-slate-400 hover:bg-primary-50 dark:hover:bg-primary-900/30 hover:text-primary-600 dark:hover:text-primary-400 transition"><i
+                                class="ph-fill ph-twitter-logo text-xl"></i></a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-slate-50 dark:bg-slate-800 flex items-center justify-center text-slate-500 dark:text-slate-400 hover:bg-primary-50 dark:hover:bg-primary-900/30 hover:text-primary-600 dark:hover:text-primary-400 transition"><i
+                                class="ph-fill ph-github-logo text-xl"></i></a>
+                        <a href="#"
+                            class="w-10 h-10 rounded-full bg-slate-50 dark:bg-slate-800 flex items-center justify-center text-slate-500 dark:text-slate-400 hover:bg-primary-50 dark:hover:bg-primary-900/30 hover:text-primary-600 dark:hover:text-primary-400 transition"><i
+                                class="ph-fill ph-linkedin-logo text-xl"></i></a>
                     </div>
                 </div>
                 <div>
                     <h4 class="font-bold text-slate-900 dark:text-white mb-4">Product</h4>
                     <ul class="space-y-2 text-sm text-slate-600 dark:text-slate-400">
-                        <li><a href="#" class="hover:text-primary-600 dark:hover:text-primary-400 transition">Features</a></li>
-                        <li><a href="#" class="hover:text-primary-600 dark:hover:text-primary-400 transition">Integrations</a></li>
-                        <li><a href="pricing.html" class="hover:text-primary-600 dark:hover:text-primary-400 transition">Pricing</a></li>
-                        <li><a href="#" class="hover:text-primary-600 dark:hover:text-primary-400 transition">Changelog</a></li>
+                        <li><a href="#"
+                                class="hover:text-primary-600 dark:hover:text-primary-400 transition">Features</a></li>
+                        <li><a href="#"
+                                class="hover:text-primary-600 dark:hover:text-primary-400 transition">Integrations</a>
+                        </li>
+                        <li><a href="pricing.html"
+                                class="hover:text-primary-600 dark:hover:text-primary-400 transition">Pricing</a></li>
+                        <li><a href="#"
+                                class="hover:text-primary-600 dark:hover:text-primary-400 transition">Changelog</a></li>
                     </ul>
                 </div>
                 <div>
                     <h4 class="font-bold text-slate-900 dark:text-white mb-4">Resources</h4>
                     <ul class="space-y-2 text-sm text-slate-600 dark:text-slate-400">
-                        <li><a href="#" class="hover:text-primary-600 dark:hover:text-primary-400 transition">Documentation</a></li>
-                        <li><a href="#" class="hover:text-primary-600 dark:hover:text-primary-400 transition">API Reference</a></li>
-                        <li><a href="blog.html" class="hover:text-primary-600 dark:hover:text-primary-400 transition">Blog</a></li>
-                        <li><a href="#" class="hover:text-primary-600 dark:hover:text-primary-400 transition">Community</a></li>
+                        <li><a href="#"
+                                class="hover:text-primary-600 dark:hover:text-primary-400 transition">Documentation</a>
+                        </li>
+                        <li><a href="#" class="hover:text-primary-600 dark:hover:text-primary-400 transition">API
+                                Reference</a></li>
+                        <li><a href="blog.html"
+                                class="hover:text-primary-600 dark:hover:text-primary-400 transition">Blog</a></li>
+                        <li><a href="#"
+                                class="hover:text-primary-600 dark:hover:text-primary-400 transition">Community</a></li>
                     </ul>
                 </div>
                 <div>
                     <h4 class="font-bold text-slate-900 dark:text-white mb-4">Company</h4>
                     <ul class="space-y-2 text-sm text-slate-600 dark:text-slate-400">
-                        <li><a href="about.html" class="hover:text-primary-600 dark:hover:text-primary-400 transition">About</a></li>
-                        <li><a href="#" class="hover:text-primary-600 dark:hover:text-primary-400 transition">Careers</a></li>
-                        <li><a href="#" class="hover:text-primary-600 dark:hover:text-primary-400 transition">Legal</a></li>
-                        <li><a href="contact.html" class="hover:text-primary-600 dark:hover:text-primary-400 transition">Contact</a></li>
+                        <li><a href="about.html"
+                                class="hover:text-primary-600 dark:hover:text-primary-400 transition">About</a></li>
+                        <li><a href="#"
+                                class="hover:text-primary-600 dark:hover:text-primary-400 transition">Careers</a></li>
+                        <li><a href="#" class="hover:text-primary-600 dark:hover:text-primary-400 transition">Legal</a>
+                        </li>
+                        <li><a href="contact.html"
+                                class="hover:text-primary-600 dark:hover:text-primary-400 transition">Contact</a></li>
                     </ul>
                 </div>
             </div>
-            <div class="pt-8 border-t border-slate-100 dark:border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4">
+            <div
+                class="pt-8 border-t border-slate-100 dark:border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4">
                 <p class="text-slate-400 text-sm">© 2025 OrbitScale Inc. All rights reserved.</p>
                 <div class="flex gap-6 text-sm text-slate-500 dark:text-slate-400">
                     <a href="#" class="hover:text-slate-900 dark:hover:text-white">Privacy Policy</a>

@@ -54,7 +54,7 @@
                     <div class="relative group px-3 py-2">
                         <button
                             class="flex items-center gap-1 text-slate-600 dark:text-slate-300 font-medium hover:text-primary-600 dark:hover:text-primary-400 transition">
-                            Product <i class="ph-bold ph-caret-down text-xs mt-0.5"></i>
+                            Home <i class="ph-bold ph-caret-down text-xs mt-0.5"></i>
                         </button>
                         <div
                             class="absolute top-full left-1/2 -translate-x-1/2 pt-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform translate-y-2 group-hover:translate-y-0">
@@ -64,21 +64,20 @@
                                     class="flex items-center gap-3 p-3 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-700 transition">
                                     <div
                                         class="w-8 h-8 rounded-lg bg-primary-50 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400 flex items-center justify-center">
-                                        <i class="ph-fill ph-rocket-launch"></i></div>
+                                        <i class="ph-fill ph-rocket-launch"></i>
+                                    </div>
                                     <div>
-                                        <div class="font-bold text-sm text-slate-900 dark:text-white">Platform</div>
-                                        <div class="text-xs text-slate-500 dark:text-slate-400">For scaling teams</div>
+                                        <div class="font-bold text-sm text-slate-900 dark:text-white">Home 1</div>
                                     </div>
                                 </a>
                                 <a href="index-v2.html"
                                     class="flex items-center gap-3 p-3 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-700 transition">
                                     <div
                                         class="w-8 h-8 rounded-lg bg-slate-900 dark:bg-slate-700 text-white flex items-center justify-center">
-                                        <i class="ph-fill ph-code"></i></div>
+                                        <i class="ph-fill ph-code"></i>
+                                    </div>
                                     <div>
-                                        <div class="font-bold text-sm text-slate-900 dark:text-white">Developer API
-                                        </div>
-                                        <div class="text-xs text-slate-500 dark:text-slate-400">Documentation</div>
+                                        <div class="font-bold text-sm text-slate-900 dark:text-white">Home 2</div>
                                     </div>
                                 </a>
                             </div>
@@ -109,9 +108,17 @@
                 </div>
 
                 <!-- Mobile Toggle -->
-                <button id="mobile-menu-btn" class="md:hidden p-2 text-slate-600 dark:text-slate-300">
-                    <i class="ph ph-list text-2xl"></i>
-                </button>
+                <!-- Mobile Actions -->
+                <div class="flex md:hidden items-center gap-2">
+                    <button
+                        class="rtl-toggle-btn p-2 text-slate-600 dark:text-slate-300 hover:text-primary-600 dark:hover:text-primary-400 transition"
+                        title="Toggle RTL/LTR">
+                        <i class="ph ph-globe text-xl"></i>
+                    </button>
+                    <button id="mobile-menu-btn" class="p-2 text-slate-600 dark:text-slate-300">
+                        <i class="ph ph-list text-2xl"></i>
+                    </button>
+                </div>
             </div>
         </div>
     </nav>
@@ -152,6 +159,12 @@
             <a href="register.html"
                 class="block w-full py-3 rounded-xl bg-primary-600 text-white text-center font-bold shadow-lg shadow-primary-500/30 mt-4">Get
                 Started Free</a>
+            <div class="mt-4 flex justify-center">
+                <button
+                    class="rtl-toggle-btn w-10 h-10 rounded-full border border-slate-200 dark:border-slate-800 flex items-center justify-center text-slate-500 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-primary-600 dark:hover:text-primary-400 transition">
+                    <i class="ph ph-globe text-lg"></i>
+                </button>
+            </div>
         </div>
     </div>
 
@@ -365,7 +378,8 @@
                     <a href="index.html" class="flex items-center gap-2 mb-4">
                         <div
                             class="w-8 h-8 rounded-lg bg-gradient-to-br from-violet-500 to-pink-500 flex items-center justify-center text-white shadow-lg shadow-violet-500/30 group-hover:scale-110 transition-transform duration-300">
-                            <i class="ph-bold ph-planet"></i></div>
+                            <i class="ph-bold ph-planet"></i>
+                        </div>
                         <span class="font-display font-bold text-xl text-slate-900 dark:text-white">OrbitScale</span>
                     </a>
                     <p class="text-slate-500 dark:text-slate-400 text-sm max-w-xs mb-6">Making cloud infrastructure
